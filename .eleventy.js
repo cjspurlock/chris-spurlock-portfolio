@@ -2,7 +2,7 @@ const htmlmin = require("html-minifier");
 
 const now = String(Date.now());
 
-module.exports = function (eleventyConfig) {
+module.exports = (eleventyConfig) => {
 	eleventyConfig.addWatchTarget("./styles/tailwind.config.js");
 	eleventyConfig.addWatchTarget("./styles/tailwind.css");
 
@@ -16,13 +16,11 @@ module.exports = function (eleventyConfig) {
 		"./node_modules/alpinejs/dist/cdn.js": "./js/alpine.js",
 	});
 
-	eleventyConfig.addShortcode("version", function () {
-		return now;
-	});
+	eleventyConfig.addShortcode("version", () => now);
 
-	eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
+	eleventyConfig.addTransform("htmlmin", (content, outputPath) => {
 		if (process.env.ELEVENTY_PRODUCTION && outputPath && outputPath.endsWith(".html")) {
-			let minified = htmlmin.minify(content, {
+			const minified = htmlmin.minify(content, {
 				useShortDoctype: true,
 				removeComments: true,
 				collapseWhitespace: true,
@@ -34,5 +32,5 @@ module.exports = function (eleventyConfig) {
 	});
 
 	// Copy `robots.txt` to the output directory
-    eleventyConfig.addPassthroughCopy("robots.txt");
+	eleventyConfig.addPassthroughCopy("robots.txt");
 };
