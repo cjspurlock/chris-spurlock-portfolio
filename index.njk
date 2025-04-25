@@ -1,321 +1,850 @@
-{% extends "_includes/default.njk" %}
-
-{% block title %}Chris Spurlock | Tailwind Labs Design Engineer Application | Portfolio{% endblock %}
-
-{% block content %}
-	<main class="pt-6 md:pt-12">
-		<section class="px-6 md:px-12 max-w-[108rem] mx-auto">
-			<div class="px-6 md:px-16 py-16 md:py-32 mx-auto text-center text-white bg-gradient-to-br from-zinc-950 to-zinc-800 rounded-4xl shadow-card before:pointer-events-none before:absolute before:inset-0 before:rounded-4xl before:shadow-[0px_2px_8px_0px_rgba(0,_0,_0,_0.20),_0px_1px_0px_0px_rgba(255,_255,_255,_0.06)_inset] relative">
-				<img src="/images/headshot.jpeg" alt="Headshot style image of Chris Spurlock, UI Developer" class="block object-cover object-center w-32 h-auto mx-auto mb-6 rounded-full aspect-square">
-				<h1 class="mb-2 text-5xl font-semibold md:text-6xl">Chris Spurlock</h1>
-				<h2 class="inline-block mb-4 text-xl font-medium text-transparent md:text-2xl bg-gradient-to-r from-fuchsia-800 via-fuchsia-300 to-fuchsia-800 bg-clip-text">A Passion for Pixels and Polish</h2>
-				<p class="max-w-2xl mx-auto mb-8 text-base md:mb-12 md:text-lg text-zinc-400">Senior frontend developer & designer with a journalism soul. Passionate about crafting beautiful, accessible web experiences built with care.</p>
-				<div class="flex flex-col justify-center gap-2 sm:items-center sm:flex-row">
-					<a href="/about/" class="inline-flex justify-center py-2.5 px-8 rounded-full bg-transparent shadow-button-light font-medium border border-zinc-700 hover:bg-zinc-950 transition-all duration-300 ease-linear">About Me</a>
-					<a href="/assets/Chris-Spurlock-Senior-Front-End-Developer-and-UI-Designer-Resume.pdf" target="_blank" rel="noopener nofollow" class="inline-flex py-2.5 px-8 rounded-full bg-fuchsia-700 border justify-center border-fuchsia-700 shadow-button font-medium hover:bg-fuchsia-900 transition-all duration-300 ease-linear">Download Resume</a>
-				</div>
+{% extends "_includes/default.njk" %} {% block title %}Chris Spurlock | Tailwind Labs Design Engineer Application | Portfolio{% endblock %} {% block content %}
+<main class="pt-6 md:pt-12">
+	<section class="px-6 md:px-12 max-w-[108rem] mx-auto">
+		<div
+			class="px-6 md:px-16 py-16 md:py-32 mx-auto text-center text-white bg-gradient-to-br from-zinc-950 to-zinc-800 rounded-4xl shadow-card before:pointer-events-none before:absolute before:inset-0 before:rounded-4xl before:shadow-[0px_2px_8px_0px_rgba(0,_0,_0,_0.20),_0px_1px_0px_0px_rgba(255,_255,_255,_0.06)_inset] relative"
+		>
+			<img
+				src="/images/headshot.jpeg"
+				alt="Headshot style image of Chris Spurlock, UI Developer"
+				class="block object-cover object-center w-32 h-auto mx-auto mb-6 rounded-full aspect-square"
+			/>
+			<h1 class="mb-2 text-5xl font-semibold md:text-6xl">Chris Spurlock</h1>
+			<h2
+				class="inline-block mb-4 text-xl font-medium text-transparent md:text-2xl bg-gradient-to-r from-fuchsia-800 via-fuchsia-300 to-fuchsia-800 bg-clip-text"
+			>
+				A Passion for Pixels and Polish
+			</h2>
+			<p class="max-w-2xl mx-auto mb-8 text-base md:mb-12 md:text-lg text-zinc-400">
+				Senior frontend developer & designer with a journalism soul. Passionate about crafting beautiful, accessible web experiences built with care.
+			</p>
+			<div class="flex flex-col justify-center gap-2 sm:items-center sm:flex-row">
+				<a
+					href="/about/"
+					class="inline-flex justify-center py-2.5 px-8 rounded-full bg-transparent shadow-button-light font-medium border border-zinc-700 hover:bg-zinc-950 transition-all duration-300 ease-linear"
+					>About Me</a
+				>
+				<a
+					href="/assets/Chris-Spurlock-Senior-Front-End-Developer-and-UI-Designer-Resume.pdf"
+					target="_blank"
+					rel="noopener nofollow"
+					class="inline-flex py-2.5 px-8 rounded-full bg-fuchsia-700 border justify-center border-fuchsia-700 shadow-button font-medium hover:bg-fuchsia-900 transition-all duration-300 ease-linear"
+					>Download Resume</a
+				>
 			</div>
-		</section>
-		<section class="px-6 md:px-12 max-w-[108rem] mx-auto">
-			<div class="py-12 mx-auto md:py-16 max-w-7xl">
+		</div>
+	</section>
+	<section class="px-6 md:px-12 max-w-[108rem] mx-auto">
+		<div class="py-12 mx-auto md:py-16 max-w-7xl">
+			{% from "_includes/project-tabs.njk" import projectTabs %} {% set designDevProjects = [ { id: 1, title: 'Sure Sports', subtitle: 'Modern, minimal UI
+			for contract-based lending platform', content: 'Custom WordPress theme built from scratch with Kadence, Gutenberg, and ACF. Designed a flexible
+			block-based system to serve a niche, high-trust user base with speed, polish, and clarity.', imageUrl: '/images/sure-sports.jpg', altText: 'Sure
+			Sports website screenshot. The site headline is Better Banking for Athletes and there is an illustration of a baseball player in a line art style.
+			Two buttons read Call Now and Request Financing.', date: 'June 2023', dateTime: '2023-06', link: 'https://www.suresports.com', prettyLink:
+			'suresports.com', tags: [ { label: 'Design', color: 'teal-500' }, { label: 'Development', color: 'amber-500' }, { label: 'Project Management',
+			color: 'sky-500' } ] }, { id: 2, title: 'You Are Not Stuck', subtitle: 'Playful, approachable UI for bestselling self-help author', content: 'Led UI
+			design and QA on a custom Kadence theme with WooCommerce, LearnDash, and AutomateWoo — blending coaching, commerce, and community into a unified,
+			user-first experience. ', imageUrl: '/images/you-are-not-stuck.jpg', altText: 'You Are Not Stuck website screenshot. The site headline is Hi! I am
+			Becky Vollmer. Author. Teacher. Speaker. Seeker. and there is a headshot photo of Vollmer on the right.', date: 'January 2023', dateTime: '2023-01',
+			link: 'https://www.youarenotstuck.com', prettyLink: 'youarenotstuck.com', tags: [ { label: 'Design', color: 'teal-500' }, { label: 'Project
+			Management', color: 'sky-500' } ] }, { id: 3, title: 'A Place 2 Grow', subtitle: 'Whimsical, parent-friendly UI for a nature-focused childcare
+			center', content: 'Custom WordPress build featuring ACF-powered templates, a weekly meal calendar, an event calendar, photo galleries, and classroom
+			pages — all with thoughtfully designed, print-friendly layouts for parents.', imageUrl: '/images/a-place-2-grow.jpg', altText: 'A Place 2 Grow
+			website screenshot. The site headline is Reggio Emilia inspired curriculum for ages six weeks to twelve years. The pictured section of the site has
+			a spring-green background and features logos of organizations to which A Place 2 Grow belongs.', date: 'April 2018', dateTime: '2018-04', link:
+			'https://www.aplace2growchildcarecenter.com/', prettyLink: 'aplace2growchildcarecenter.com', tags: [ { label: 'Design', color: 'teal-500' }, {
+			label: 'Development', color: 'amber-500' }, { label: 'Project Management', color: 'sky-500' } ] }, { id: 4, title: 'AAIMEA Member Dashboard',
+			subtitle: 'Responsive, streamlined UX overhaul for HR platform’s member dashboard', content: 'One-page member portal redesign with a focus on
+			clarity, speed, and usability — built with Tailwind, custom interactivity, and a GPT-powered assistant. Currently leading the design and project
+			management of a custom Vue-based LMS, set to launch soon.', imageUrl: '/images/aaim-member-dashboard.jpg', altText: 'AAIMEA Member Dashboard website
+			screenshot. The dashboard contains links to various member resources and also features a call to action to a forthcoming AI chatbot.', date: 'March
+			2024', dateTime: '2024-03', link: 'https://aaimea.org/member-dashboard/', prettyLink: 'aaimea.org/member-dashboard', tags: [ { label: 'Design',
+			color: 'teal-500' }, { label: 'Development', color: 'amber-500' }, { label: 'Project Management', color: 'sky-500' } ] } ] %}
 
-				{% from "_includes/project-tabs.njk" import projectTabs %}
+			{{
+				projectTabs(
+					"Designs That Delight",
+					"Projects where I led the UI design — crafting thoughtful, intuitive experiences from concept to completion.",
+					designDevProjects
+				)
+			}}
+		</div>
 
-				{% set designDevProjects = [
-					{
-						id: 1,
-						title: 'Sure Sports',
-						subtitle: 'Modern, minimal UI for contract-based lending platform',
-						content: 'Custom WordPress theme built from scratch with Kadence, Gutenberg, and ACF. Designed a flexible block-based system to serve a niche, high-trust user base with speed, polish, and clarity.',
-						imageUrl: '/images/sure-sports.jpg',
-						altText: 'Sure Sports website screenshot. The site headline is Better Banking for Athletes and there is an illustration of a baseball player in a line art style. Two buttons read Call Now and Request Financing.',
-						date: 'June 2023',
-						dateTime: '2023-06',
-						link: 'https://www.suresports.com',
-						prettyLink: 'suresports.com',
-						tags: [
-							{ label: 'Design', color: 'teal-500' },
-							{ label: 'Development', color: 'amber-500' },
-							{ label: 'Project Management', color: 'sky-500' }
-						]
-					},
-					{
-						id: 2,
-						title: 'You Are Not Stuck',
-						subtitle: 'Playful, approachable UI for bestselling self-help author',
-						content: 'Led UI design and QA on a custom Kadence theme with WooCommerce, LearnDash, and AutomateWoo — blending coaching, commerce, and community into a unified, user-first experience.						',
-						imageUrl: '/images/you-are-not-stuck.jpg',
-						altText: 'You Are Not Stuck website screenshot. The site headline is Hi! I am Becky Vollmer. Author. Teacher. Speaker. Seeker. and there is a headshot photo of Vollmer on the right.',
-						date: 'January 2023',
-						dateTime: '2023-01',
-						link: 'https://www.youarenotstuck.com',
-						prettyLink: 'youarenotstuck.com',
-						tags: [
-							{ label: 'Design', color: 'teal-500' },
-							{ label: 'Project Management', color: 'sky-500' }
-						]
-					},
-					{
-						id: 3,
-						title: 'A Place 2 Grow',
-						subtitle: 'Whimsical, parent-friendly UI for a nature-focused childcare center',
-						content: 'Custom WordPress build featuring ACF-powered templates, a weekly meal calendar, an event calendar, photo galleries, and classroom pages — all with thoughtfully designed, print-friendly layouts for parents.',
-						imageUrl: '/images/a-place-2-grow.jpg',
-						altText: 'A Place 2 Grow website screenshot. The site headline is Reggio Emilia inspired curriculum for ages six weeks to twelve years. The pictured section of the site has a spring-green background and features logos of organizations to which A Place 2 Grow belongs.',
-						date: 'April 2018',
-						dateTime: '2018-04',
-						link: 'https://www.aplace2growchildcarecenter.com/',
-						prettyLink: 'aplace2growchildcarecenter.com',
-						tags: [
-							{ label: 'Design', color: 'teal-500' },
-							{ label: 'Development', color: 'amber-500' },
-							{ label: 'Project Management', color: 'sky-500' }
-						]
-					},
-					{
-						id: 4,
-						title: 'AAIMEA Member Dashboard',
-						subtitle: 'Responsive, streamlined UX overhaul for HR platform’s member dashboard',
-						content: 'One-page member portal redesign with a focus on clarity, speed, and usability — built with Tailwind, custom interactivity, and a GPT-powered assistant. Currently leading the design and project management of a custom Vue-based LMS, set to launch soon.',
-						imageUrl: '/images/aaim-member-dashboard.jpg',
-						altText: 'AAIMEA Member Dashboard website screenshot. The dashboard contains links to various member resources and also features a call to action to a forthcoming AI chatbot.',
-						date: 'March 2024',
-						dateTime: '2024-03',
-						link: 'https://aaimea.org/member-dashboard/',
-						prettyLink: 'aaimea.org/member-dashboard',
-						tags: [
-							{ label: 'Design', color: 'teal-500' },
-							{ label: 'Development', color: 'amber-500' },
-							{ label: 'Project Management', color: 'sky-500' }
-						]
-					}
-				] %}
-				
-				{% set codeOnlyProjects = [
-					{
-						id: 1,
-						title: 'STL 2030 Progress',
-						subtitle: 'Dynamic web experience to visualize regional economic progress',
-						content: 'Collaborated with <a href="https://tremendo.us/work/fostering-inclusive-economic-growth/" class="underline text-fuchsia-700 hover:text-fuchsia-900" target="_blank" rel="noopener noreferrer">Tremendousness</a> to build a performant, accessible frontend featuring 60+ charts and hundreds of initiatives via Tableau and ArcGIS. Focused on custom theming, data viz, and WCAG compliance.',
-						imageUrl: '/images/stl-2030-progress.jpg',
-						altText: 'Homepage hero image of the STL 2030 Progress website. It features a stylized infographic arrow made of red, yellow, and blue bands pointing to a compass icon. Text reads "Progress to 2030" with a description about tracking inclusive economic growth in the St. Louis metro.',
-						date: 'July 2024',
-						dateTime: '2024-07',
-						link: 'https://stl2030progress.com/',
-						prettyLink: 'stl2030progress.com',
-						tags: [
-							{ label: 'Development', color: 'amber-500' },
-							{ label: 'Interactivity', color: 'emerald-500' },
-							{ label: 'Visualization', color: 'indigo-500' }
-						]
-					},
-					{
-						id: 2,
-						title: 'Unigroup',
-						subtitle: 'Dual-site, modular, brand-specific frontend dev for national moving giants',
-						content: 'Collaborated with <a href="https://hlkagency.com/" class="underline text-fuchsia-700 hover:text-fuchsia-900" target="_blank" rel="noopener noreferrer">HLK</a> to develop dual-brand frontend architecture for Unigroup’s flagship moving sites, Mayflower Moving and United Van Lines. Balanced consistent design systems with unique branding for each carrier, tackling large-scale content and UI complexity with a shared technical foundation.',
-						imageUrl: '/images/mayflower-moving-united-van-lines.jpg',
-						altText: 'Side-by-side comparison of hero sections from Mayflower and United Van Lines websites. The Mayflower section on the left features a green background with white serif text reading “Mayflower® Moving Companies: America’s Most Trusted Mover” alongside a map illustration with location pins. The United Van Lines section on the right features a blue and white design with the headline “United Moving Companies – We Take Care Of It All” and a cityscape line drawing at the bottom. Both sections include “Get a Quote” call-to-action buttons.',
-						date: 'December 2019',
-						dateTime: '2019-12',
-						link: 'https://www.mayflower.com/',
-						prettyLink: 'mayflower.com',
-						secondaryLink: 'https://www.unitedvanlines.com/',
-						secondaryPrettyLink: 'unitedvanlines.com',
-						tags: [
-							{ label: 'Development', color: 'amber-500' }
-						]
-					},
-					{
-						id: 3,
-						title: 'School Choice Matters',
-						subtitle: 'Custom, interactive policy explorer for national nonprofit advocacy team',
-						content: 'Built in partnership with <a href="https://tremendo.us/" class="underline text-fuchsia-700 hover:text-fuchsia-900" target="_blank" rel="noopener noreferrer">Tremendousness</a> for <a href="https://excelined.org/2024/11/14/school-choice-matters-explore-educational-choice-policies-across-all-50-states-with-excelineds-new-tool/" class="underline text-fuchsia-700 hover:text-fuchsia-900" target="_blank" rel="noopener noreferrer">ExcelinEd</a>, this Tailwind-powered site integrates ACF and Alpine.js for interactive maps, tabbed content, and dynamic state-by-state views. Prioritized accessibility and mobile usability while visualizing complex educational policy data.',
-						imageUrl: '/images/school-choice-matters.jpg',
-						altText: 'Homepage hero image of ExcelinEd’s School Choice Matters website. Light blue background with clouds, school buildings, and children walking toward a school bus. Text reads “How can my state give all children access to the educational opportunities they deserve?”',
-						date: 'November 2024',
-						dateTime: '2024-11',
-						link: 'https://schoolchoicematters.org/',
-						prettyLink: 'schoolchoicematters.org',
-						tags: [
-							{ label: 'Development', color: 'amber-500' },
-							{ label: 'Interactivity', color: 'emerald-500' },
-							{ label: 'Visualization', color: 'indigo-500' }
-						]
-					}
-				] %}
-
-				{{ projectTabs('Designs That Delight', 'Projects where I led the UI design — crafting thoughtful, intuitive experiences from concept to completion.', designDevProjects) }}
-
-				{{ projectTabs('Under the Hood', 'Projects where I focused purely on frontend development — building fast, accessible, user-first experiences from the ground up.', codeOnlyProjects) }}
-			</div>
-		</section>
-		<section class="px-6 md:px-12 max-w-[108rem] mx-auto">
-			<div class="mx-auto max-w-7xl">
-				<div class="py-12 border-t md:py-16 border-zinc-100">
-
-					<!-- Yes, this is the example layout from Simon Vrachliotis' Pixel Perfect Figma to Tailwind workshot on EpicWeb.dev. I haven't taken the course, but I saw the design and just HAD to try to recreate it. -->
-					<div class="flex flex-col-reverse xl:grid xl:grid-cols-2 gap-x-20 gap-y-12 xl:items-center">
-						<div>
-							<ul class="flex flex-wrap gap-4 xl:grid xl:grid-cols-5 xl:grid-rows-6 [&>*]:w-[calc(33.333%-0.667rem)] sm:[&>*]:w-[calc(25%-.75rem)] md:[&>*]:w-[calc(16.667%-.8333rem)] xl:[&>*]:w-full">
-								<li class="xl:col-start-1">
-									<a href="https://techselect.aaoinfo.org/" target="_blank" rel="noopener noreferrer" class="block p-6 rounded-lg bg-fuchsia-50 aspect-square">
-										<figure class="block">
-											<img class="block object-contain w-full h-auto aspect-square" width="64" height="64" src="/images/icon--aao.png" alt="AAO logo" />
-										</figure>
-									</a>
-								</li>
-								<li class="xl:col-start-4">
-									<a href="https://artesysonline.com/" target="_blank" rel="noopener noreferrer" class="block p-6 rounded-lg bg-fuchsia-50 aspect-square">
-										<figure class="block">
-											<img class="block object-contain w-full h-auto aspect-square" width="64" height="64" src="/images/icon--artesys.png" alt="Artesys logo" />
-										</figure>
-									</a>
-								</li>
-								<li class="xl:col-start-1">
-									<a href="https://www.ascentcorp.com/" target="_blank" rel="noopener noreferrer" class="block p-6 rounded-lg bg-fuchsia-50 aspect-square">
-										<figure class="block">
-											<img class="block object-contain w-full h-auto aspect-square" width="64" height="64" src="/images/icon--ascent.png" alt="Ascent Corp. logo" />
-										</figure>
-									</a>
-								</li>
-								<li class="xl:col-start-2">
-									<a href="https://www.bigbluespark.com/" target="_blank" rel="noopener noreferrer" class="block p-6 rounded-lg bg-fuchsia-50 aspect-square">
-										<figure class="block">
-											<img class="block object-contain w-full h-auto aspect-square" width="64" height="64" src="/images/icon--big-blue-spark.png" alt="Big Blue Spark logo" />
-										</figure>
-									</a>
-								</li>
-								<li class="xl:col-start-4">
-									<a href="https://www.coleschotz.com/" target="_blank" rel="noopener noreferrer" class="block p-6 rounded-lg bg-fuchsia-50 aspect-square">
-										<figure class="block">
-											<img class="block object-contain w-full h-auto aspect-square" width="64" height="64" src="/images/icon--cole-schotz.png" alt="Cole Schotz logo" />
-										</figure>
-									</a>
-								</li>
-								<li class="xl:col-start-5">
-									<a href="https://convoyofhope.org/" target="_blank" rel="noopener noreferrer" class="block p-6 rounded-lg bg-fuchsia-50 aspect-square">
-										<figure class="block">
-											<img class="block object-contain w-full h-auto aspect-square" width="64" height="64" src="/images/icon--convoy-of-hope.webp" alt="Convoy of Hope logo" />
-										</figure>
-									</a>
-								</li>
-								<li class="xl:col-start-1">
-									<a href="https://www.yourfocalpointe.com/" target="_blank" rel="noopener noreferrer" class="block p-6 rounded-lg bg-fuchsia-50 aspect-square">
-										<figure class="block">
-											<img class="block object-contain w-full h-auto aspect-square" width="64" height="64" src="/images/icon--focal-pointe.png" alt="Focal Pointe logo" />
-										</figure>
-									</a>
-								</li>
-								<li class="xl:col-start-2">
-									<a href="https://stl2030progress.com/" target="_blank" rel="noopener noreferrer" class="block p-6 rounded-lg bg-fuchsia-50 aspect-square">
-										<figure class="block">
-											<img class="block object-contain w-full h-auto rounded aspect-square" width="64" height="64" src="/images/icon--gsl.png" alt="Greater St. Louis 2030 logo" />
-										</figure>
-									</a>
-								</li class="xl:col-start-3">
-									<li>
-									<a href="https://www.kateandcollc.com/" target="_blank" rel="noopener noreferrer" class="block p-6 rounded-lg bg-fuchsia-50 aspect-square">
-										<figure class="block">
-											<img class="block object-contain w-full h-auto aspect-square" width="64" height="64" src="/images/icon--kate-and-co.png" alt="Kate + Co. logo" />
-										</figure>
-									</a>
-								</li>
-								<li class="xl:col-start-4">
-									<a href="https://www.mayflower.com/" target="_blank" rel="noopener noreferrer" class="block p-6 rounded-lg bg-fuchsia-50 aspect-square">
-										<figure class="block">
-											<img class="block object-contain w-full h-auto aspect-square" width="64" height="64" src="/images/icon--mayflower.png" alt="Mayflower Moving logo" />
-										</figure>
-									</a>
-								</li>
-								<li class="xl:col-start-5">
-									<a href="https://oldfashioncandy.com/" target="_blank" rel="noopener noreferrer" class="block p-6 rounded-lg bg-fuchsia-50 aspect-square">
-										<figure class="block">
-											<img class="block object-contain w-full h-auto aspect-square" width="64" height="64" src="/images/icon--ofc.png" alt="Old Fashion Candy logo" />
-										</figure>
-									</a>
-								</li>
-								<li class="xl:col-start-2">
-									<a href="https://pathwaysmatter.org/" target="_blank" rel="noopener noreferrer" class="block p-6 rounded-lg bg-fuchsia-50 aspect-square">
-										<figure class="block">
-											<img class="block object-contain w-full h-auto aspect-square" width="64" height="64" src="/images/icon--pathways-matter.png" alt="Pathways Matter logo" />
-										</figure>
-									</a>
-								</li>
-								<li class="xl:col-start-3">
-									<a href="https://premiumretail.com/" target="_blank" rel="noopener noreferrer" class="block p-6 rounded-lg bg-fuchsia-50 aspect-square">
-										<figure class="block">
-											<img class="block object-contain w-full h-auto aspect-square" width="64" height="64" src="/images/icon--premium.png" alt="Premium Retail logo" />
-										</figure>
-									</a>
-								</li>
-								<li class="xl:col-start-4">
-									<a href="https://rosenthalwinemerchant.com/" target="_blank" rel="noopener noreferrer" class="block p-6 rounded-lg bg-fuchsia-50 aspect-square">
-										<figure class="block">
-											<img class="block object-contain w-full h-auto aspect-square" width="64" height="64" src="/images/icon--rosenthal.png" alt="Rosenthal Wine Merchant logo" />
-										</figure>
-									</a>
-								</li>
-								<li class="xl:col-start-5">
-									<a href="https://www.switzerfilm.com/" target="_blank" rel="noopener noreferrer" class="block p-6 rounded-lg bg-fuchsia-50 aspect-square">
-										<figure class="block">
-											<img class="block object-contain w-full h-auto aspect-square" width="64" height="64" src="/images/icon--switzerfilm.png" alt="Switzerfilm logo" />
-										</figure>
-									</a>
-								</li>
-								<li class="xl:col-start-2">
-									<a href="https://thompsoncenter.missouri.edu/" target="_blank" rel="noopener noreferrer" class="block p-6 rounded-lg bg-fuchsia-50 aspect-square">
-										<figure class="block">
-											<img class="block object-contain w-full h-auto aspect-square" width="64" height="64" src="/images/icon--thompson-center.png" alt="Thompson Center for Autism & Neurodevelopment logo" />
-										</figure>
-									</a>
-								</li>
-								<li class="xl:col-start-3">
-									<a href="https://www.uhsp.edu/" target="_blank" rel="noopener noreferrer" class="block p-6 rounded-lg bg-fuchsia-50 aspect-square">
-										<figure class="block">
-											<img class="block object-contain w-full h-auto aspect-square" width="64" height="64" src="/images/icon--uhsp.png" alt="University of Health Sciences & Pharmacy logo" />
-										</figure>
-									</a>
-								</li>
-								<li class="xl:col-start-4">
-									<a href="https://www.ultramodern.com/" target="_blank" rel="noopener noreferrer" class="block p-6 rounded-lg bg-fuchsia-50 aspect-square">
-										<figure class="block">
-											<img class="block object-contain w-full h-auto aspect-square" width="64" height="64" src="/images/icon--ultramodern.png" alt="Ultra Modern Pool & Patio logo" />
-										</figure>
-									</a>
-								</li>
-								<li class="xl:col-start-5">
-									<a href="https://www.unitedvanlines.com/" target="_blank" rel="noopener noreferrer" class="block p-6 rounded-lg bg-fuchsia-50 aspect-square">
-										<figure class="block">
-											<img class="block object-contain w-full h-auto aspect-square" width="64" height="64" src="/images/icon--united-van-lines.png" alt="United Van Lines logo" />
-										</figure>
-									</a>
-								</li>
-								<li class="xl:col-start-2">
-									<a href="https://mir.wustl.edu/" target="_blank" rel="noopener noreferrer" class="block p-6 rounded-lg bg-fuchsia-50 aspect-square">
-										<figure class="block">
-											<img class="block object-contain w-full h-auto aspect-square" width="64" height="64" src="/images/icon--washu.png" alt="WashU Mallinckrodt Institute of Radiology logo" />
-										</figure>
-									</a>
-								</li>
-								<li class="xl:col-start-4">
-									<a href="https://www.zelis.com/" target="_blank" rel="noopener noreferrer" class="block p-6 rounded-lg bg-fuchsia-50 aspect-square">
-										<figure class="block">
-											<img class="block object-contain w-full h-auto aspect-square" width="64" height="64" src="/images/icon--zelis.png" alt="Zelis logo" />
-										</figure>
-									</a>
-								</li>
-							</ul>
+		<div class="py-16 md:py-24 bg-zinc-50 sm:py-32 rounded-4xl ring-1 ring-black/5 ring-inset">
+			<div class="max-w-2xl px-6 mx-auto lg:max-w-7xl lg:px-8">
+				<h3 class="mb-3 text-base font-medium text-center text-fuchsia-600">The Stack</h3>
+				<h2 class="max-w-lg mx-auto mt-2 mb-4 text-4xl font-semibold tracking-tight text-center text-balance text-zinc-950 sm:text-5xl">
+					Technologies I Use
+				</h2>
+				<p class="max-w-xl mx-auto mb-10 text-lg text-center text-zinc-600">
+					Over the years, I’ve worked with a range of technologies in the web development world, from frontend to backend and everything in between.
+					These are the ones I trust and return to daily.
+				</p>
+				<div class="grid gap-4 mt-10 sm:mt-16 lg:grid-cols-3">
+					<div class="relative">
+						<div class="absolute inset-px rounded-lg bg-white lg:rounded-tl-[2rem]"></div>
+						<div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-tl-[calc(2rem+1px)]">
+							<div class="p-8">
+								<h4 class="text-xl font-semibold">Languages & Syntax</h4>
+								<p class="max-w-lg mt-2 mb-4 text-zinc-600 text-sm/6">
+									The core coding languages I use to build and debug everything from themes to APIs.
+								</p>
+								<div class="flex flex-wrap gap-2">
+									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+										<img height="16" width="16" src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript logo" />
+										JavaScript
+									</div>
+									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+										<img height="16" width="16" src="https://cdn.simpleicons.org/typescript/3178C6" alt="TypeScript logo" />
+										TypeScript
+									</div>
+									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+										<img height="16" width="16" src="https://cdn.simpleicons.org/php/777BB4" alt="PHP logo" />
+										PHP
+									</div>
+									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+										<img height="16" width="16" src="https://cdn.simpleicons.org/html5/E34F26" alt="HTML5 logo" />
+										HTML
+									</div>
+									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+										<img height="16" width="16" src="https://cdn.simpleicons.org/css/663399" alt="CSS logo" />
+										CSS
+									</div>
+								</div>
+							</div>
 						</div>
-						<div>
-							<h3 class="mb-3 text-base font-medium text-fuchsia-600">Collaborations</h3>
-							<h4 class="mb-5 text-3xl font-semibold md:text-4xl text-zinc-950">Teaming Up with Top Brands</h4>
-							<p class="max-w-2xl mb-4 text-lg md:text-xl text-zinc-600">From local startups to global enterprises, I've had the privilege of working with a diverse range of clients to bring their digital visions to life.</p>
-							<p class="max-w-2xl text-lg md:text-xl text-zinc-600">Each of these websites was developed either by me alone or in close collaboration with a teammate.</p>
+						<div class="pointer-events-none absolute inset-px rounded-lg shadow-sm ring-1 ring-black/5 lg:rounded-tl-[2rem]"></div>
+					</div>
+					<div class="relative">
+						<div class="absolute bg-white rounded-lg inset-px"></div>
+						<div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)]">
+							<div class="p-8">
+								<h4 class="text-xl font-semibold">Frameworks & Libraries</h4>
+								<p class="max-w-lg mt-2 mb-4 text-zinc-600 text-sm/6">Tools I use to organize, enhance, or extend core languages.</p>
+								<div class="flex flex-wrap gap-2">
+									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+										<img height="16" width="16" src="https://cdn.simpleicons.org/react/61DAFB" alt="React logo" />
+										React
+									</div>
+									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+										<img height="16" width="16" src="https://cdn.simpleicons.org/eleventy/222222" alt="Eleventy logo" />
+										Eleventy
+									</div>
+									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+										<img height="16" width="16" src="https://cdn.simpleicons.org/nunjucks/1C4913" alt="Nunjucks logo" />
+										Nunjucks
+									</div>
+									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+										<img height="16" width="16" src="https://cdn.simpleicons.org/tailwindcss/06B6D4" alt="Tailwind CSS logo" />
+										Tailwind CSS
+									</div>
+									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+										<img height="16" width="16" src="https://cdn.simpleicons.org/alpinedotjs/8BC0D0" alt="Alpine.js logo" />
+										Alpine.js
+									</div>
+									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+										<img height="16" width="16" src="https://cdn.simpleicons.org/framer/0055FF" alt="Framer logo" />
+										Framer
+									</div>
+									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+										<img height="16" width="16" src="https://cdn.simpleicons.org/lottiefiles/00DDB3" alt="Lottie logo" />
+										Lottie
+									</div>
+									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+										<img height="16" width="16" src="https://cdn.simpleicons.org/greensock/88CE02" alt="GSAP logo" />
+										GSAP
+									</div>
+								</div>
+							</div>
 						</div>
+						<div class="absolute rounded-lg shadow-sm pointer-events-none inset-px ring-1 ring-black/5"></div>
+					</div>
+					<div class="relative">
+						<div class="absolute bg-white rounded-lg lg:rounded-tr-[2rem] inset-px"></div>
+						<div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-tr-[calc(2rem+1px)]">
+							<div class="p-8">
+								<h4 class="text-xl font-semibold">Design & UX Tools</h4>
+								<p class="max-w-lg mt-2 mb-4 text-zinc-600 text-sm/6">Where I shape ideas visually and refine complex interfaces.</p>
+								<div class="flex flex-wrap gap-2">
+									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+										<img height="16" width="16" src="https://cdn.simpleicons.org/figma/F24E1E" alt="Figma logo" />
+										Figma
+									</div>
+									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+										<img height="16" width="16" src="https://cdn.simpleicons.org/sketch/F7B500" alt="Sketch logo" />
+										Sketch
+									</div>
+									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+										<img
+											height="16"
+											width="16"
+											src="https://upload.wikimedia.org/wikipedia/commons/c/c2/Adobe_XD_CC_icon.svg"
+											alt="Adobe XD logo"
+										/>
+										Adobe XD
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="absolute rounded-lg lg:rounded-tr-[2rem] shadow-sm pointer-events-none inset-px ring-1 ring-black/5"></div>
+					</div>
+					<div class="relative">
+						<div class="absolute bg-white rounded-lg inset-px"></div>
+						<div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)]">
+							<div class="p-8">
+								<h4 class="text-xl font-semibold">CMS & Site Builders</h4>
+								<p class="max-w-lg mt-2 mb-4 text-zinc-600 text-sm/6">How I build, scale, and manage client sites—especially in WordPress.</p>
+								<div class="flex flex-wrap gap-2">
+									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+										<img height="16" width="16" src="https://cdn.simpleicons.org/wordpress/21759B" alt="WordPress logo" />
+										WordPress
+									</div>
+									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+										<img height="16" width="16" src="https://ps.w.org/advanced-custom-fields/assets/icon.svg?rev=3207824" alt="ACF logo" />
+										ACF
+									</div>
+									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+										<img
+											height="16"
+											width="16"
+											src="https://www.kadencewp.com/wp-content/uploads/2020/10/kadencewp-icon.svg"
+											alt="Kadence logo"
+										/>
+										Kadence
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="absolute rounded-lg shadow-sm pointer-events-none inset-px ring-1 ring-black/5"></div>
+					</div>
+					<div class="relative">
+						<div class="absolute bg-white rounded-lg inset-px"></div>
+						<div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)]">
+							<div class="p-8">
+								<h4 class="text-xl font-semibold">Tooling & DevOps</h4>
+								<p class="max-w-lg mt-2 mb-4 text-zinc-600 text-sm/6">My environment, deployment, hosting, and version control setup.</p>
+								<div class="flex flex-wrap gap-2">
+									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+										<img height="16" width="16" src="https://cdn.simpleicons.org/github/181717" alt="GitHub logo" />
+										GitHub
+									</div>
+									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+										<img height="16" width="16" src="https://cdn.simpleicons.org/netlify/00C7B7" alt="Netlify logo" />
+										Netlify
+									</div>
+									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+										<img height="16" width="16" src="https://cdn.simpleicons.org/wpengine/0ECAD4" alt="WP Engine logo" />
+										WP Engine
+									</div>
+									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+										<img height="16" width="16" src="https://cdn.simpleicons.org/local/51BB7B" alt="Local logo" />
+										Local
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="absolute rounded-lg shadow-sm pointer-events-none inset-px ring-1 ring-black/5"></div>
+					</div>
+					<div class="relative">
+						<div class="absolute bg-white rounded-lg inset-px"></div>
+						<div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)]">
+							<div class="p-8">
+								<h4 class="text-xl font-semibold">Data & API Work</h4>
+								<p class="max-w-lg mt-2 mb-4 text-zinc-600 text-sm/6">How I connect apps, send data, and build integrations.</p>
+								<div class="flex flex-wrap gap-2">
+									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+										<img height="16" width="16" src="/images/rest_api_logo.svg" alt="REST logo" />
+										REST APIs
+									</div>
+									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+										<img height="16" width="16" src="https://cdn.simpleicons.org/json/000000" alt="JSON logo" />
+										JSON
+									</div>
+									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+										<img height="16" width="16" src="https://cdn.simpleicons.org/postman/FF6C37" alt="Postman logo" />
+										Postman
+									</div>
+									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+										<img height="16" width="16" src="https://cdn.simpleicons.org/swagger/85EA2D" alt="Swagger logo" />
+										Swagger
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="absolute rounded-lg shadow-sm pointer-events-none inset-px ring-1 ring-black/5"></div>
+					</div>
+					<div class="relative">
+						<div class="absolute bg-white rounded-lg inset-px lg:rounded-bl-[2rem]"></div>
+						<div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px) lg:rounded-bl-[calc(2rem+1px)]]">
+							<div class="p-8">
+								<h4 class="text-xl font-semibold">Marketing & Measurement</h4>
+								<p class="max-w-lg mt-2 mb-4 text-zinc-600 text-sm/6">
+									For SEO, analytics, conversion tracking, inclusiveness, and compliance.
+								</p>
+								<div class="flex flex-wrap gap-2">
+									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+										<img height="16" width="16" src="https://www.a11yproject.com/favicon.svg" alt="Accessibility logo" />
+										Accessibility
+									</div>
+									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+										<img height="16" width="16" src="https://cdn.simpleicons.org/google/4285F4" alt="Google Tag Manager logo" />
+										GTM
+									</div>
+									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+										<img height="16" width="16" src="https://cdn.simpleicons.org/yoast/A61E69" alt="Yoast logo" />
+										SEO
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="absolute rounded-lg shadow-sm pointer-events-none inset-px ring-1 ring-black/5 lg:rounded-bl-[2rem]"></div>
+					</div>
+					<div class="relative">
+						<div class="absolute bg-white rounded-lg inset-px"></div>
+						<div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)]">
+							<div class="p-8">
+								<h4 class="text-xl font-semibold">AI & Automation</h4>
+								<p class="max-w-lg mt-2 mb-4 text-zinc-600 text-sm/6">
+									Tools I use to streamline workflows, refine ideas, and code smarter (and faster).
+								</p>
+								<div class="flex flex-wrap gap-2">
+									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+										<img height="16" width="16" src="https://cdn.simpleicons.org/openai/412991" alt="OpenAI logo" />
+										ChatGPT
+									</div>
+									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+										<img height="16" width="16" src="https://cdn.simpleicons.org/claude/D97757" alt="Claude logo" />
+										Claude
+									</div>
+									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+										<img height="16" width="16" src="https://cdn.simpleicons.org/googlegemini/8E75B2" alt="Google Gemini logo" />
+										Gemini
+									</div>
+									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+										<img height="16" width="16" src="https://www.cursor.com/favicon.svg" alt="Cursor logo" />
+										Cursor
+									</div>
+									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+										<img
+											height="16"
+											width="16"
+											src="https://exafunction.github.io/public/images/ides/windsurf-logo.svg"
+											alt="Windsurf logo"
+										/>
+										Windsurf
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="absolute rounded-lg shadow-sm pointer-events-none inset-px ring-1 ring-black/5"></div>
+					</div>
+					<div class="relative">
+						<div class="absolute bg-white rounded-lg inset-px lg:rounded-br-[2rem]"></div>
+						<div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-br-[calc(2rem+1px)]">
+							<div class="p-8">
+								<h4 class="text-xl font-semibold">PM & Communication</h4>
+								<p class="max-w-lg mt-2 mb-4 text-zinc-600 text-sm/6">
+									Tools that keep projects moving smoothly, ideas organized, and teams aligned.
+								</p>
+								<div class="flex flex-wrap gap-2">
+									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+										<img height="16" width="16" src="https://cdn.simpleicons.org/slack/4A154B" alt="Slack logo" />
+										Slack
+									</div>
+									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+										<img height="16" width="16" src="https://cdn.simpleicons.org/trello/0052CC" alt="Trello logo" />
+										Trello
+									</div>
+									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+										<img height="16" width="16" src="/images/bugherd-logo.webp" alt="BugHerd logo" />
+										BugHerd
+									</div>
+									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+										<img height="16" width="16" src="https://cdn.simpleicons.org/jira/0052CC" alt="Jira logo" />
+										Jira
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="absolute rounded-lg shadow-sm pointer-events-none inset-px ring-1 ring-black/5 lg:rounded-br-[2rem]"></div>
 					</div>
 				</div>
 			</div>
-		</section>
-	</main>
+		</div>
+
+		<div class="py-12 mx-auto md:py-16 max-w-7xl">
+			{% set codeOnlyProjects = [ { id: 1, title: 'STL 2030 Progress', subtitle: 'Dynamic web experience to visualize regional economic progress',
+			content: 'Collaborated with
+			<a
+				href="https://tremendo.us/work/fostering-inclusive-economic-growth/"
+				class="underline text-fuchsia-700 hover:text-fuchsia-900"
+				target="_blank"
+				rel="noopener noreferrer"
+				>Tremendousness</a
+			>
+			to build a performant, accessible frontend featuring 60+ charts and hundreds of initiatives via Tableau and ArcGIS. Focused on custom theming, data
+			viz, and WCAG compliance.', imageUrl: '/images/stl-2030-progress.jpg', altText: 'Homepage hero image of the STL 2030 Progress website. It features a
+			stylized infographic arrow made of red, yellow, and blue bands pointing to a compass icon. Text reads "Progress to 2030" with a description about
+			tracking inclusive economic growth in the St. Louis metro.', date: 'July 2024', dateTime: '2024-07', link: 'https://stl2030progress.com/',
+			prettyLink: 'stl2030progress.com', tags: [ { label: 'Development', color: 'amber-500' }, { label: 'Interactivity', color: 'emerald-500' }, { label:
+			'Visualization', color: 'indigo-500' } ] }, { id: 2, title: 'Unigroup', subtitle: 'Dual-site, modular, brand-specific frontend dev for national
+			moving giants', content: 'Joined forces with
+			<a href="https://hlkagency.com/" class="underline text-fuchsia-700 hover:text-fuchsia-900" target="_blank" rel="noopener noreferrer">HLK</a> to
+			develop dual-brand frontend architecture for Unigroup’s flagship moving sites, Mayflower Moving and United Van Lines. Balanced consistent design
+			systems with unique branding for each carrier, tackling large-scale content and UI complexity with a shared technical foundation.', imageUrl:
+			'/images/mayflower-moving-united-van-lines.jpg', altText: 'Side-by-side comparison of hero sections from Mayflower and United Van Lines websites.
+			The Mayflower section on the left features a green background with white serif text reading “Mayflower® Moving Companies: America’s Most Trusted
+			Mover” alongside a map illustration with location pins. The United Van Lines section on the right features a blue and white design with the headline
+			“United Moving Companies – We Take Care Of It All” and a cityscape line drawing at the bottom. Both sections include “Get a Quote” call-to-action
+			buttons.', date: 'December 2019', dateTime: '2019-12', link: 'https://www.mayflower.com/', prettyLink: 'mayflower.com', secondaryLink:
+			'https://www.unitedvanlines.com/', secondaryPrettyLink: 'unitedvanlines.com', tags: [ { label: 'Development', color: 'amber-500' } ] }, { id: 3,
+			title: 'School Choice Matters', subtitle: 'Custom, interactive policy explorer for national nonprofit advocacy team', content: 'Built in partnership
+			with
+			<a href="https://tremendo.us/" class="underline text-fuchsia-700 hover:text-fuchsia-900" target="_blank" rel="noopener noreferrer"
+				>Tremendousness</a
+			>
+			for
+			<a
+				href="https://excelined.org/2024/11/14/school-choice-matters-explore-educational-choice-policies-across-all-50-states-with-excelineds-new-tool/"
+				class="underline text-fuchsia-700 hover:text-fuchsia-900"
+				target="_blank"
+				rel="noopener noreferrer"
+				>ExcelinEd</a
+			>, this Tailwind-powered site integrates ACF and Alpine.js for interactive maps, tabbed content, and dynamic state-by-state views. Prioritized
+			accessibility and mobile usability while visualizing complex educational policy data.', imageUrl: '/images/school-choice-matters.jpg', altText:
+			'Homepage hero image of ExcelinEd’s School Choice Matters website. Light blue background with clouds, school buildings, and children walking toward
+			a school bus. Text reads “How can my state give all children access to the educational opportunities they deserve?”', date: 'November 2024',
+			dateTime: '2024-11', link: 'https://schoolchoicematters.org/', prettyLink: 'schoolchoicematters.org', tags: [ { label: 'Development', color:
+			'amber-500' }, { label: 'Interactivity', color: 'emerald-500' }, { label: 'Visualization', color: 'indigo-500' } ] }, { id: 4, title: 'Artesys',
+			subtitle: 'Custom marketing site and advisor-focused portfolio builder', content: 'Frontend development for a dynamic portfolio recommendation app
+			embedded within a WordPress site, helping advisors guide clients to smarter retirement strategies with ease and clarity. Joint effort between
+			Kestrel and
+			<a
+				href="https://www.atomicdust.com/helps-artesys-brighten-up-financial-services/"
+				class="underline text-fuchsia-700 hover:text-fuchsia-900"
+				target="_blank"
+				rel="noopener noreferrer"
+				>Atomicdust</a
+			>
+			', imageUrl: '/images/artesys.jpg', altText: 'Screenshot of the Artesys homepage featuring the headline “Build your future with Artesys.” followed
+			by the tagline “Retirement investing strategies done for you.” The layout includes four diverse, lifestyle-oriented photos of people of different
+			ages and ethnicities, with a highlighted text box that reads: “Artesys is driven to help shape a future where a secure and fulfilling retirement is
+			not just a dream, but a reality for everyone.” A green call-to-action button below says “See the Artesys advantage.”', date: 'March 2024', dateTime:
+			'2024-03', link: 'https://artesysonline.com/', prettyLink: 'artesysonline.com', tags: [ { label: 'Development', color: 'amber-500' }, { label: 'Wep
+			App', color: 'rose-500' }, { label: 'UX Enhancements', color: 'lime-500' } ] }] %}
+
+			{{
+				projectTabs(
+					"Under the Hood",
+					"Projects where I focused purely on frontend development — building fast, accessible, user-first experiences from the ground up.",
+					codeOnlyProjects
+				)
+			}}
+		</div>
+	</section>
+	<section class="px-6 md:px-12 max-w-[108rem] mx-auto">
+		<div class="mx-auto max-w-7xl">
+			<div class="py-12 border-t md:py-16 border-zinc-100">
+				<!-- Yes, this is the example layout from Simon Vrachliotis' Pixel Perfect Figma to Tailwind workshot on EpicWeb.dev. I haven't taken the course, but I saw the design and just HAD to try to recreate it. -->
+				<div class="flex flex-col-reverse xl:grid xl:grid-cols-2 gap-x-20 gap-y-12 xl:items-center">
+					<div>
+						<ul
+							class="flex flex-wrap gap-4 xl:grid xl:grid-cols-5 xl:grid-rows-6 [&>*]:w-[calc(33.333%-0.667rem)] sm:[&>*]:w-[calc(25%-.75rem)] md:[&>*]:w-[calc(16.667%-.8333rem)] xl:[&>*]:w-full"
+						>
+							<li class="xl:col-start-1">
+								<a
+									href="https://techselect.aaoinfo.org/"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="block p-6 rounded-lg bg-fuchsia-50 aspect-square"
+								>
+									<figure class="block">
+										<img
+											class="block object-contain w-full h-auto aspect-square"
+											width="64"
+											height="64"
+											src="/images/icon--aao.png"
+											alt="AAO logo"
+										/>
+									</figure>
+								</a>
+							</li>
+							<li class="xl:col-start-4">
+								<a
+									href="https://artesysonline.com/"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="block p-6 rounded-lg bg-fuchsia-50 aspect-square"
+								>
+									<figure class="block">
+										<img
+											class="block object-contain w-full h-auto aspect-square"
+											width="64"
+											height="64"
+											src="/images/icon--artesys.png"
+											alt="Artesys logo"
+										/>
+									</figure>
+								</a>
+							</li>
+							<li class="xl:col-start-1">
+								<a
+									href="https://www.ascentcorp.com/"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="block p-6 rounded-lg bg-fuchsia-50 aspect-square"
+								>
+									<figure class="block">
+										<img
+											class="block object-contain w-full h-auto aspect-square"
+											width="64"
+											height="64"
+											src="/images/icon--ascent.png"
+											alt="Ascent Corp. logo"
+										/>
+									</figure>
+								</a>
+							</li>
+							<li class="xl:col-start-2">
+								<a
+									href="https://www.bigbluespark.com/"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="block p-6 rounded-lg bg-fuchsia-50 aspect-square"
+								>
+									<figure class="block">
+										<img
+											class="block object-contain w-full h-auto aspect-square"
+											width="64"
+											height="64"
+											src="/images/icon--big-blue-spark.png"
+											alt="Big Blue Spark logo"
+										/>
+									</figure>
+								</a>
+							</li>
+							<li class="xl:col-start-4">
+								<a
+									href="https://www.coleschotz.com/"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="block p-6 rounded-lg bg-fuchsia-50 aspect-square"
+								>
+									<figure class="block">
+										<img
+											class="block object-contain w-full h-auto aspect-square"
+											width="64"
+											height="64"
+											src="/images/icon--cole-schotz.png"
+											alt="Cole Schotz logo"
+										/>
+									</figure>
+								</a>
+							</li>
+							<li class="xl:col-start-5">
+								<a
+									href="https://convoyofhope.org/"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="block p-6 rounded-lg bg-fuchsia-50 aspect-square"
+								>
+									<figure class="block">
+										<img
+											class="block object-contain w-full h-auto aspect-square"
+											width="64"
+											height="64"
+											src="/images/icon--convoy-of-hope.webp"
+											alt="Convoy of Hope logo"
+										/>
+									</figure>
+								</a>
+							</li>
+							<li class="xl:col-start-1">
+								<a
+									href="https://www.yourfocalpointe.com/"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="block p-6 rounded-lg bg-fuchsia-50 aspect-square"
+								>
+									<figure class="block">
+										<img
+											class="block object-contain w-full h-auto aspect-square"
+											width="64"
+											height="64"
+											src="/images/icon--focal-pointe.png"
+											alt="Focal Pointe logo"
+										/>
+									</figure>
+								</a>
+							</li>
+							<li class="xl:col-start-2">
+								<a
+									href="https://stl2030progress.com/"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="block p-6 rounded-lg bg-fuchsia-50 aspect-square"
+								>
+									<figure class="block">
+										<img
+											class="block object-contain w-full h-auto rounded aspect-square"
+											width="64"
+											height="64"
+											src="/images/icon--gsl.png"
+											alt="Greater St. Louis 2030 logo"
+										/>
+									</figure>
+								</a>
+							</li>
+							<li class="xl:col-start-3">
+								<a
+									href="https://www.kateandcollc.com/"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="block p-6 rounded-lg bg-fuchsia-50 aspect-square"
+								>
+									<figure class="block">
+										<img
+											class="block object-contain w-full h-auto aspect-square"
+											width="64"
+											height="64"
+											src="/images/icon--kate-and-co.png"
+											alt="Kate + Co. logo"
+										/>
+									</figure>
+								</a>
+							</li>
+							<li class="xl:col-start-4">
+								<a
+									href="https://www.mayflower.com/"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="block p-6 rounded-lg bg-fuchsia-50 aspect-square"
+								>
+									<figure class="block">
+										<img
+											class="block object-contain w-full h-auto aspect-square"
+											width="64"
+											height="64"
+											src="/images/icon--mayflower.png"
+											alt="Mayflower Moving logo"
+										/>
+									</figure>
+								</a>
+							</li>
+							<li class="xl:col-start-5">
+								<a
+									href="https://oldfashioncandy.com/"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="block p-6 rounded-lg bg-fuchsia-50 aspect-square"
+								>
+									<figure class="block">
+										<img
+											class="block object-contain w-full h-auto aspect-square"
+											width="64"
+											height="64"
+											src="/images/icon--ofc.png"
+											alt="Old Fashion Candy logo"
+										/>
+									</figure>
+								</a>
+							</li>
+							<li class="xl:col-start-2">
+								<a
+									href="https://pathwaysmatter.org/"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="block p-6 rounded-lg bg-fuchsia-50 aspect-square"
+								>
+									<figure class="block">
+										<img
+											class="block object-contain w-full h-auto aspect-square"
+											width="64"
+											height="64"
+											src="/images/icon--pathways-matter.png"
+											alt="Pathways Matter logo"
+										/>
+									</figure>
+								</a>
+							</li>
+							<li class="xl:col-start-3">
+								<a
+									href="https://premiumretail.com/"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="block p-6 rounded-lg bg-fuchsia-50 aspect-square"
+								>
+									<figure class="block">
+										<img
+											class="block object-contain w-full h-auto aspect-square"
+											width="64"
+											height="64"
+											src="/images/icon--premium.png"
+											alt="Premium Retail logo"
+										/>
+									</figure>
+								</a>
+							</li>
+							<li class="xl:col-start-4">
+								<a
+									href="https://rosenthalwinemerchant.com/"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="block p-6 rounded-lg bg-fuchsia-50 aspect-square"
+								>
+									<figure class="block">
+										<img
+											class="block object-contain w-full h-auto aspect-square"
+											width="64"
+											height="64"
+											src="/images/icon--rosenthal.png"
+											alt="Rosenthal Wine Merchant logo"
+										/>
+									</figure>
+								</a>
+							</li>
+							<li class="xl:col-start-5">
+								<a
+									href="https://www.switzerfilm.com/"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="block p-6 rounded-lg bg-fuchsia-50 aspect-square"
+								>
+									<figure class="block">
+										<img
+											class="block object-contain w-full h-auto aspect-square"
+											width="64"
+											height="64"
+											src="/images/icon--switzerfilm.png"
+											alt="Switzerfilm logo"
+										/>
+									</figure>
+								</a>
+							</li>
+							<li class="xl:col-start-2">
+								<a
+									href="https://thompsoncenter.missouri.edu/"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="block p-6 rounded-lg bg-fuchsia-50 aspect-square"
+								>
+									<figure class="block">
+										<img
+											class="block object-contain w-full h-auto aspect-square"
+											width="64"
+											height="64"
+											src="/images/icon--thompson-center.png"
+											alt="Thompson Center for Autism & Neurodevelopment logo"
+										/>
+									</figure>
+								</a>
+							</li>
+							<li class="xl:col-start-3">
+								<a
+									href="https://www.uhsp.edu/"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="block p-6 rounded-lg bg-fuchsia-50 aspect-square"
+								>
+									<figure class="block">
+										<img
+											class="block object-contain w-full h-auto aspect-square"
+											width="64"
+											height="64"
+											src="/images/icon--uhsp.png"
+											alt="University of Health Sciences & Pharmacy logo"
+										/>
+									</figure>
+								</a>
+							</li>
+							<li class="xl:col-start-4">
+								<a
+									href="https://www.ultramodern.com/"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="block p-6 rounded-lg bg-fuchsia-50 aspect-square"
+								>
+									<figure class="block">
+										<img
+											class="block object-contain w-full h-auto aspect-square"
+											width="64"
+											height="64"
+											src="/images/icon--ultramodern.png"
+											alt="Ultra Modern Pool & Patio logo"
+										/>
+									</figure>
+								</a>
+							</li>
+							<li class="xl:col-start-5">
+								<a
+									href="https://www.unitedvanlines.com/"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="block p-6 rounded-lg bg-fuchsia-50 aspect-square"
+								>
+									<figure class="block">
+										<img
+											class="block object-contain w-full h-auto aspect-square"
+											width="64"
+											height="64"
+											src="/images/icon--united-van-lines.png"
+											alt="United Van Lines logo"
+										/>
+									</figure>
+								</a>
+							</li>
+							<li class="xl:col-start-2">
+								<a
+									href="https://mir.wustl.edu/"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="block p-6 rounded-lg bg-fuchsia-50 aspect-square"
+								>
+									<figure class="block">
+										<img
+											class="block object-contain w-full h-auto aspect-square"
+											width="64"
+											height="64"
+											src="/images/icon--washu.png"
+											alt="WashU Mallinckrodt Institute of Radiology logo"
+										/>
+									</figure>
+								</a>
+							</li>
+							<li class="xl:col-start-4">
+								<a
+									href="https://www.zelis.com/"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="block p-6 rounded-lg bg-fuchsia-50 aspect-square"
+								>
+									<figure class="block">
+										<img
+											class="block object-contain w-full h-auto aspect-square"
+											width="64"
+											height="64"
+											src="/images/icon--zelis.png"
+											alt="Zelis logo"
+										/>
+									</figure>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div>
+						<h3 class="mb-3 text-base font-medium text-fuchsia-600">Collaborations</h3>
+						<h4 class="mb-5 text-3xl font-semibold md:text-4xl text-zinc-950">Teaming Up with Top Brands</h4>
+						<p class="max-w-2xl mb-4 text-lg md:text-xl text-zinc-600">
+							From local startups to global enterprises, I've had the privilege of working with a diverse range of clients to bring their digital
+							visions to life.
+						</p>
+						<p class="max-w-2xl text-lg md:text-xl text-zinc-600">
+							Each of these websites was developed either by me alone or in close collaboration with a teammate.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</main>
 {% endblock %}
