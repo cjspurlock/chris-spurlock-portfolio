@@ -1,62 +1,204 @@
-{% extends "_includes/default.njk" %}
-
-{% block title %}Chris Spurlock | Tailwind Labs Design Engineer Application | About Me{% endblock %}
-
-{% block content %}
-	<main class="pt-6 md:pt-12">
-		<section class="px-6 md:px-12 max-w-[108rem] mx-auto">
-			<div class="px-6 md:px-16 py-16 md:py-32 mx-auto text-center text-white bg-gradient-to-br from-zinc-950 to-zinc-800 rounded-4xl shadow-card before:pointer-events-none before:absolute before:inset-0 before:rounded-4xl before:shadow-[0px_2px_8px_0px_rgba(0,_0,_0,_0.20),_0px_1px_0px_0px_rgba(255,_255,_255,_0.06)_inset] relative">
-				<img src="/images/headshot.jpeg" alt="Headshot style image of Chris Spurlock, UI Developer" class="block object-cover object-center w-32 h-auto mx-auto mb-6 rounded-full aspect-square">
-				<h1 class="mb-2 text-5xl font-semibold md:text-6xl">Chris Spurlock</h1>
-				<h2 class="inline-block mb-4 text-xl font-medium text-transparent md:text-2xl bg-gradient-to-r from-fuchsia-800 via-fuchsia-300 to-fuchsia-800 bg-clip-text">Developer. Designer. Problem-solver. Possibilitarian.</h2>
-				<p class="max-w-2xl mx-auto mb-8 text-base md:mb-12 md:text-lg text-zinc-400">If you&rsquo;re looking for someone who leads with heart, builds with care, and brings thoughtful momentum to every project, let&rsquo;s connect.</p>
-				<div class="flex flex-col justify-center gap-2 sm:items-center sm:flex-row">
-					<a href="/" class="inline-flex py-2.5 px-8 rounded-full bg-transparent shadow-button-light font-medium border justify-center border-zinc-700 hover:bg-zinc-950 transition-all duration-300 ease-linear">Back to Portfolio</a>
-					<a href="/assets/Chris-Spurlock-Senior-Front-End-Developer-and-UI-Designer-Resume.pdf" target="_blank" rel="noopener nofollow" class="inline-flex py-2.5 px-8 rounded-full bg-fuchsia-700 border justify-center border-fuchsia-700 shadow-button font-medium hover:bg-fuchsia-900 transition-all duration-300 ease-linear">Download Resume</a>
-				</div>
+{% extends "_includes/default.njk" %} {% block title %}Chris Spurlock | Tailwind Labs Design Engineer Application | About Me{% endblock %} {% block content %}
+<main class="pt-6 md:pt-12">
+	<section class="px-6 md:px-12 max-w-[108rem] mx-auto">
+		<div
+			class="px-6 md:px-16 py-16 md:py-32 mx-auto text-center text-white bg-gradient-to-br from-zinc-950 to-zinc-800 rounded-4xl shadow-card before:pointer-events-none before:absolute before:inset-0 before:rounded-4xl before:shadow-[0px_2px_8px_0px_rgba(0,_0,_0,_0.20),_0px_1px_0px_0px_rgba(255,_255,_255,_0.06)_inset] relative"
+		>
+			<img
+				src="/images/headshot.jpeg"
+				alt="Headshot style image of Chris Spurlock, UI Developer"
+				class="block object-cover object-center w-32 h-auto mx-auto mb-6 rounded-full aspect-square"
+			/>
+			<h1 class="mb-2 text-5xl font-semibold md:text-6xl">Chris Spurlock</h1>
+			<h2
+				class="inline-block mb-4 text-xl font-medium text-transparent md:text-2xl bg-gradient-to-r from-fuchsia-800 via-fuchsia-300 to-fuchsia-800 bg-clip-text"
+			>
+				Developer. Designer. Problem-solver. Possibilitarian.
+			</h2>
+			<p class="max-w-2xl mx-auto mb-8 text-base md:mb-12 md:text-lg text-zinc-400">
+				If you&rsquo;re looking for someone who leads with heart, builds with care, and brings thoughtful momentum to every project, let&rsquo;s
+				connect.
+			</p>
+			<div class="flex flex-col justify-center gap-2 sm:items-center sm:flex-row">
+				<a
+					href="/"
+					class="inline-flex py-2.5 px-8 rounded-full bg-transparent shadow-button-light font-medium border justify-center border-zinc-700 hover:bg-zinc-950 transition-all duration-300 ease-linear"
+					>Back to Portfolio</a
+				>
+				<a
+					href="/assets/Chris-Spurlock-Senior-Front-End-Developer-and-UI-Designer-Resume.pdf"
+					target="_blank"
+					rel="noopener nofollow"
+					class="inline-flex py-2.5 px-8 rounded-full bg-fuchsia-700 border justify-center border-fuchsia-700 shadow-button font-medium hover:bg-fuchsia-900 transition-all duration-300 ease-linear"
+					>Download Resume</a
+				>
 			</div>
-		</section>
-		<section class="px-6 md:px-12 max-w-[108rem] mx-auto">
-			<div class="py-12 mx-auto md:py-16 max-w-7xl">
-				<div class="mx-auto prose md:prose-xl prose-zinc markdown">
-					<p class="text-lg md:text-2xl">
-						<b class="font-semibold">Hi, I'm Chris Spurlock.</b>
-					</p>
+		</div>
+	</section>
+	<section class="px-6 md:px-12 max-w-[108rem] mx-auto">
+		<div class="pb-12 mx-auto pt-18 md:pb-16 md:pt-24 max-w-7xl">
+			<div class="mx-auto prose md:prose-xl prose-zinc markdown">
+				<p class="text-lg md:text-2xl">
+					<b class="font-semibold">Hi, I'm Chris Spurlock.</b>
+				</p>
 
-					<p>I'm a developer with a journalist's brain, a designer's eye, and a builder's heart. Over the last decade, I've moved fluidly between storytelling, strategy, and software—whether that meant pioneering interactive infographics in a legacy newsroom, launching enterprise-grade WordPress builds, or obsessing over accessibility and user empathy. The through-line? Relentless curiosity and self-directed mastery.</p>
+				<p>
+					I'm a developer with a journalist's brain, a designer's eye, and a builder's heart. Over the last decade, I've moved fluidly between
+					storytelling, strategy, and software—whether that meant pioneering interactive infographics in a legacy newsroom, launching enterprise-grade
+					WordPress builds, or obsessing over accessibility and user empathy. The through-line? Relentless curiosity and self-directed mastery.
+				</p>
 
-					<p>I spent my early career in journalism, where a lecture on interactive storytelling lit a fire that never really burned out. There was no formal training track, so I built one: learning D3, jQuery, and CSS on nights and weekends to bring stories to life in the browser. Since then, I've applied that same energy to every challenge I’ve encountered—whether it was leading a digital transformation at a major newspaper, coding custom themes from scratch, or jumping into a JS framework I’d never used before... because the project needed it <em>yesterday</em>.</p>
+				<p>
+					I spent my early career in journalism, where a lecture on interactive storytelling lit a fire that never really burned out. There was no
+					formal training track, so I built one: learning D3, jQuery, and CSS on nights and weekends to bring stories to life in the browser. Since
+					then, I've applied that same energy to every challenge I’ve encountered—whether it was leading a digital transformation at a major
+					newspaper, coding custom themes from scratch, or jumping into a JS framework I’d never used before... because the project needed it
+					<em>yesterday</em>.
+				</p>
 
-					<p>These days, I'm the COO and UI lead at <a href="https://thekestrel.co" target="_blank" rel="noopener noreferrer">The Kestrel Co.</a>, a boutique dev agency where I help shape both the work and the workflows. I’m known for wearing many hats—sometimes in the same meeting. Design audits, accessibility reviews, CSS bug hunts, pricing strategy, proposals, GTM tracking setups—I’ve done them all. And I believe my superpower is making teams feel calm, collaborative, and inspired.</p>
+				<p>
+					These days, I'm the COO and UI lead at <a href="https://thekestrel.co" target="_blank" rel="noopener noreferrer">The Kestrel Co.</a>, a
+					boutique dev agency where I help shape both the work and the workflows. I’m known for wearing many hats—sometimes in the same meeting.
+					Design audits, accessibility reviews, CSS bug hunts, pricing strategy, proposals, GTM tracking setups—I’ve done them all. And I believe my
+					superpower is making teams feel calm, collaborative, and inspired.
+				</p>
 
-					<p>AI is changing the game—and I’m here for it. I see AI as a teammate, not a threat: a pair programmer, a rubber duck, and a research assistant rolled into one. I’m already using GPT to debug, to explore new frameworks, to prototype ideas, and to challenge my own thinking. I’m excited by what this means for the craft of development—and for those of us who care deeply about the people on the other side of the screen.</p>
+				<p>
+					AI is changing the game—and I’m here for it. I see AI as a teammate, not a threat: a pair programmer, a rubber duck, and a research
+					assistant rolled into one. I’m already using GPT to debug, to explore new frameworks, to prototype ideas, and to challenge my own thinking.
+					I’m excited by what this means for the craft of development—and for those of us who care deeply about the people on the other side of the
+					screen.
+				</p>
 
-					<p>What others say:</p>
-					<ul class="list-none">
-						<li>
-							<blockquote>“Chris brings a rare combination of technical expertise and creative insight to every phase of a project—from discovery and UX/UI design through development and launch. His development work is consistently polished, thoughtful, and nearly flawless.”</blockquote>
-						</li>
-						<li>
-							<blockquote>“He grasps the ‘why’ behind each project, ensuring his solutions are both elegant and effective in achieving client goals. His attention to detail and creative problem-solving don’t just result in beautiful, functional websites—they elevate the work of everyone around him.”
-							</blockquote>
-						</li>
-						<li>
-							<blockquote>“He grasps the ‘why’ behind each project, ensuring his solutions are both elegant and effective in achieving client goals. His attention to detail and creative problem-solving don’t just result in beautiful, functional websites—they elevate the work of everyone around him.”
-							</blockquote>
-						</li>
-					</ul>
-
-					<p>Outside of work, I'm a dad to two tornado toddlers, a husband of nearly ten years, and a distance runner who's rediscovered the meditative joy of the long run. I believe in making work that matters and showing up every day with a bias toward generosity, craft, and clarity.</p>
-
-					<p>If you're looking for someone who can code, design, write, lead, and connect dots others don’t see—I’d love to meet.</p>
-
-					<div class="mt-12 md:-mx-16 p-10 bg-gradient-to-br from-fuchsia-100 to-fuchsia-200 rounded-2xl shadow-card before:pointer-events-none before:absolute before:inset-0 before:rounded-2xl before:shadow-[0px_2px_8px_0px_rgba(0,_0,_0,_0.20),_0px_1px_0px_0px_rgba(255,_255,_255,_0.06)_inset] relative text-fuchsia-950">
-						<p class="!mt-0">
-							<strong>Let’s connect.</strong> I’m currently open to senior frontend roles, creative dev positions, or collaborative consulting partnerships. You can <a href="/assets/Chris-Spurlock-Senior-Front-End-Developer-and-UI-Designer-Resume.pdf" target="_blank" class="underline">download my resume</a> or <a href="mailto:chrisjspurlock@gmail.com" class="underline">email me directly</a>. If you're building something thoughtful and ambitious, I'd love to hear about it.</p>
+				<p>Here’s what others have to say about working with me:</p>
+			</div>
+			<div>
+				<section class="px-6 overflow-hidden bg-white isolate lg:px-8">
+					<div class="relative flex flex-col max-w-2xl gap-16 py-24 mx-auto sm:py-32 lg:max-w-4xl">
+						<div
+							class="absolute top-0 left-1/2 -z-10 h-[50rem] w-[90rem] -translate-x-1/2 bg-[radial-gradient(50%_100%_at_top,var(--color-indigo-100),white)] opacity-20 lg:left-36"
+						></div>
+						<div
+							class="absolute inset-y-0 right-1/2 -z-10 mr-12 w-[150vw] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl ring-1 shadow-indigo-600/10 ring-indigo-50 sm:mr-20 md:mr-0 lg:right-full lg:-mr-36 lg:origin-center"
+						></div>
+						<figure class="grid items-center grid-cols-1 gap-4 lg:gap-x-10">
+							<div class="relative col-span-2 lg:col-start-1 lg:row-start-2">
+								<svg viewBox="0 0 162 128" fill="none" aria-hidden="true" class="absolute left-0 h-32 -top-8 -z-10 stroke-gray-900/10">
+									<path
+										id="b56e9dab-6ccb-4d32-ad02-6b4bb5d9bbeb"
+										d="M65.5697 118.507L65.8918 118.89C68.9503 116.314 71.367 113.253 73.1386 109.71C74.9162 106.155 75.8027 102.28 75.8027 98.0919C75.8027 94.237 75.16 90.6155 73.8708 87.2314C72.5851 83.8565 70.8137 80.9533 68.553 78.5292C66.4529 76.1079 63.9476 74.2482 61.0407 72.9536C58.2795 71.4949 55.276 70.767 52.0386 70.767C48.9935 70.767 46.4686 71.1668 44.4872 71.9924L44.4799 71.9955L44.4726 71.9988C42.7101 72.7999 41.1035 73.6831 39.6544 74.6492C38.2407 75.5916 36.8279 76.455 35.4159 77.2394L35.4047 77.2457L35.3938 77.2525C34.2318 77.9787 32.6713 78.3634 30.6736 78.3634C29.0405 78.3634 27.5131 77.2868 26.1274 74.8257C24.7483 72.2185 24.0519 69.2166 24.0519 65.8071C24.0519 60.0311 25.3782 54.4081 28.0373 48.9335C30.703 43.4454 34.3114 38.345 38.8667 33.6325C43.5812 28.761 49.0045 24.5159 55.1389 20.8979C60.1667 18.0071 65.4966 15.6179 71.1291 13.7305C73.8626 12.8145 75.8027 10.2968 75.8027 7.38572C75.8027 3.6497 72.6341 0.62247 68.8814 1.1527C61.1635 2.2432 53.7398 4.41426 46.6119 7.66522C37.5369 11.6459 29.5729 17.0612 22.7236 23.9105C16.0322 30.6019 10.618 38.4859 6.47981 47.558L6.47976 47.558L6.47682 47.5647C2.4901 56.6544 0.5 66.6148 0.5 77.4391C0.5 84.2996 1.61702 90.7679 3.85425 96.8404L3.8558 96.8445C6.08991 102.749 9.12394 108.02 12.959 112.654L12.959 112.654L12.9646 112.661C16.8027 117.138 21.2829 120.739 26.4034 123.459L26.4033 123.459L26.4144 123.465C31.5505 126.033 37.0873 127.316 43.0178 127.316C47.5035 127.316 51.6783 126.595 55.5376 125.148L55.5376 125.148L55.5477 125.144C59.5516 123.542 63.0052 121.456 65.9019 118.881L65.5697 118.507Z"
+									></path>
+									<use href="#b56e9dab-6ccb-4d32-ad02-6b4bb5d9bbeb" x="86"></use>
+								</svg>
+								<blockquote class="font-semibold text-gray-900 text-xl/8 sm:text-2xl/9">
+									<p>
+										Chris brings a rare combination of technical expertise and creative insight to every phase of a project—from discovery
+										and UX/UI design through development and launch. His development work is consistently polished, thoughtful, and nearly
+										flawless.
+									</p>
+								</blockquote>
+							</div>
+							<figcaption class="text-base lg:col-start-1 lg:row-start-3">
+								<div class="font-semibold text-gray-900">Erin Muzughi</div>
+								<div class="mt-1 text-gray-500">Digital Project Lead & Web Strategist</div>
+							</figcaption>
+						</figure>
+						<figure class="grid items-center grid-cols-1 gap-4 lg:gap-x-10">
+							<div class="relative col-span-2 lg:col-start-1 lg:row-start-2">
+								<svg
+									viewBox="0 0 162 128"
+									fill="none"
+									aria-hidden="true"
+									class="absolute right-0 h-32 -top-8 -z-10 stroke-gray-900/10 -scale-x-100"
+								>
+									<path
+										id="b56e9dab-6ccb-4d32-ad02-6b4bb5d9bbeb"
+										d="M65.5697 118.507L65.8918 118.89C68.9503 116.314 71.367 113.253 73.1386 109.71C74.9162 106.155 75.8027 102.28 75.8027 98.0919C75.8027 94.237 75.16 90.6155 73.8708 87.2314C72.5851 83.8565 70.8137 80.9533 68.553 78.5292C66.4529 76.1079 63.9476 74.2482 61.0407 72.9536C58.2795 71.4949 55.276 70.767 52.0386 70.767C48.9935 70.767 46.4686 71.1668 44.4872 71.9924L44.4799 71.9955L44.4726 71.9988C42.7101 72.7999 41.1035 73.6831 39.6544 74.6492C38.2407 75.5916 36.8279 76.455 35.4159 77.2394L35.4047 77.2457L35.3938 77.2525C34.2318 77.9787 32.6713 78.3634 30.6736 78.3634C29.0405 78.3634 27.5131 77.2868 26.1274 74.8257C24.7483 72.2185 24.0519 69.2166 24.0519 65.8071C24.0519 60.0311 25.3782 54.4081 28.0373 48.9335C30.703 43.4454 34.3114 38.345 38.8667 33.6325C43.5812 28.761 49.0045 24.5159 55.1389 20.8979C60.1667 18.0071 65.4966 15.6179 71.1291 13.7305C73.8626 12.8145 75.8027 10.2968 75.8027 7.38572C75.8027 3.6497 72.6341 0.62247 68.8814 1.1527C61.1635 2.2432 53.7398 4.41426 46.6119 7.66522C37.5369 11.6459 29.5729 17.0612 22.7236 23.9105C16.0322 30.6019 10.618 38.4859 6.47981 47.558L6.47976 47.558L6.47682 47.5647C2.4901 56.6544 0.5 66.6148 0.5 77.4391C0.5 84.2996 1.61702 90.7679 3.85425 96.8404L3.8558 96.8445C6.08991 102.749 9.12394 108.02 12.959 112.654L12.959 112.654L12.9646 112.661C16.8027 117.138 21.2829 120.739 26.4034 123.459L26.4033 123.459L26.4144 123.465C31.5505 126.033 37.0873 127.316 43.0178 127.316C47.5035 127.316 51.6783 126.595 55.5376 125.148L55.5376 125.148L55.5477 125.144C59.5516 123.542 63.0052 121.456 65.9019 118.881L65.5697 118.507Z"
+									></path>
+									<use href="#b56e9dab-6ccb-4d32-ad02-6b4bb5d9bbeb" x="86"></use>
+								</svg>
+								<blockquote class="font-semibold text-gray-900 text-xl/8 sm:text-2xl/9">
+									<p>
+										He grasps the ‘why’ behind each project, ensuring his solutions are both elegant and effective in achieving client
+										goals. His attention to detail and creative problem-solving don’t just result in beautiful, functional websites—they
+										elevate the work of everyone around him.
+									</p>
+								</blockquote>
+							</div>
+							<figcaption class="text-base lg:col-start-1 lg:row-start-3">
+								<div class="font-semibold text-gray-900">Alex Linek</div>
+								<div class="mt-1 text-gray-500">Senior Web Developer</div>
+							</figcaption>
+						</figure>
+						<figure class="grid items-center grid-cols-1 gap-4 lg:gap-x-10">
+							<div class="relative col-span-2 lg:col-start-1 lg:row-start-2">
+								<svg viewBox="0 0 162 128" fill="none" aria-hidden="true" class="absolute left-0 h-32 -top-8 -z-10 stroke-gray-900/10">
+									<path
+										id="b56e9dab-6ccb-4d32-ad02-6b4bb5d9bbeb"
+										d="M65.5697 118.507L65.8918 118.89C68.9503 116.314 71.367 113.253 73.1386 109.71C74.9162 106.155 75.8027 102.28 75.8027 98.0919C75.8027 94.237 75.16 90.6155 73.8708 87.2314C72.5851 83.8565 70.8137 80.9533 68.553 78.5292C66.4529 76.1079 63.9476 74.2482 61.0407 72.9536C58.2795 71.4949 55.276 70.767 52.0386 70.767C48.9935 70.767 46.4686 71.1668 44.4872 71.9924L44.4799 71.9955L44.4726 71.9988C42.7101 72.7999 41.1035 73.6831 39.6544 74.6492C38.2407 75.5916 36.8279 76.455 35.4159 77.2394L35.4047 77.2457L35.3938 77.2525C34.2318 77.9787 32.6713 78.3634 30.6736 78.3634C29.0405 78.3634 27.5131 77.2868 26.1274 74.8257C24.7483 72.2185 24.0519 69.2166 24.0519 65.8071C24.0519 60.0311 25.3782 54.4081 28.0373 48.9335C30.703 43.4454 34.3114 38.345 38.8667 33.6325C43.5812 28.761 49.0045 24.5159 55.1389 20.8979C60.1667 18.0071 65.4966 15.6179 71.1291 13.7305C73.8626 12.8145 75.8027 10.2968 75.8027 7.38572C75.8027 3.6497 72.6341 0.62247 68.8814 1.1527C61.1635 2.2432 53.7398 4.41426 46.6119 7.66522C37.5369 11.6459 29.5729 17.0612 22.7236 23.9105C16.0322 30.6019 10.618 38.4859 6.47981 47.558L6.47976 47.558L6.47682 47.5647C2.4901 56.6544 0.5 66.6148 0.5 77.4391C0.5 84.2996 1.61702 90.7679 3.85425 96.8404L3.8558 96.8445C6.08991 102.749 9.12394 108.02 12.959 112.654L12.959 112.654L12.9646 112.661C16.8027 117.138 21.2829 120.739 26.4034 123.459L26.4033 123.459L26.4144 123.465C31.5505 126.033 37.0873 127.316 43.0178 127.316C47.5035 127.316 51.6783 126.595 55.5376 125.148L55.5376 125.148L55.5477 125.144C59.5516 123.542 63.0052 121.456 65.9019 118.881L65.5697 118.507Z"
+									></path>
+									<use href="#b56e9dab-6ccb-4d32-ad02-6b4bb5d9bbeb" x="86"></use>
+								</svg>
+								<blockquote class="font-semibold text-gray-900 text-xl/8 sm:text-2xl/9">
+									<p>
+										Chris is a coveted member of any team and a genuinely delightful human to be around. His technical know-how is top-tier,
+										and I’d bring him any challenge—technical or organizational—knowing he’d offer not just a thoughtful solution, but a
+										fresh perspective.
+									</p>
+								</blockquote>
+							</div>
+							<figcaption class="text-base lg:col-start-1 lg:row-start-3">
+								<div class="font-semibold text-gray-900">Bob Schuster</div>
+								<div class="mt-1 text-gray-500">Agency Owner & Creative Director</div>
+							</figcaption>
+						</figure>
+						<figure class="grid items-center grid-cols-1 gap-4 lg:gap-x-10">
+							<div class="relative col-span-2 lg:col-start-1 lg:row-start-2">
+								<svg viewBox="0 0 162 128" fill="none" aria-hidden="true" class="absolute left-0 h-32 -top-8 -z-10 stroke-gray-900/10">
+									<path
+										id="b56e9dab-6ccb-4d32-ad02-6b4bb5d9bbeb"
+										d="M65.5697 118.507L65.8918 118.89C68.9503 116.314 71.367 113.253 73.1386 109.71C74.9162 106.155 75.8027 102.28 75.8027 98.0919C75.8027 94.237 75.16 90.6155 73.8708 87.2314C72.5851 83.8565 70.8137 80.9533 68.553 78.5292C66.4529 76.1079 63.9476 74.2482 61.0407 72.9536C58.2795 71.4949 55.276 70.767 52.0386 70.767C48.9935 70.767 46.4686 71.1668 44.4872 71.9924L44.4799 71.9955L44.4726 71.9988C42.7101 72.7999 41.1035 73.6831 39.6544 74.6492C38.2407 75.5916 36.8279 76.455 35.4159 77.2394L35.4047 77.2457L35.3938 77.2525C34.2318 77.9787 32.6713 78.3634 30.6736 78.3634C29.0405 78.3634 27.5131 77.2868 26.1274 74.8257C24.7483 72.2185 24.0519 69.2166 24.0519 65.8071C24.0519 60.0311 25.3782 54.4081 28.0373 48.9335C30.703 43.4454 34.3114 38.345 38.8667 33.6325C43.5812 28.761 49.0045 24.5159 55.1389 20.8979C60.1667 18.0071 65.4966 15.6179 71.1291 13.7305C73.8626 12.8145 75.8027 10.2968 75.8027 7.38572C75.8027 3.6497 72.6341 0.62247 68.8814 1.1527C61.1635 2.2432 53.7398 4.41426 46.6119 7.66522C37.5369 11.6459 29.5729 17.0612 22.7236 23.9105C16.0322 30.6019 10.618 38.4859 6.47981 47.558L6.47976 47.558L6.47682 47.5647C2.4901 56.6544 0.5 66.6148 0.5 77.4391C0.5 84.2996 1.61702 90.7679 3.85425 96.8404L3.8558 96.8445C6.08991 102.749 9.12394 108.02 12.959 112.654L12.959 112.654L12.9646 112.661C16.8027 117.138 21.2829 120.739 26.4034 123.459L26.4033 123.459L26.4144 123.465C31.5505 126.033 37.0873 127.316 43.0178 127.316C47.5035 127.316 51.6783 126.595 55.5376 125.148L55.5376 125.148L55.5477 125.144C59.5516 123.542 63.0052 121.456 65.9019 118.881L65.5697 118.507Z"
+									></path>
+									<use href="#b56e9dab-6ccb-4d32-ad02-6b4bb5d9bbeb" x="86"></use>
+								</svg>
+								<blockquote class="font-semibold text-gray-900 text-xl/8 sm:text-2xl/9">
+									<p>
+										Chris is the embodiment of equal parts expertise, integrity, and authentic humanity. His empathy, leadership, and
+										curiosity make him someone people want to work with—and learn from.
+									</p>
+								</blockquote>
+							</div>
+							<figcaption class="text-base lg:col-start-1 lg:row-start-3">
+								<div class="font-semibold text-gray-900">Lauren Hurley-Clark</div>
+								<div class="mt-1 text-gray-500">Sr. PM, Tech + Digital Producer</div>
+							</figcaption>
+						</figure>
 					</div>
+				</section>
+			</div>
+			<div class="mx-auto prose md:prose-xl prose-zinc markdown">
+				<p>
+					Outside of work, I'm a dad to two tornado toddlers, a husband of nearly ten years, and a distance runner who's rediscovered the meditative
+					joy of the long run. I believe in making work that matters and showing up every day with a bias toward generosity, craft, and clarity.
+				</p>
 
+				<p>If you're looking for someone who can code, design, write, lead, and connect dots others don’t see—I’d love to meet.</p>
+
+				<div
+					class="mt-12 md:-mx-16 p-10 bg-gradient-to-br from-fuchsia-100 to-fuchsia-200 rounded-2xl shadow-card before:pointer-events-none before:absolute before:inset-0 before:rounded-2xl before:shadow-[0px_2px_8px_0px_rgba(0,_0,_0,_0.20),_0px_1px_0px_0px_rgba(255,_255,_255,_0.06)_inset] relative text-fuchsia-950"
+				>
+					<p class="!mt-0">
+						<strong>Let’s connect.</strong> I’m currently open to senior frontend roles, creative dev positions, or collaborative consulting
+						partnerships. You can
+						<a href="/assets/Chris-Spurlock-Senior-Front-End-Developer-and-UI-Designer-Resume.pdf" target="_blank" class="underline"
+							>download my resume</a
+						>
+						or <a href="mailto:chrisjspurlock@gmail.com" class="underline">email me directly</a>. If you're building something thoughtful and
+						ambitious, I'd love to hear about it.
+					</p>
 				</div>
 			</div>
-		</section>
-	</main>
+		</div>
+	</section>
+</main>
 {% endblock %}
