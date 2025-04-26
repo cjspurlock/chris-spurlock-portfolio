@@ -1,39 +1,35 @@
-{% macro projectTabs(title, description, tabs) %}
+{% macro projectTabs(eyebrow,title, description, tabs) %}
 <div>
 	<div class="pt-8 mx-auto mt:py-12 lg:py-16 max-w-7xl">
+		<h3 class="mb-3 text-base font-medium text-fuchsia-600">{{ eyebrow }}</h3>
 		<h4 class="mb-3 text-3xl font-semibold md:mb-5 md:text-4xl text-zinc-950">{{ title }}</h4>
 		<p class="max-w-2xl text-lg md:text-xl text-zinc-600">{{ description }}</p>
-		
+
 		<div class="grid grid-cols-1 pt-8 md:pt-12 gap-y-8 gap-x-16 md:pt-16 lg:grid-cols-2" x-data="{ activeTab: 1, tabs: $refs.tablist.children }">
 			<!-- Tab buttons -->
 			<div class="flex flex-col">
-				<div
-					class="flex flex-row lg:flex-col"
-					role="tablist"
-					x-ref="tablist"
-					aria-labelledby="tabpanels"
-				>
+				<div class="flex flex-row lg:flex-col" role="tablist" x-ref="tablist" aria-labelledby="tabpanels">
 					<!-- Tabs -->
 					{% for tab in tabs %}
-						<button
-							id="tab-{{ tab.id }}"
-							type="button"
-							role="tab"
-							class="grow text-center lg:text-left px-2 sm:px-3 py-1.5 sm:py-2 lg:px-6 lg:py-4 transition-all duration-300 ease-linear max-lg:border-b-2 lg:border-l-4"
-							:class="{'border-fuchsia-500': activeTab === {{ tab.id }}, 'border-zinc-100 hover:border-fuchsia-200': activeTab !== {{ tab.id }}}"
-							:tabindex="activeTab === {{ tab.id }} ? 0 : -1"
-							:aria-selected="activeTab === {{ tab.id }} ? 'true' : 'false'"
-							aria-controls="tabpanel-{{ tab.id }}"
-							@click="activeTab = {{ tab.id }}"
-							@focus="activeTab = {{ tab.id }}"
-							@keydown.arrow-right.prevent="$event.target.nextElementSibling ? $event.target.nextElementSibling.focus() : tabs[0].focus()"
-							@keydown.arrow-down.prevent="$event.target.nextElementSibling ? $event.target.nextElementSibling.focus() : tabs[0].focus()"
-							@keydown.arrow-left.prevent="$event.target.previousElementSibling ? $event.target.previousElementSibling.focus() : tabs[tabs.length - 1].focus()"
-							@keydown.arrow-up.prevent="$event.target.previousElementSibling ? $event.target.previousElementSibling.focus() : tabs[tabs.length - 1].focus()"
-						>
-							<h5 class="text-xs font-semibold leading-none lg:mb-2 sm:text-sm md:text-base lg:text-xl text-zinc-950">{{ tab.title }}</h5>
-							<div class="hidden text-base text-zinc-600 lg:block">{{ tab.content | safe }}</div>
-						</button>
+					<button
+						id="tab-{{ tab.id }}"
+						type="button"
+						role="tab"
+						class="grow text-center lg:text-left px-2 sm:px-3 py-1.5 sm:py-2 lg:px-6 lg:py-4 transition-all duration-300 ease-linear max-lg:border-b-2 lg:border-l-4"
+						:class="{'border-fuchsia-500': activeTab === {{ tab.id }}, 'border-zinc-100 hover:border-fuchsia-200': activeTab !== {{ tab.id }}}"
+						:tabindex="activeTab === {{ tab.id }} ? 0 : -1"
+						:aria-selected="activeTab === {{ tab.id }} ? 'true' : 'false'"
+						aria-controls="tabpanel-{{ tab.id }}"
+						@click="activeTab = {{ tab.id }}"
+						@focus="activeTab = {{ tab.id }}"
+						@keydown.arrow-right.prevent="$event.target.nextElementSibling ? $event.target.nextElementSibling.focus() : tabs[0].focus()"
+						@keydown.arrow-down.prevent="$event.target.nextElementSibling ? $event.target.nextElementSibling.focus() : tabs[0].focus()"
+						@keydown.arrow-left.prevent="$event.target.previousElementSibling ? $event.target.previousElementSibling.focus() : tabs[tabs.length - 1].focus()"
+						@keydown.arrow-up.prevent="$event.target.previousElementSibling ? $event.target.previousElementSibling.focus() : tabs[tabs.length - 1].focus()"
+					>
+						<h5 class="text-xs font-semibold leading-none lg:mb-2 sm:text-sm md:text-base lg:text-xl text-zinc-950">{{ tab.title }}</h5>
+						<div class="hidden text-base text-zinc-600 lg:block">{{ tab.content | safe }}</div>
+					</button>
 					{% endfor %}
 				</div>
 			</div>
@@ -42,48 +38,69 @@
 				<div class="relative flex flex-col">
 					<!-- Panels -->
 					{% for tab in tabs %}
-						<div
-							id="tabpanel-{{ tab.id }}"
-							class="w-full bg-gradient-to-br from-zinc-950 to-zinc-800 shadow-card rounded-4xl before:pointer-events-none before:absolute before:inset-0 before:rounded-4xl before:shadow-[0px_2px_8px_0px_rgba(0,_0,_0,_0.20),_0px_1px_0px_0px_rgba(255,_255,_255,_0.06)_inset]"
-							role="tabpanel" 
-							tabindex="0"
-							aria-labelledby="tab-{{ tab.id }}"
-							x-cloak
-							x-show="activeTab === {{ tab.id }}"
-							x-transition:enter="transition ease-[cubic-bezier(0.68,-0.3,0.32,1)] duration-700 transform order-first"
-							x-transition:enter-start="opacity-0 -translate-y-8"
-							x-transition:enter-end="opacity-100 translate-y-0"
-							x-transition:leave="transition ease-[cubic-bezier(0.68,-0.3,0.32,1)] duration-300 transform absolute"
-							x-transition:leave-start="opacity-100 translate-y-0"
-							x-transition:leave-end="opacity-0 translate-y-12"                        
-						>
-							<figure class="block p-2">
-								<img class="block object-cover w-full h-auto rounded-3xl aspect-[5/3.2]" width="304" height="214" src="{{ tab.imageUrl }}" alt="{{ tab.altText }}" />
-							</figure>
-							<div class="px-4 py-6">
-								<time class="block mb-2 text-base font-semibold text-fuchsia-500" datetime="{{ tab.dateTime }}">{{ tab.date }}</time>
-								<h6 class="mb-2 text-xl font-semibold text-white md:text-2xl">{{ tab.subtitle }}</h6>
-								<div class="block mb-2 text-sm md:text-base text-zinc-300 lg:hidden">{{ tab.content | safe }}</div>
-								<a href="{{ tab.link }}" target="_blank" rel="noopener noreferrer" class="inline-block py-1 text-sm font-medium transition-all duration-300 ease-linear text-zinc-400 hover:text-white">{{ tab.prettyLink }}</a>
-								{% if tab.secondaryLink %}
-									<span class="text-zinc-200">|</span> <a href="{{ tab.secondaryLink }}" target="_blank" rel="noopener noreferrer" class="inline-block py-1 text-sm font-medium transition-all duration-300 ease-linear text-zinc-400 hover:text-white">{{ tab.secondaryPrettyLink }}</a>
-								{% endif %}
-								<div class="flex flex-wrap mt-4 gap-x-2">
-									{% for tag in tab.tags %}
-										<span class="inline-flex items-center gap-x-1.5 rounded-full px-2 py-1 text-xs font-medium  ring-1 ring-inset ring-white/15 bg-white/5 text-white">
-											<svg class="h-1.5 w-1.5 fill-{{ tag.color }}" viewBox="0 0 6 6" aria-hidden="true">
-												<circle cx="3" cy="3" r="3"></circle>
-											</svg>
-											{{ tag.label }}
-										</span>
-									{% endfor %}
-								</div>
+					<div
+						id="tabpanel-{{ tab.id }}"
+						class="w-full bg-gradient-to-br from-zinc-950 to-zinc-800 shadow-card rounded-4xl before:pointer-events-none before:absolute before:inset-0 before:rounded-4xl before:shadow-[0px_2px_8px_0px_rgba(0,_0,_0,_0.20),_0px_1px_0px_0px_rgba(255,_255,_255,_0.06)_inset]"
+						role="tabpanel"
+						tabindex="0"
+						aria-labelledby="tab-{{ tab.id }}"
+						x-cloak
+						x-show="activeTab === {{ tab.id }}"
+						x-transition:enter="transition ease-[cubic-bezier(0.68,-0.3,0.32,1)] duration-700 transform order-first"
+						x-transition:enter-start="opacity-0 -translate-y-8"
+						x-transition:enter-end="opacity-100 translate-y-0"
+						x-transition:leave="transition ease-[cubic-bezier(0.68,-0.3,0.32,1)] duration-300 transform absolute"
+						x-transition:leave-start="opacity-100 translate-y-0"
+						x-transition:leave-end="opacity-0 translate-y-12"
+					>
+						<figure class="block p-2">
+							<img
+								class="block object-cover w-full h-auto rounded-3xl aspect-[5/3.2]"
+								width="304"
+								height="214"
+								src="{{ tab.imageUrl }}"
+								alt="{{ tab.altText }}"
+							/>
+						</figure>
+						<div class="px-4 py-6">
+							<time class="block mb-2 text-base font-semibold text-fuchsia-500" datetime="{{ tab.dateTime }}">{{ tab.date }}</time>
+							<h6 class="mb-2 text-xl font-semibold text-white md:text-2xl">{{ tab.subtitle }}</h6>
+							<div class="block mb-2 text-sm md:text-base text-zinc-300 lg:hidden">{{ tab.content | safe }}</div>
+							<a
+								href="{{ tab.link }}"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="inline-block py-1 text-sm font-medium transition-all duration-300 ease-linear text-zinc-400 hover:text-white"
+								>{{ tab.prettyLink }}</a
+							>
+							{% if tab.secondaryLink %}
+							<span class="text-zinc-200">|</span>
+							<a
+								href="{{ tab.secondaryLink }}"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="inline-block py-1 text-sm font-medium transition-all duration-300 ease-linear text-zinc-400 hover:text-white"
+								>{{ tab.secondaryPrettyLink }}</a
+							>
+							{% endif %}
+							<div class="flex flex-wrap mt-4 gap-x-2">
+								{% for tag in tab.tags %}
+								<span
+									class="inline-flex items-center gap-x-1.5 rounded-full px-2 py-1 text-xs font-medium ring-1 ring-inset ring-white/15 bg-white/5 text-white"
+								>
+									<svg class="h-1.5 w-1.5 fill-{{ tag.color }}" viewBox="0 0 6 6" aria-hidden="true">
+										<circle cx="3" cy="3" r="3"></circle>
+									</svg>
+									{{ tag.label }}
+								</span>
+								{% endfor %}
 							</div>
 						</div>
+					</div>
 					{% endfor %}
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-{% endmacro %} 
+{% endmacro %}
