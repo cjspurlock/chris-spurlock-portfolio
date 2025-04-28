@@ -58,8 +58,10 @@
 								class="block object-cover w-full h-auto rounded-3xl aspect-[5/3.2]"
 								width="304"
 								height="214"
-								src="{{ tab.imageUrl }}"
+								src="{{ tab.imageUrl | replace('.jpg', '.webp') }}"
 								alt="{{ tab.altText }}"
+								loading="lazy"
+								decoding="async"
 							/>
 						</figure>
 						<div class="px-4 py-6">

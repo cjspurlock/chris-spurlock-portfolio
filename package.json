@@ -4,14 +4,16 @@
 		"build": "ELEVENTY_PRODUCTION=true eleventy && NODE_ENV=production npx tailwindcss -i styles/tailwind.css -c styles/tailwind.config.js -o _site/style.css --minify",
 		"format": "biome format --write .",
 		"lint": "biome lint .",
-		"check": "biome check --apply ."
+		"check": "biome check --apply .",
+		"optimize-images": "node scripts/optimize-images.js"
 	},
 	"devDependencies": {
 		"@11ty/eleventy": "^3.0.0",
-		"@tailwindcss/typography": "^0.5.16",
 		"@biomejs/biome": "1.5.3",
+		"@tailwindcss/typography": "^0.5.16",
 		"alpinejs": "^3.14.9",
 		"html-minifier": "^4.0.0",
+		"sharp": "^0.33.5",
 		"tailwindcss": "^3.4.3"
 	}
 }
