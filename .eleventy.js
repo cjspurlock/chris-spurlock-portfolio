@@ -58,4 +58,7 @@ module.exports = (eleventyConfig) => {
 
 	// Copy `robots.txt` to the output directory
 	eleventyConfig.addPassthroughCopy("robots.txt");
+
+	// Copy Netlify headers file to output
+	eleventyConfig.addPassthroughCopy("_headers");
 };
