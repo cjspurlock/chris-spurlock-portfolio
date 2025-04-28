@@ -37,6 +37,29 @@
 		<!-- Preconnect to external domains -->
 		<link rel="preconnect" href="https://cdn.simpleicons.org" crossorigin />
 
+		<!-- Font loading detection -->
+		<script>
+			// Add a class to the html element when fonts are loaded
+			document.documentElement.classList.add("fonts-unloaded");
+
+			// Check if the browser supports the Font Loading API
+			if ("fonts" in document) {
+				Promise.all([
+					document.fonts.load("400 1em Syne"),
+					document.fonts.load("500 1em Syne"),
+					document.fonts.load("600 1em Syne"),
+					document.fonts.load("700 1em Syne"),
+				]).then(() => {
+					document.documentElement.classList.remove("fonts-unloaded");
+					document.documentElement.classList.add("fonts-loaded");
+				});
+			} else {
+				// Fallback for browsers that don't support the Font Loading API
+				document.documentElement.classList.remove("fonts-unloaded");
+				document.documentElement.classList.add("fonts-loaded");
+			}
+		</script>
+
 		<!-- Inline critical CSS -->
 		<style>
 			{% include "critical.css" %}

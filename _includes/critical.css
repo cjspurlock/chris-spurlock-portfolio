@@ -10,6 +10,28 @@ html {
   font-family: "Syne", ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
 }
 
+/* Font loading states */
+html.fonts-unloaded {
+  font-family: ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+}
+
+html.fonts-loaded {
+  font-family: "Syne", ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+}
+
+/* Prevent layout shift during font load */
+html.fonts-unloaded h1,
+html.fonts-unloaded h2,
+html.fonts-unloaded h3,
+html.fonts-unloaded h4,
+html.fonts-unloaded h5,
+html.fonts-unloaded h6,
+html.fonts-unloaded p,
+html.fonts-unloaded span,
+html.fonts-unloaded a {
+  font-family: ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+}
+
 body {
   margin: 0;
   line-height: inherit;
