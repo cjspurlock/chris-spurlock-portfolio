@@ -27,8 +27,8 @@
 						@keydown.arrow-left.prevent="$event.target.previousElementSibling ? $event.target.previousElementSibling.focus() : tabs[tabs.length - 1].focus()"
 						@keydown.arrow-up.prevent="$event.target.previousElementSibling ? $event.target.previousElementSibling.focus() : tabs[tabs.length - 1].focus()"
 					>
-						<h5 class="text-xs font-semibold leading-none lg:mb-2 sm:text-sm md:text-base lg:text-xl text-zinc-950">{{ tab.title }}</h5>
-						<div class="hidden text-base text-zinc-600 lg:block">{{ tab.content | safe }}</div>
+						<span class="block text-xs font-semibold leading-none lg:mb-2 sm:text-sm md:text-base lg:text-xl text-zinc-950">{{ tab.title }}</span>
+						<span class="hidden text-base text-zinc-600 lg:block">{{ tab.content | safe }}</span>
 					</button>
 					{% endfor %}
 				</div>
@@ -97,7 +97,8 @@
 								<span
 									class="inline-flex items-center gap-x-1.5 rounded-full px-2 py-1 text-xs font-medium ring-1 ring-inset ring-white/15 bg-white/5 text-white"
 								>
-									<svg class="h-1.5 w-1.5 fill-{{ tag.color }}" viewBox="0 0 6 6" aria-hidden="true">
+									<svg class="h-1.5 w-1.5 fill-{{ tag.color }}" viewBox="0 0 6 6" aria-hidden="true" focusable="false">
+										<title>Tag indicator dot</title>
 										<circle cx="3" cy="3" r="3"></circle>
 									</svg>
 									{{ tag.label }}
