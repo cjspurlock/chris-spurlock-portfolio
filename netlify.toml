@@ -14,5 +14,4 @@
   package = "netlify-plugin-checklinks"
 
   [plugins.inputs]
-    skipPatterns = ["https://cdn.simpleicons.org"]
-    skipAnchorChecks = true 
+    skipPatterns = ["https://cdn.simpleicons.org"] 
