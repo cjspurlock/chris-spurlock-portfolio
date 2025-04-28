@@ -3,7 +3,7 @@ const crypto = require("crypto-js");
 const fs = require("fs");
 const path = require("path");
 
-// Generate a hash of the CSS file content
+// Generate a hash of a file's content
 function getFileHash(filePath) {
 	try {
 		const content = fs.readFileSync(filePath, "utf8");
@@ -14,8 +14,12 @@ function getFileHash(filePath) {
 	}
 }
 
-// Get the hash of the CSS file
-const cssHash = getFileHash(path.join(__dirname, "styles", "tailwind.css"));
+// Get hashes for all static assets
+const assetHashes = {
+	css: getFileHash(path.join(__dirname, "styles", "tailwind.css")),
+	js: getFileHash(path.join(__dirname, "node_modules", "alpinejs", "dist", "cdn.min.js")),
+	// Add more assets here as needed
+};
 
 module.exports = (eleventyConfig) => {
 	eleventyConfig.addWatchTarget("./styles/tailwind.config.js");
@@ -34,7 +38,10 @@ module.exports = (eleventyConfig) => {
 		"./node_modules/alpinejs/dist/cdn.min.js": "./js/alpine.js",
 	});
 
-	eleventyConfig.addShortcode("version", () => cssHash);
+	// Version shortcode that accepts an asset type
+	eleventyConfig.addShortcode("version", (assetType = "css") => {
+		return assetHashes[assetType] || assetHashes.css; // fallback to CSS hash if type not found
+	});
 
 	eleventyConfig.addTransform("htmlmin", (content, outputPath) => {
 		if (process.env.ELEVENTY_PRODUCTION && outputPath && outputPath.endsWith(".html")) {
