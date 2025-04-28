@@ -1,104 +1,82 @@
 const sharp = require("sharp");
 const fs = require("fs").promises;
 const path = require("path");
+const glob = require("glob");
 
-// Files that should remain as PNG (favicons and touch icons)
-const KEEP_AS_PNG = [
-	"favicon.png",
-	"favicon-16x16.png",
-	"favicon-32x32.png",
-	"apple-touch-icon.png",
-	"android-chrome-192x192.png",
-	"android-chrome-512x512.png",
-];
+// Function to get all image files
+async function getImageFiles() {
+	// Get all PNG files in the images directory
+	const pngFiles = glob.sync("images/*.png").map((file) => ({
+		input: path.basename(file),
+		output: path.basename(file).replace(".png", ".webp"),
+		sizes: [64, 128, 256], // Default sizes for logos
+	}));
 
-async function findImagesToOptimize() {
-	const imagesDir = path.join(process.cwd(), "images");
-	const files = await fs.readdir(imagesDir);
-	return files.filter((file) => /\.(jpg|jpeg|png)$/i.test(file));
+	// Get all JPG files in the images directory
+	const jpgFiles = glob.sync("images/*.jpg").map((file) => ({
+		input: path.basename(file),
+		output: path.basename(file).replace(".jpg", ".webp"),
+		sizes: [400, 800, 1200], // Default sizes for project images
+	}));
+
+	// Get all base WEBP files in the images directory (exclude already-resized ones)
+	const webpFiles = glob
+		.sync("images/*.webp")
+		.filter((file) => !file.match(/-(64|128|256|400|800|1200)\.webp$/))
+		.map((file) => {
+			const name = path.basename(file);
+			// Use logo sizes for icon--* files, project sizes for others
+			const isLogo = name.startsWith("icon--");
+			return {
+				input: name,
+				output: name, // Output is the same as input for webp
+				sizes: isLogo ? [64, 128, 256] : [400, 800, 1200],
+			};
+		});
+
+	return [...pngFiles, ...jpgFiles, ...webpFiles];
 }
 
-async function optimizeImage(filename) {
-	const inputPath = path.join("images", filename);
-	const ext = path.extname(filename);
-	const basename = path.basename(filename, ext);
+async function optimizeImage(imageConfig) {
+	const inputPath = path.join("images", imageConfig.input);
+	const outputBasePath = path.join("images", path.parse(imageConfig.output).name);
 
 	try {
-		const stats = await fs.stat(inputPath);
-		const originalSize = stats.size;
+		// Generate different sizes
+		for (const size of imageConfig.sizes) {
+			const outputPath = `${outputBasePath}-${size}.webp`;
+			await sharp(inputPath).resize(size).webp({ quality: 80 }).toFile(outputPath);
 
-		if (ext.toLowerCase() === ".jpg" || ext.toLowerCase() === ".jpeg") {
-			// Process JPG files with multiple sizes
-			const sizes = {
-				sm: 400,
-				md: 800,
-				lg: 1200,
-				xl: 1600,
-			};
-
-			for (const [size, width] of Object.entries(sizes)) {
-				const outputPath = path.join("images", `${basename}-${size}.webp`);
-				await sharp(inputPath)
-					.resize(width, null, { withoutEnlargement: true })
-					.webp({ quality: 80 })
-					.toFile(outputPath);
-
-				const newStats = await fs.stat(outputPath);
-				console.log(
-					`Converted ${filename} to ${basename}-${size}.webp (${Math.round(
-						(1 - newStats.size / originalSize) * 100
-					)}% smaller)`
-				);
-			}
-		} else if (ext.toLowerCase() === ".png") {
-			if (KEEP_AS_PNG.includes(filename)) {
-				// Optimize PNG without converting to WebP
-				const outputPath = path.join("images", filename);
-				await sharp(inputPath)
-					.png({ quality: 80, compressionLevel: 9 })
-					.toFile(`${outputPath}.temp`);
-
-				await fs.rename(`${outputPath}.temp`, outputPath);
-
-				const newStats = await fs.stat(outputPath);
-				console.log(
-					`Optimized ${filename} (${Math.round((1 - newStats.size / originalSize) * 100)}% smaller)`
-				);
-			} else {
-				// Convert icons to WebP while maintaining transparency
-				const outputPath = path.join("images", `${basename}.webp`);
-				await sharp(inputPath).webp({ quality: 80, lossless: true }).toFile(outputPath);
-
-				const newStats = await fs.stat(outputPath);
-				console.log(
-					`Converted ${filename} to WebP (${Math.round(
-						(1 - newStats.size / originalSize) * 100
-					)}% smaller)`
-				);
-			}
+			const stats = await fs.stat(outputPath);
+			console.log(`Created ${outputPath} (${(stats.size / 1024).toFixed(2)}KB)`);
 		}
+
+		// Create the default size (largest)
+		const defaultOutputPath = path.join("images", imageConfig.output);
+		await sharp(inputPath)
+			.resize(imageConfig.sizes[imageConfig.sizes.length - 1])
+			.webp({ quality: 80 })
+			.toFile(defaultOutputPath);
+
+		const stats = await fs.stat(defaultOutputPath);
+		console.log(`Created ${defaultOutputPath} (${(stats.size / 1024).toFixed(2)}KB)`);
 	} catch (error) {
-		console.error(`Error processing ${filename}:`, error);
+		console.error(`Error processing ${imageConfig.input}:`, error);
 	}
 }
 
 async function main() {
-	console.log("🔄 Starting image optimization...\n");
+	console.log("Starting image optimization...");
 
-	const imagesToOptimize = await findImagesToOptimize();
+	// Get all image files
+	const imagesToOptimize = await getImageFiles();
 
-	if (imagesToOptimize.length === 0) {
-		console.log("No JPG/JPEG/PNG images found to optimize.");
-		return;
-	}
-
-	console.log(`Found ${imagesToOptimize.length} images to optimize:\n`);
-
+	// Process all images
 	for (const image of imagesToOptimize) {
 		await optimizeImage(image);
 	}
 
-	console.log("\n✨ Image optimization complete!");
+	console.log("Image optimization complete!");
 }
 
 main().catch(console.error);
