@@ -1,6 +1,21 @@
 const htmlmin = require("html-minifier");
+const crypto = require("crypto-js");
+const fs = require("fs");
+const path = require("path");
 
-const now = String(Date.now());
+// Generate a hash of the CSS file content
+function getFileHash(filePath) {
+	try {
+		const content = fs.readFileSync(filePath, "utf8");
+		return crypto.MD5(content).toString().substring(0, 8);
+	} catch (error) {
+		console.error(`Error reading file ${filePath}:`, error);
+		return Date.now().toString();
+	}
+}
+
+// Get the hash of the CSS file
+const cssHash = getFileHash(path.join(__dirname, "styles", "tailwind.css"));
 
 module.exports = (eleventyConfig) => {
 	eleventyConfig.addWatchTarget("./styles/tailwind.config.js");
@@ -19,7 +34,7 @@ module.exports = (eleventyConfig) => {
 		"./node_modules/alpinejs/dist/cdn.min.js": "./js/alpine.js",
 	});
 
-	eleventyConfig.addShortcode("version", () => now);
+	eleventyConfig.addShortcode("version", () => cssHash);
 
 	eleventyConfig.addTransform("htmlmin", (content, outputPath) => {
 		if (process.env.ELEVENTY_PRODUCTION && outputPath && outputPath.endsWith(".html")) {
