@@ -1,0 +1,10 @@
+@config {
+  content: "_site/**/*.html";
+  theme-font-family-sans: '"Syne", ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji';
+  theme-box-shadow-button: "0px 3px 4px -1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.1), inset 0px 4px 2px rgba(255, 255, 255, 0.08), inset 0px -4px 2px rgba(255, 255, 255, 0.08), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.2)";
+  theme-box-shadow-button-light: "0px 3px 4px -1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.1), inset 0px 4px 2px rgba(255, 255, 255, 0.04), inset 0px -4px 2px rgba(255, 255, 255, 0.04), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.2)";
+  theme-box-shadow-card: "0px_0px_0px_1px_rgba(255,255,255,0.1)";
+  theme-border-radius-4xl: 2.125rem;
+  plugins: "@tailwindcss/typography";
+  important: true;
+} 
