@@ -2,6 +2,14 @@ const sharp = require("sharp");
 const fs = require("fs").promises;
 const path = require("path");
 
+// Define the sizes we want to generate
+const SIZES = {
+	sm: 640, // Small devices
+	md: 1024, // Medium devices
+	lg: 1536, // Large devices
+	xl: 2048, // Extra large devices
+};
+
 async function findImagesToOptimize() {
 	const imagesDir = path.join(process.cwd(), "images");
 	const files = await fs.readdir(imagesDir);
@@ -10,24 +18,50 @@ async function findImagesToOptimize() {
 
 async function optimizeImage(filename) {
 	const inputPath = path.join("images", filename);
-	const outputPath = path.join("images", filename.replace(/\.(jpg|jpeg)$/i, ".webp"));
+	const baseName = filename.replace(/\.(jpg|jpeg)$/i, "");
 
 	try {
-		// Convert to WebP with quality optimization
-		await sharp(inputPath)
-			.webp({ quality: 80 }) // Adjust quality as needed
-			.toFile(outputPath);
-
-		console.log(`✅ Converted ${filename} to WebP`);
-
-		// Get file sizes for comparison
+		// Get original image dimensions
+		const metadata = await sharp(inputPath).metadata();
 		const originalSize = (await fs.stat(inputPath)).size;
-		const newSize = (await fs.stat(outputPath)).size;
-		const savings = (((originalSize - newSize) / originalSize) * 100).toFixed(1);
 
-		console.log(`   Original: ${(originalSize / 1024).toFixed(1)}KB`);
-		console.log(`   New: ${(newSize / 1024).toFixed(1)}KB`);
-		console.log(`   Savings: ${savings}%`);
+		console.log(`\n🔄 Processing ${filename}`);
+		console.log(`   Original size: ${(originalSize / 1024).toFixed(1)}KB`);
+
+		// Generate WebP versions at different sizes
+		for (const [size, width] of Object.entries(SIZES)) {
+			// Skip if the target width is larger than the original
+			if (width > metadata.width) continue;
+
+			const outputPath = path.join("images", `${baseName}-${size}.webp`);
+
+			await sharp(inputPath)
+				.resize(width, null, { withoutEnlargement: true })
+				.webp({ quality: 80 })
+				.toFile(outputPath);
+
+			const newSize = (await fs.stat(outputPath)).size;
+			const savings = (((originalSize - newSize) / originalSize) * 100).toFixed(1);
+
+			console.log(
+				`   ✅ Generated ${size} (${width}px): ${(newSize / 1024).toFixed(
+					1
+				)}KB (${savings}% smaller)`
+			);
+		}
+
+		// Also generate the full-size WebP version
+		const fullSizePath = path.join("images", `${baseName}.webp`);
+		await sharp(inputPath).webp({ quality: 80 }).toFile(fullSizePath);
+
+		const fullSizeNew = (await fs.stat(fullSizePath)).size;
+		const fullSizeSavings = (((originalSize - fullSizeNew) / originalSize) * 100).toFixed(1);
+
+		console.log(
+			`   ✅ Generated full size: ${(fullSizeNew / 1024).toFixed(
+				1
+			)}KB (${fullSizeSavings}% smaller)`
+		);
 	} catch (error) {
 		console.error(`❌ Error processing ${filename}:`, error);
 	}

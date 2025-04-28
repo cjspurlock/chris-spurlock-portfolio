@@ -59,6 +59,13 @@
 								width="304"
 								height="214"
 								src="{{ tab.imageUrl | replace('.jpg', '.webp') }}"
+								srcset="
+									{{ tab.imageUrl | replace('.jpg', '-sm.webp') }} 640w,
+									{{ tab.imageUrl | replace('.jpg', '-md.webp') }} 1024w,
+									{{ tab.imageUrl | replace('.jpg', '-lg.webp') }} 1536w,
+									{{ tab.imageUrl | replace('.jpg', '.webp') }} 2048w
+								"
+								sizes="(max-width: 640px) 640px, (max-width: 1024px) 1024px, (max-width: 1536px) 1536px, 2048px"
 								alt="{{ tab.altText }}"
 								loading="lazy"
 								decoding="async"
