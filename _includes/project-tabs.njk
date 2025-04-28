@@ -58,14 +58,14 @@
 								class="block object-cover w-full h-auto rounded-3xl aspect-[5/3.2]"
 								width="304"
 								height="214"
-								src="{{ tab.imageUrl | replace('.jpg', '.webp') }}"
+								src="{{ tab.imageUrl | replace('.jpg', '-md.webp') }}"
 								srcset="
-									{{ tab.imageUrl | replace('.jpg', '-sm.webp') }} 640w,
-									{{ tab.imageUrl | replace('.jpg', '-md.webp') }} 1024w,
-									{{ tab.imageUrl | replace('.jpg', '-lg.webp') }} 1536w,
-									{{ tab.imageUrl | replace('.jpg', '.webp') }} 2048w
+									{{ tab.imageUrl | replace('.jpg', '-sm.webp') }} 400w,
+									{{ tab.imageUrl | replace('.jpg', '-md.webp') }} 800w,
+									{{ tab.imageUrl | replace('.jpg', '-lg.webp') }} 1200w,
+									{{ tab.imageUrl | replace('.jpg', '-xl.webp') }} 1600w
 								"
-								sizes="(max-width: 640px) 640px, (max-width: 1024px) 1024px, (max-width: 1536px) 1536px, 2048px"
+								sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1200px) 1200px, 1600px"
 								alt="{{ tab.altText }}"
 								loading="lazy"
 								decoding="async"

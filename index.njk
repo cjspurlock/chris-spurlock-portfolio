@@ -7,11 +7,13 @@ Designer{% endblock %} {% block content %}
 			class="px-6 md:px-16 py-16 md:py-32 mx-auto text-center text-white bg-gradient-to-br from-zinc-950 to-zinc-800 rounded-4xl shadow-card before:pointer-events-none before:absolute before:inset-0 before:rounded-4xl before:shadow-[0px_2px_8px_0px_rgba(0,_0,_0,_0.20),_0px_1px_0px_0px_rgba(255,_255,_255,_0.06)_inset] relative"
 		>
 			<img
-				src="/images/headshot.webp"
-				srcset="/images/headshot-sm.webp 640w, /images/headshot-md.webp 1024w, /images/headshot.webp 2048w"
-				sizes="(max-width: 640px) 640px, (max-width: 1024px) 1024px, 2048px"
+				src="/images/headshot-md.webp"
+				srcset="/images/headshot-sm.webp 400w, /images/headshot-md.webp 800w, /images/headshot-lg.webp 1200w, /images/headshot-xl.webp 1600w"
+				sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1200px) 1200px, 1600px"
 				alt="Headshot style image of Chris Spurlock, UI Developer"
 				class="block object-cover object-center w-32 h-auto mx-auto mb-6 rounded-full aspect-square"
+				loading="eager"
+				decoding="async"
 			/>
 			<h1 class="mb-2 text-5xl font-semibold md:text-6xl">Chris Spurlock</h1>
 			<h2
