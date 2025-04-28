@@ -1,4 +1,18 @@
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /js/
+Disallow: /style.css
+Disallow: /images/og/
+Disallow: /fonts/
 
+# Allow important static assets
+Allow: /images/favicon-*.png
+Allow: /images/apple-touch-icon.png
+Allow: /images/site.webmanifest
+
+# Block state-changing URLs (if any exist)
+Disallow: /api/
+Disallow: /*?*
+
+# Sitemap
 Sitemap: https://chrisspurlock.com/sitemap.xml
