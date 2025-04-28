@@ -8,6 +8,22 @@
 
 @font-face {
   font-family: 'Syne';
+  src: url('../fonts/Syne-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Syne';
+  src: url('../fonts/Syne-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Syne';
   src: url('../fonts/Syne-Bold.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
