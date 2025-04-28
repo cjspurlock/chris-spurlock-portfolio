@@ -25,15 +25,12 @@ module.exports = (eleventyConfig) => {
 	eleventyConfig.addWatchTarget("./styles/tailwind.config.js");
 	eleventyConfig.addWatchTarget("./styles/tailwind.css");
 
-	// Pass images directory through to the _site folder
+	// Pass directories through to the _site folder
 	eleventyConfig.addPassthroughCopy("images");
-
-	// Pass assets directory through to the _site folder
 	eleventyConfig.addPassthroughCopy("assets");
-
-	// Pass fonts directory through to the _site folder
 	eleventyConfig.addPassthroughCopy("fonts");
 
+	// Pass Alpine.js through to the _site folder
 	eleventyConfig.addPassthroughCopy({
 		"./node_modules/alpinejs/dist/cdn.min.js": "./js/alpine.js",
 	});
@@ -56,9 +53,15 @@ module.exports = (eleventyConfig) => {
 		return content;
 	});
 
-	// Copy `robots.txt` to the output directory
+	// Copy static files to the output directory
 	eleventyConfig.addPassthroughCopy("robots.txt");
-
-	// Copy Netlify headers file to output
+	eleventyConfig.addPassthroughCopy("sitemap.xml");
 	eleventyConfig.addPassthroughCopy("_headers");
+	eleventyConfig.addPassthroughCopy("images/site.webmanifest");
+	eleventyConfig.addPassthroughCopy("images/favicon.ico");
+	eleventyConfig.addPassthroughCopy("images/favicon-16x16.png");
+	eleventyConfig.addPassthroughCopy("images/favicon-32x32.png");
+	eleventyConfig.addPassthroughCopy("images/apple-touch-icon.png");
+	eleventyConfig.addPassthroughCopy("images/android-chrome-192x192.png");
+	eleventyConfig.addPassthroughCopy("images/android-chrome-512x512.png");
 };
