@@ -1,14 +1,26 @@
-/*
+/* Cache static assets aggressively */
+
+/style.css*
   Cache-Control: public, max-age=31536000, immutable
 
-/style.css
-  Cache-Control: public, max-age=31536000, immutable
-
-/js/alpine.js
+/js/alpine.js*
   Cache-Control: public, max-age=31536000, immutable
 
 /fonts/*
   Cache-Control: public, max-age=31536000, immutable
 
 /images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/* Add specific rules for root assets */
+/favicon-32x32.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/apple-touch-icon.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/favicon-16x16.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/site.webmanifest
   Cache-Control: public, max-age=31536000, immutable 
