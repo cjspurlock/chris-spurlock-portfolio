@@ -12,6 +12,9 @@ module.exports = (eleventyConfig) => {
 	// Pass assets directory through to the _site folder
 	eleventyConfig.addPassthroughCopy("assets");
 
+	// Pass fonts directory through to the _site folder
+	eleventyConfig.addPassthroughCopy("fonts");
+
 	eleventyConfig.addPassthroughCopy({
 		"./node_modules/alpinejs/dist/cdn.js": "./js/alpine.js",
 	});
