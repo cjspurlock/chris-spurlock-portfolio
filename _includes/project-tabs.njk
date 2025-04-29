@@ -12,14 +12,14 @@
 					<!-- Tabs -->
 					{% for tab in tabs %}
 					<button
-						id="tab-{{ tab.id }}"
+						id="tab-{{ eyebrow | slug }}-{{ tab.id }}"
 						type="button"
 						role="tab"
 						class="grow text-center lg:text-left px-2 sm:px-3 py-1.5 sm:py-2 lg:px-6 lg:py-4 transition-all duration-300 ease-linear max-lg:border-b-2 lg:border-l-4"
 						:class="{'border-fuchsia-500': activeTab === {{ tab.id }}, 'border-zinc-100 hover:border-fuchsia-200': activeTab !== {{ tab.id }}}"
 						:tabindex="activeTab === {{ tab.id }} ? 0 : -1"
 						:aria-selected="activeTab === {{ tab.id }} ? 'true' : 'false'"
-						aria-controls="tabpanel-{{ tab.id }}"
+						aria-controls="tabpanel-{{ eyebrow | slug }}-{{ tab.id }}"
 						@click="activeTab = {{ tab.id }}"
 						@focus="activeTab = {{ tab.id }}"
 						@keydown.arrow-right.prevent="$event.target.nextElementSibling ? $event.target.nextElementSibling.focus() : tabs[0].focus()"
@@ -39,11 +39,11 @@
 					<!-- Panels -->
 					{% for tab in tabs %}
 					<div
-						id="tabpanel-{{ tab.id }}"
+						id="tabpanel-{{ eyebrow | slug }}-{{ tab.id }}"
 						class="w-full bg-gradient-to-br from-zinc-950 to-zinc-800 shadow-card rounded-4xl before:pointer-events-none before:absolute before:inset-0 before:rounded-4xl before:shadow-[0px_2px_8px_0px_rgba(0,_0,_0,_0.20),_0px_1px_0px_0px_rgba(255,_255,_255,_0.06)_inset]"
 						role="tabpanel"
 						tabindex="0"
-						aria-labelledby="tab-{{ tab.id }}"
+						aria-labelledby="tab-{{ eyebrow | slug }}-{{ tab.id }}"
 						x-cloak
 						x-show="activeTab === {{ tab.id }}"
 						x-transition:enter="transition ease-[cubic-bezier(0.68,-0.3,0.32,1)] duration-700 transform order-first"
@@ -75,23 +75,27 @@
 							<time class="block mb-2 text-base font-semibold text-fuchsia-500" datetime="{{ tab.dateTime }}">{{ tab.date }}</time>
 							<h6 class="mb-2 text-xl font-semibold text-white md:text-2xl">{{ tab.subtitle }}</h6>
 							<div class="block mb-2 text-sm md:text-base text-zinc-300 lg:hidden">{{ tab.content | safe }}</div>
-							<a
-								href="{{ tab.link }}"
-								target="_blank"
-								rel="noopener noreferrer"
-								class="inline-block py-1 text-sm font-medium transition-all duration-300 ease-linear text-zinc-400 hover:text-white"
-								>{{ tab.prettyLink }}</a
-							>
-							{% if tab.secondaryLink %}
-							<span class="text-zinc-200">|</span>
-							<a
-								href="{{ tab.secondaryLink }}"
-								target="_blank"
-								rel="noopener noreferrer"
-								class="inline-block py-1 text-sm font-medium transition-all duration-300 ease-linear text-zinc-400 hover:text-white"
-								>{{ tab.secondaryPrettyLink }}</a
-							>
-							{% endif %}
+							<div class="flex items-center gap-2">
+								<a
+									href="{{ tab.link }}"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="inline-block py-1 text-sm font-medium transition-all duration-300 ease-linear text-zinc-400 hover:text-white"
+									aria-label="Visit {{ tab.prettyLink }}"
+									>{{ tab.prettyLink }}</a
+								>
+								{% if tab.secondaryLink %}
+								<span class="text-zinc-200">|</span>
+								<a
+									href="{{ tab.secondaryLink }}"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="inline-block py-1 text-sm font-medium transition-all duration-300 ease-linear text-zinc-400 hover:text-white"
+									aria-label="Visit {{ tab.secondaryPrettyLink }}"
+									>{{ tab.secondaryPrettyLink }}</a
+								>
+								{% endif %}
+							</div>
 							<div class="flex flex-wrap gap-2 mt-4">
 								{% for tag in tab.tags %}
 								<span
