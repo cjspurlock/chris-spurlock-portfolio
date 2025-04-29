@@ -73,7 +73,7 @@
 						</figure>
 						<div class="px-4 py-6">
 							<time class="block mb-2 text-base font-semibold text-fuchsia-500" datetime="{{ tab.dateTime }}">{{ tab.date }}</time>
-							<h6 class="mb-2 text-xl font-semibold text-white md:text-2xl">{{ tab.subtitle }}</h6>
+							<h5 class="mb-2 text-xl font-semibold text-white md:text-2xl">{{ tab.subtitle }}</h5>
 							<div class="block mb-2 text-sm md:text-base text-zinc-300 lg:hidden">{{ tab.content | safe }}</div>
 							<div class="flex items-center gap-2">
 								<a
@@ -81,7 +81,7 @@
 									target="_blank"
 									rel="noopener noreferrer"
 									class="inline-block py-1 text-sm font-medium transition-all duration-300 ease-linear text-zinc-400 hover:text-white"
-									aria-label="Visit {{ tab.prettyLink }}"
+									aria-label="Visit {{ tab.prettyLink }} (opens in new tab)"
 									>{{ tab.prettyLink }}</a
 								>
 								{% if tab.secondaryLink %}
@@ -91,7 +91,7 @@
 									target="_blank"
 									rel="noopener noreferrer"
 									class="inline-block py-1 text-sm font-medium transition-all duration-300 ease-linear text-zinc-400 hover:text-white"
-									aria-label="Visit {{ tab.secondaryPrettyLink }}"
+									aria-label="Visit {{ tab.secondaryPrettyLink }} (opens in new tab)"
 									>{{ tab.secondaryPrettyLink }}</a
 								>
 								{% endif %}
