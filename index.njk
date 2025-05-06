@@ -159,7 +159,14 @@ in modern web development and user interface design." %} {% extends "_includes/d
 									<div
 										class="flex items-center gap-2 rounded-xl border border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
 									>
-										<img height="16" width="16" src="https://cdn.simpleicons.org/eleventy/222222" alt="Eleventy logo" />
+										<img class="dark:hidden" height="16" width="16" src="https://cdn.simpleicons.org/eleventy/222222" alt="Eleventy logo" />
+										<img
+											class="hidden dark:block"
+											height="16"
+											width="16"
+											src="https://cdn.simpleicons.org/eleventy/ffffff"
+											alt="Eleventy logo"
+										/>
 										Eleventy
 									</div>
 									<div
@@ -247,19 +254,19 @@ in modern web development and user interface design." %} {% extends "_includes/d
 								</p>
 								<div class="flex flex-wrap gap-2">
 									<div
-										class="flex items-center gap-2 rounded-xl aborder border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+										class="flex items-center gap-2 rounded-xl border border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
 									>
 										<img height="16" width="16" src="https://cdn.simpleicons.org/wordpress/21759B" alt="WordPress logo" />
 										WordPress
 									</div>
 									<div
-										class="flex items-center gap-2 rounded-xl aborder border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+										class="flex items-center gap-2 rounded-xl border border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
 									>
 										<img height="16" width="16" src="/images/acf-icon.svg" alt="ACF logo" />
 										ACF
 									</div>
 									<div
-										class="flex items-center gap-2 rounded-xl aborder border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+										class="flex items-center gap-2 rounded-xl border border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
 									>
 										<img height="16" width="16" src="/images/kadencewp-icon.svg" alt="Kadence logo" />
 										Kadence
@@ -279,25 +286,32 @@ in modern web development and user interface design." %} {% extends "_includes/d
 								</p>
 								<div class="flex flex-wrap gap-2">
 									<div
-										class="flex items-center gap-2 rounded-xl aborder border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+										class="flex items-center gap-2 rounded-xl border border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
 									>
-										<img height="16" width="16" src="https://cdn.simpleicons.org/github/181717" alt="GitHub logo" />
+										<img class="dark:hidden" height="16" width="16" src="https://cdn.simpleicons.org/github/181717" alt="GitHub logo" />
+										<img
+											class="hidden dark:block"
+											height="16"
+											width="16"
+											src="https://cdn.simpleicons.org/github/ffffff"
+											alt="GitHub logo"
+										/>
 										GitHub
 									</div>
 									<div
-										class="flex items-center gap-2 rounded-xl aborder border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+										class="flex items-center gap-2 rounded-xl border border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
 									>
 										<img height="16" width="16" src="https://cdn.simpleicons.org/netlify/00C7B7" alt="Netlify logo" />
 										Netlify
 									</div>
 									<div
-										class="flex items-center gap-2 rounded-xl aborder border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+										class="flex items-center gap-2 rounded-xl border border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
 									>
 										<img height="16" width="16" src="https://cdn.simpleicons.org/wpengine/0ECAD4" alt="WP Engine logo" />
 										WP Engine
 									</div>
 									<div
-										class="flex items-center gap-2 rounded-xl aborder border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+										class="flex items-center gap-2 rounded-xl border border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
 									>
 										<img height="16" width="16" src="https://cdn.simpleicons.org/local/51BB7B" alt="Local logo" />
 										Local
@@ -317,25 +331,27 @@ in modern web development and user interface design." %} {% extends "_includes/d
 								</p>
 								<div class="flex flex-wrap gap-2">
 									<div
-										class="flex items-center gap-2 rounded-xl aborder border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+										class="flex items-center gap-2 rounded-xl border border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
 									>
-										<img height="16" width="16" src="/images/rest_api_logo.svg" alt="REST logo" />
+										<img class="dark:hidden" height="16" width="16" src="/images/rest_api_logo.svg" alt="REST logo" />
+										<img class="hidden dark:block" height="16" width="16" src="/images/rest_api_logo_white.svg" alt="REST logo" />
 										REST APIs
 									</div>
 									<div
-										class="flex items-center gap-2 rounded-xl aborder border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+										class="flex items-center gap-2 rounded-xl border border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
 									>
-										<img height="16" width="16" src="https://cdn.simpleicons.org/json/000000" alt="JSON logo" />
+										<img class="dark:hidden" height="16" width="16" src="https://cdn.simpleicons.org/json/000000" alt="JSON logo" />
+										<img class="hidden dark:block" height="16" width="16" src="https://cdn.simpleicons.org/json/ffffff" alt="JSON logo" />
 										JSON
 									</div>
 									<div
-										class="flex items-center gap-2 rounded-xl aborder border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+										class="flex items-center gap-2 rounded-xl border border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
 									>
 										<img height="16" width="16" src="https://cdn.simpleicons.org/postman/FF6C37" alt="Postman logo" />
 										Postman
 									</div>
 									<div
-										class="flex items-center gap-2 rounded-xl aborder border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+										class="flex items-center gap-2 rounded-xl border border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
 									>
 										<img height="16" width="16" src="https://cdn.simpleicons.org/swagger/85EA2D" alt="Swagger logo" />
 										Swagger
@@ -355,19 +371,19 @@ in modern web development and user interface design." %} {% extends "_includes/d
 								</p>
 								<div class="flex flex-wrap gap-2">
 									<div
-										class="flex items-center gap-2 rounded-xl aborder border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+										class="flex items-center gap-2 rounded-xl border border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
 									>
 										<img height="16" width="16" src="/images/a11y-icon.svg" alt="Accessibility logo" />
 										Accessibility
 									</div>
 									<div
-										class="flex items-center gap-2 rounded-xl aborder border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+										class="flex items-center gap-2 rounded-xl border border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
 									>
 										<img height="16" width="16" src="https://cdn.simpleicons.org/google/4285F4" alt="Google Tag Manager logo" />
 										GTM
 									</div>
 									<div
-										class="flex items-center gap-2 rounded-xl aborder border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+										class="flex items-center gap-2 rounded-xl border border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
 									>
 										<img height="16" width="16" src="https://cdn.simpleicons.org/yoast/A61E69" alt="Yoast logo" />
 										SEO
@@ -389,31 +405,31 @@ in modern web development and user interface design." %} {% extends "_includes/d
 								</p>
 								<div class="flex flex-wrap gap-2">
 									<div
-										class="flex items-center gap-2 rounded-xl aborder border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+										class="flex items-center gap-2 rounded-xl border border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
 									>
 										<img height="16" width="16" src="https://cdn.simpleicons.org/openai/412991" alt="OpenAI logo" />
 										ChatGPT
 									</div>
 									<div
-										class="flex items-center gap-2 rounded-xl aborder border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+										class="flex items-center gap-2 rounded-xl border border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
 									>
 										<img height="16" width="16" src="https://cdn.simpleicons.org/claude/D97757" alt="Claude logo" />
 										Claude
 									</div>
 									<div
-										class="flex items-center gap-2 rounded-xl aborder border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+										class="flex items-center gap-2 rounded-xl border border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
 									>
 										<img height="16" width="16" src="https://cdn.simpleicons.org/googlegemini/8E75B2" alt="Google Gemini logo" />
 										Gemini
 									</div>
 									<div
-										class="flex items-center gap-2 rounded-xl aborder border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+										class="flex items-center gap-2 rounded-xl border border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
 									>
 										<img height="16" width="16" src="/images/cursor-icon.svg" alt="Cursor logo" />
 										Cursor
 									</div>
 									<div
-										class="flex items-center gap-2 rounded-xl aborder border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+										class="flex items-center gap-2 rounded-xl border border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
 									>
 										<img height="16" width="16" src="/images/windsurf-logo.svg" alt="Windsurf logo" />
 										Windsurf
@@ -433,25 +449,25 @@ in modern web development and user interface design." %} {% extends "_includes/d
 								</p>
 								<div class="flex flex-wrap gap-2">
 									<div
-										class="flex items-center gap-2 rounded-xl aborder border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+										class="flex items-center gap-2 rounded-xl border border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
 									>
 										<img height="16" width="16" src="https://cdn.simpleicons.org/slack/4A154B" alt="Slack logo" />
 										Slack
 									</div>
 									<div
-										class="flex items-center gap-2 rounded-xl aborder border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+										class="flex items-center gap-2 rounded-xl border border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
 									>
 										<img height="16" width="16" src="https://cdn.simpleicons.org/trello/0052CC" alt="Trello logo" />
 										Trello
 									</div>
 									<div
-										class="flex items-center gap-2 rounded-xl aborder border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+										class="flex items-center gap-2 rounded-xl border border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
 									>
 										<img height="16" width="16" src="/images/bugherd-logo.webp" alt="BugHerd logo" />
 										BugHerd
 									</div>
 									<div
-										class="flex items-center gap-2 rounded-xl aborder border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+										class="flex items-center gap-2 rounded-xl border border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
 									>
 										<img height="16" width="16" src="https://cdn.simpleicons.org/jira/0052CC" alt="Jira logo" />
 										Jira
