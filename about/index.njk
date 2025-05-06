@@ -4,7 +4,7 @@ endblock %} {% block content %}
 <main class="pt-6 md:pt-12">
 	<section class="px-6 md:px-12 max-w-[108rem] mx-auto">
 		<div
-			class="px-6 md:px-16 py-16 md:py-32 mx-auto text-center text-white bg-gradient-to-br from-zinc-950 to-zinc-800 rounded-4xl shadow-card before:pointer-events-none before:absolute before:inset-0 before:rounded-4xl before:shadow-[0px_2px_8px_0px_rgba(0,_0,_0,_0.20),_0px_1px_0px_0px_rgba(255,_255,_255,_0.06)_inset] relative"
+			class="px-6 py-16 mx-auto text-center text-white bg-gradient-to-br from-zinc-950 to-zinc-800 md:px-16 md:py-32 bg-zinc-50 sm:py-32 rounded-4xl ring-1 ring-black/5 dark:ring-white/5 ring-inset dark:bg-gradient-to-br dark:from-zinc-900 dark:to-zinc-800 dark:ring-inset"
 		>
 			<img
 				src="/images/headshot-md.webp"
@@ -45,7 +45,7 @@ endblock %} {% block content %}
 	</section>
 	<section class="px-6 md:px-12 max-w-[108rem] mx-auto">
 		<div class="pt-16 pb-12 mx-auto md:pb-16 md:pt-24 max-w-7xl">
-			<div class="mx-auto prose md:prose-xl prose-zinc markdown">
+			<div class="mx-auto prose md:prose-xl prose-zinc dark:prose-invert markdown">
 				<p class="text-xl md:text-2xl">
 					<b class="font-semibold">Hi, I&rsquo;m Chris Spurlock.</b>
 				</p>
@@ -70,7 +70,7 @@ endblock %} {% block content %}
 					These days, I&rsquo;m the COO and UI lead at
 					<a
 						href="https://thekestrel.co"
-						class="text-fuchsia-700 hover:text-fuchsia-900"
+						class="text-fuchsia-700 hover:text-fuchsia-900 dark:text-fuchsia-500 dark:hover:text-fuchsia-400"
 						target="_blank"
 						rel="noopener noreferrer"
 						aria-label="Visit The Kestrel Co. website - Chris’s current workplace (opens in new tab)"
@@ -90,13 +90,13 @@ endblock %} {% block content %}
 				<p>Here&rsquo;s what others have to say about working with me:</p>
 			</div>
 			<div>
-				<section class="px-6 my-4 overflow-hidden bg-white isolate lg:px-8">
+				<section class="px-6 my-4 overflow-hidden bg-white isolate lg:px-8 dark:bg-zinc-950">
 					<div class="relative flex flex-col max-w-2xl gap-16 py-20 mx-auto md:py-28 lg:max-w-4xl">
 						<div
-							class="absolute top-0 left-1/2 -z-10 h-[50rem] w-[90rem] -translate-x-1/2 bg-[radial-gradient(50%_100%_at_top,var(--color-indigo-100),white)] opacity-20 lg:left-36"
+							class="absolute top-0 left-1/2 -z-10 h-[50rem] w-[90rem] -translate-x-1/2 bg-[radial-gradient(50%_100%_at_top,var(--color-indigo-100),white)] dark:bg-[radial-gradient(50%_100%_at_top,var(--color-indigo-900),#111)] opacity-20 lg:left-36"
 						></div>
 						<div
-							class="absolute inset-y-0 right-1/2 -z-10 mr-12 w-[150vw] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl ring-1 shadow-indigo-600/10 ring-indigo-50 sm:mr-20 md:mr-0 lg:right-full lg:-mr-36 lg:origin-center"
+							class="absolute inset-y-0 right-1/2 -z-10 mr-12 w-[150vw] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl ring-1 shadow-indigo-600/10 ring-indigo-50 dark:bg-zinc-950 dark:ring-white/10 sm:mr-20 md:mr-0 lg:right-full lg:-mr-36 lg:origin-center"
 						></div>
 						<figure class="grid items-center grid-cols-1 gap-4 lg:gap-x-10">
 							<div class="relative col-span-2 lg:col-start-1 lg:row-start-2">
@@ -105,7 +105,7 @@ endblock %} {% block content %}
 									fill="none"
 									aria-hidden="true"
 									focusable="false"
-									class="absolute left-0 h-32 -top-8 -z-10 stroke-zinc-900/10"
+									class="absolute left-0 h-32 -top-8 -z-10 stroke-zinc-900/10 dark:stroke-white/10"
 								>
 									<title>Decorative quote mark</title>
 									<path
@@ -114,7 +114,7 @@ endblock %} {% block content %}
 									></path>
 									<use href="#quote-path-1" x="86"></use>
 								</svg>
-								<blockquote class="font-semibold text-zinc-900 text-xl/8 sm:text-2xl/9">
+								<blockquote class="font-semibold text-zinc-900 dark:text-zinc-50 text-xl/8 sm:text-2xl/9">
 									<p>
 										Chris brings a rare combination of technical expertise and creative insight to every phase of a project—from discovery
 										and UX/UI design through development and launch. His development work is consistently polished, thoughtful, and nearly
@@ -123,8 +123,8 @@ endblock %} {% block content %}
 								</blockquote>
 							</div>
 							<figcaption class="text-base lg:col-start-1 lg:row-start-3">
-								<div class="font-semibold text-zinc-900">Erin Muzughi</div>
-								<div class="mt-1 text-zinc-500">Digital Project Lead & Web Strategist</div>
+								<div class="font-semibold text-zinc-900 dark:text-zinc-50">Erin Muzughi</div>
+								<div class="mt-1 text-zinc-500 dark:text-zinc-400">Digital Project Lead & Web Strategist</div>
 							</figcaption>
 						</figure>
 						<figure class="grid items-center grid-cols-1 gap-4 lg:gap-x-10">
@@ -134,7 +134,7 @@ endblock %} {% block content %}
 									fill="none"
 									aria-hidden="true"
 									focusable="false"
-									class="absolute right-0 h-32 -top-8 -z-10 stroke-zinc-900/10 -scale-x-100"
+									class="absolute right-0 h-32 -top-8 -z-10 stroke-zinc-900/10 -scale-x-100 dark:stroke-white/10"
 								>
 									<title>Decorative quote mark</title>
 									<path
@@ -143,7 +143,7 @@ endblock %} {% block content %}
 									></path>
 									<use href="#quote-path-2" x="86"></use>
 								</svg>
-								<blockquote class="font-semibold text-zinc-900 text-xl/8 sm:text-2xl/9">
+								<blockquote class="font-semibold text-zinc-900 dark:text-zinc-50 text-xl/8 sm:text-2xl/9">
 									<p>
 										He grasps the &lsquo;why&rsquo; behind each project, ensuring his solutions are both elegant and effective in achieving
 										client goals. His attention to detail and creative problem-solving don&rsquo;t just result in beautiful, functional
@@ -152,8 +152,8 @@ endblock %} {% block content %}
 								</blockquote>
 							</div>
 							<figcaption class="text-base lg:col-start-1 lg:row-start-3">
-								<div class="font-semibold text-zinc-900">Alex Linek</div>
-								<div class="mt-1 text-zinc-500">Senior Web Developer</div>
+								<div class="font-semibold text-zinc-900 dark:text-zinc-50">Alex Linek</div>
+								<div class="mt-1 text-zinc-500 dark:text-zinc-400">Senior Web Developer</div>
 							</figcaption>
 						</figure>
 						<figure class="grid items-center grid-cols-1 gap-4 lg:gap-x-10">
@@ -163,7 +163,7 @@ endblock %} {% block content %}
 									fill="none"
 									aria-hidden="true"
 									focusable="false"
-									class="absolute left-0 h-32 -top-8 -z-10 stroke-zinc-900/10"
+									class="absolute left-0 h-32 -top-8 -z-10 stroke-zinc-900/10 dark:stroke-white/10"
 								>
 									<title>Decorative quote mark</title>
 									<path
@@ -172,7 +172,7 @@ endblock %} {% block content %}
 									></path>
 									<use href="#quote-path-3" x="86"></use>
 								</svg>
-								<blockquote class="font-semibold text-zinc-900 text-xl/8 sm:text-2xl/9">
+								<blockquote class="font-semibold text-zinc-900 dark:text-zinc-50 text-xl/8 sm:text-2xl/9">
 									<p>
 										Chris is a coveted member of any team and a genuinely delightful human to be around. His technical know-how is top-tier,
 										and I&rsquo;d bring him any challenge—technical or organizational—knowing he&rsquo;d offer not just a thoughtful
@@ -181,8 +181,8 @@ endblock %} {% block content %}
 								</blockquote>
 							</div>
 							<figcaption class="text-base lg:col-start-1 lg:row-start-3">
-								<div class="font-semibold text-zinc-900">Bob Schuster</div>
-								<div class="mt-1 text-zinc-500">Agency Owner & Creative Director</div>
+								<div class="font-semibold text-zinc-900 dark:text-zinc-50">Bob Schuster</div>
+								<div class="mt-1 text-zinc-500 dark:text-zinc-400">Agency Owner & Creative Director</div>
 							</figcaption>
 						</figure>
 						<figure class="grid items-center grid-cols-1 gap-4 lg:gap-x-10">
@@ -192,7 +192,7 @@ endblock %} {% block content %}
 									fill="none"
 									aria-hidden="true"
 									focusable="false"
-									class="absolute right-0 h-32 -scale-x-100 -top-8 -z-10 stroke-zinc-900/10"
+									class="absolute right-0 h-32 -scale-x-100 -top-8 -z-10 stroke-zinc-900/10 dark:stroke-white/10"
 								>
 									<title>Decorative quote mark</title>
 									<path
@@ -201,7 +201,7 @@ endblock %} {% block content %}
 									></path>
 									<use href="#quote-path-4" x="86"></use>
 								</svg>
-								<blockquote class="font-semibold text-zinc-900 text-xl/8 sm:text-2xl/9">
+								<blockquote class="font-semibold text-zinc-900 dark:text-zinc-50 text-xl/8 sm:text-2xl/9">
 									<p>
 										Chris is the embodiment of equal parts expertise, integrity, and authentic humanity. His empathy, leadership, and
 										curiosity make him someone people want to work with—and learn from.
@@ -209,14 +209,14 @@ endblock %} {% block content %}
 								</blockquote>
 							</div>
 							<figcaption class="text-base lg:col-start-1 lg:row-start-3">
-								<div class="font-semibold text-zinc-900">Lauren Hurley-Clark</div>
-								<div class="mt-1 text-zinc-500">Sr. PM, Tech + Digital Producer</div>
+								<div class="font-semibold text-zinc-900 dark:text-zinc-50">Lauren Hurley-Clark</div>
+								<div class="mt-1 text-zinc-500 dark:text-zinc-400">Sr. PM, Tech + Digital Producer</div>
 							</figcaption>
 						</figure>
 					</div>
 				</section>
 			</div>
-			<div class="mx-auto prose md:prose-xl prose-zinc markdown">
+			<div class="mx-auto prose md:prose-xl prose-zinc dark:prose-invert markdown">
 				<p>
 					Outside of work, I&rsquo;m a dad to two tornado toddlers, a husband of nearly 11 years, and a distance runner who&rsquo;s rediscovered the
 					meditative joy of the long run. I believe in making work that matters and showing up every day with a bias toward generosity, craft, and
@@ -226,9 +226,9 @@ endblock %} {% block content %}
 				<p>If you&rsquo;re looking for someone who can code, design, write, lead, and connect dots others don&rsquo;t see—I&rsquo;d love to meet.</p>
 
 				<div
-					class="mt-12 md:-mx-16 p-10 bg-gradient-to-br from-fuchsia-100 to-fuchsia-200 rounded-2xl shadow-card before:pointer-events-none before:absolute before:inset-0 before:rounded-2xl before:shadow-[0px_2px_8px_0px_rgba(0,_0,_0,_0.20),_0px_1px_0px_0px_rgba(255,_255,_255,_0.06)_inset] relative text-fuchsia-950"
+					class="mt-12 md:-mx-16 p-10 bg-gradient-to-br from-fuchsia-100 to-fuchsia-200 rounded-2xl shadow-card before:pointer-events-none before:absolute before:inset-0 before:rounded-2xl before:shadow-[0px_2px_8px_0px_rgba(0,_0,_0,_0.20),_0px_1px_0px_0px_rgba(255,_255,_255,_0.06)_inset] relative text-fuchsia-950 dark:from-fuchsia-950 dark:to-fuchsia-800 dark:text-fuchsia-50"
 				>
-					<p class="!mt-0">
+					<p class="!my-0">
 						<strong>Let&rsquo;s connect.</strong> I&rsquo;m currently open to senior front-end roles, creative dev positions, or collaborative
 						consulting partnerships. You can
 						<a

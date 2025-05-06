@@ -4,7 +4,7 @@ in modern web development and user interface design." %} {% extends "_includes/d
 <main class="pt-6 md:pt-12">
 	<section class="px-6 md:px-12 max-w-[108rem] mx-auto">
 		<div
-			class="px-6 md:px-16 py-16 md:py-32 mx-auto text-center text-white bg-gradient-to-br from-zinc-950 to-zinc-800 rounded-4xl shadow-card before:pointer-events-none before:absolute before:inset-0 before:rounded-4xl before:shadow-[0px_2px_8px_0px_rgba(0,_0,_0,_0.20),_0px_1px_0px_0px_rgba(255,_255,_255,_0.06)_inset] relative"
+			class="px-6 py-16 mx-auto text-center text-white bg-gradient-to-br from-zinc-950 to-zinc-800 md:px-16 md:py-32 bg-zinc-50 sm:py-32 rounded-4xl ring-1 ring-black/5 dark:ring-white/5 ring-inset dark:bg-gradient-to-br dark:from-zinc-900 dark:to-zinc-800 dark:ring-inset"
 		>
 			<img
 				src="/images/headshot-md.webp"
@@ -80,288 +80,388 @@ in modern web development and user interface design." %} {% extends "_includes/d
 			}}
 		</div>
 
-		<div class="py-16 md:py-24 bg-zinc-50 sm:py-32 rounded-4xl ring-1 ring-black/5 ring-inset">
+		<div
+			class="py-16 md:py-24 bg-zinc-50 sm:py-32 rounded-4xl ring-1 ring-black/5 dark:ring-white/5 ring-inset dark:bg-gradient-to-br dark:from-zinc-900 dark:to-zinc-800 dark:ring-inset"
+		>
 			<div class="max-w-2xl px-6 mx-auto lg:max-w-7xl lg:px-8">
-				<span class="block mb-3 text-base font-medium text-center text-fuchsia-600">The Stack</span>
-				<h2 class="max-w-lg mx-auto mt-2 mb-4 text-4xl font-semibold tracking-tight text-center text-balance text-zinc-950 sm:text-5xl">
+				<span class="block mb-3 text-base font-medium text-center text-fuchsia-600 dark:text-fuchsia-500">The Stack</span>
+				<h2
+					class="max-w-lg mx-auto mt-2 mb-4 text-4xl font-semibold tracking-tight text-center text-balance text-zinc-950 dark:text-zinc-50 sm:text-5xl"
+				>
 					Technologies I Use
 				</h2>
-				<p class="max-w-xl mx-auto mb-10 text-lg text-center text-zinc-600">
+				<p class="max-w-xl mx-auto mb-10 text-lg text-center text-zinc-600 dark:text-zinc-400">
 					Over the years, I&rsquo;ve worked with a range of technologies in the web development world, from frontend to backend and everything in
 					between. These are the ones I trust and return to daily.
 				</p>
 				<div class="grid gap-4 mt-10 sm:mt-16 lg:grid-cols-3">
 					<div class="relative">
-						<div class="absolute inset-px rounded-lg bg-white lg:rounded-tl-[2rem]"></div>
+						<div class="absolute inset-px rounded-lg bg-white dark:bg-zinc-950 lg:rounded-tl-[2rem]"></div>
 						<div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-tl-[calc(2rem+1px)]">
 							<div class="p-8">
-								<h3 class="text-xl font-semibold">Languages & Syntax</h3>
-								<p class="max-w-lg mt-2 mb-4 text-zinc-600 text-sm/6">
+								<h3 class="text-xl font-semibold text-zinc-950 dark:text-zinc-50">Languages & Syntax</h3>
+								<p class="max-w-lg mt-2 mb-4 text-zinc-600 dark:text-zinc-400 text-sm/6">
 									The core coding languages I use to build and debug everything from themes to APIs.
 								</p>
 								<div class="flex flex-wrap gap-2">
-									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+									<div
+										class="flex items-center gap-2 rounded-xl border border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+									>
 										<img height="16" width="16" src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript logo" />
 										JavaScript
 									</div>
-									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+									<div
+										class="flex items-center gap-2 rounded-xl border border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+									>
 										<img height="16" width="16" src="https://cdn.simpleicons.org/typescript/3178C6" alt="TypeScript logo" />
 										TypeScript
 									</div>
-									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+									<div
+										class="flex items-center gap-2 rounded-xl border border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+									>
 										<img height="16" width="16" src="https://cdn.simpleicons.org/php/777BB4" alt="PHP logo" />
 										PHP
 									</div>
-									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+									<div
+										class="flex items-center gap-2 rounded-xl border border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+									>
 										<img height="16" width="16" src="https://cdn.simpleicons.org/html5/E34F26" alt="HTML5 logo" />
 										HTML
 									</div>
-									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+									<div
+										class="flex items-center gap-2 rounded-xl border border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+									>
 										<img height="16" width="16" src="https://cdn.simpleicons.org/css/663399" alt="CSS logo" />
 										CSS
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="pointer-events-none absolute inset-px rounded-lg shadow-sm ring-1 ring-black/5 lg:rounded-tl-[2rem]"></div>
+						<div
+							class="pointer-events-none absolute inset-px rounded-lg shadow-sm ring-1 ring-black/5 dark:ring-white/5 lg:rounded-tl-[2rem]"
+						></div>
 					</div>
 					<div class="relative">
-						<div class="absolute bg-white rounded-lg inset-px"></div>
+						<div class="absolute bg-white rounded-lg dark:bg-zinc-950 inset-px"></div>
 						<div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)]">
 							<div class="p-8">
-								<h3 class="text-xl font-semibold">Frameworks & Libraries</h3>
-								<p class="max-w-lg mt-2 mb-4 text-zinc-600 text-sm/6">Tools I use to organize, enhance, or extend core languages.</p>
+								<h3 class="text-xl font-semibold text-zinc-950 dark:text-zinc-50">Frameworks & Libraries</h3>
+								<p class="max-w-lg mt-2 mb-4 text-zinc-600 dark:text-zinc-400 text-sm/6">
+									Tools I use to organize, enhance, or extend core languages.
+								</p>
 								<div class="flex flex-wrap gap-2">
-									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+									<div
+										class="flex items-center gap-2 rounded-xl border border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+									>
 										<img height="16" width="16" src="https://cdn.simpleicons.org/react/61DAFB" alt="React logo" />
 										React
 									</div>
-									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+									<div
+										class="flex items-center gap-2 rounded-xl border border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+									>
 										<img height="16" width="16" src="https://cdn.simpleicons.org/eleventy/222222" alt="Eleventy logo" />
 										Eleventy
 									</div>
-									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+									<div
+										class="flex items-center gap-2 rounded-xl border border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+									>
 										<img height="16" width="16" src="https://cdn.simpleicons.org/nunjucks/1C4913" alt="Nunjucks logo" />
 										Nunjucks
 									</div>
-									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+									<div
+										class="flex items-center gap-2 rounded-xl border border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+									>
 										<img height="16" width="16" src="https://cdn.simpleicons.org/tailwindcss/06B6D4" alt="Tailwind CSS logo" />
 										Tailwind CSS
 									</div>
-									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+									<div
+										class="flex items-center gap-2 rounded-xl border border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+									>
 										<img height="16" width="16" src="https://cdn.simpleicons.org/alpinedotjs/8BC0D0" alt="Alpine.js logo" />
 										Alpine.js
 									</div>
-									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+									<div
+										class="flex items-center gap-2 rounded-xl border border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+									>
 										<img height="16" width="16" src="https://cdn.simpleicons.org/framer/0055FF" alt="Framer logo" />
 										Framer
 									</div>
-									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+									<div
+										class="flex items-center gap-2 rounded-xl border border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+									>
 										<img height="16" width="16" src="https://cdn.simpleicons.org/lottiefiles/00DDB3" alt="Lottie logo" />
 										Lottie
 									</div>
-									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+									<div
+										class="flex items-center gap-2 rounded-xl border border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+									>
 										<img height="16" width="16" src="https://cdn.simpleicons.org/greensock/88CE02" alt="GSAP logo" />
 										GSAP
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="absolute rounded-lg shadow-sm pointer-events-none inset-px ring-1 ring-black/5"></div>
+						<div class="absolute rounded-lg shadow-sm pointer-events-none inset-px ring-1 ring-black/5 dark:ring-white/5"></div>
 					</div>
 					<div class="relative">
-						<div class="absolute bg-white rounded-lg lg:rounded-tr-[2rem] inset-px"></div>
+						<div class="absolute bg-white dark:bg-zinc-950 rounded-lg lg:rounded-tr-[2rem] inset-px"></div>
 						<div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-tr-[calc(2rem+1px)]">
 							<div class="p-8">
-								<h3 class="text-xl font-semibold">Design & UX Tools</h3>
-								<p class="max-w-lg mt-2 mb-4 text-zinc-600 text-sm/6">Where I shape ideas visually and refine complex interfaces.</p>
+								<h3 class="text-xl font-semibold text-zinc-950 dark:text-zinc-50">Design & UX Tools</h3>
+								<p class="max-w-lg mt-2 mb-4 text-zinc-600 dark:text-zinc-400 text-sm/6">
+									Where I shape ideas visually and refine complex interfaces.
+								</p>
 								<div class="flex flex-wrap gap-2">
-									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+									<div
+										class="flex items-center gap-2 rounded-xl border border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+									>
 										<img height="16" width="16" src="https://cdn.simpleicons.org/figma/F24E1E" alt="Figma logo" />
 										Figma
 									</div>
-									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+									<div
+										class="flex items-center gap-2 rounded-xl border border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+									>
 										<img height="16" width="16" src="https://cdn.simpleicons.org/sketch/F7B500" alt="Sketch logo" />
 										Sketch
 									</div>
-									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+									<div
+										class="flex items-center gap-2 rounded-xl border border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+									>
 										<img height="16" width="16" src="/images/Adobe_XD_CC_icon.svg" alt="Adobe XD logo" />
 										Adobe XD
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="absolute rounded-lg lg:rounded-tr-[2rem] shadow-sm pointer-events-none inset-px ring-1 ring-black/5"></div>
+						<div
+							class="absolute rounded-lg lg:rounded-tr-[2rem] shadow-sm pointer-events-none inset-px ring-1 ring-black/5 dark:ring-white/5"
+						></div>
 					</div>
 					<div class="relative">
-						<div class="absolute bg-white rounded-lg inset-px"></div>
+						<div class="absolute bg-white rounded-lg dark:bg-zinc-950 inset-px"></div>
 						<div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)]">
 							<div class="p-8">
-								<h3 class="text-xl font-semibold">CMS & Site Builders</h3>
-								<p class="max-w-lg mt-2 mb-4 text-zinc-600 text-sm/6">How I build, scale, and manage client sites—especially in WordPress.</p>
+								<h3 class="text-xl font-semibold text-zinc-950 dark:text-zinc-50">CMS & Site Builders</h3>
+								<p class="max-w-lg mt-2 mb-4 text-zinc-600 dark:text-zinc-400 text-sm/6">
+									How I build, scale, and manage client sites—especially in WordPress.
+								</p>
 								<div class="flex flex-wrap gap-2">
-									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+									<div
+										class="flex items-center gap-2 rounded-xl aborder border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+									>
 										<img height="16" width="16" src="https://cdn.simpleicons.org/wordpress/21759B" alt="WordPress logo" />
 										WordPress
 									</div>
-									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+									<div
+										class="flex items-center gap-2 rounded-xl aborder border-black/[0.14] dark:border-white/[0.14] bg-white px-3 py-1 text-sm font-medium"
+									>
 										<img height="16" width="16" src="/images/acf-icon.svg" alt="ACF logo" />
 										ACF
 									</div>
-									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+									<div
+										class="flex items-center gap-2 rounded-xl aborder border-black/[0.14] dark:border-white/[0.14] bg-white px-3 py-1 text-sm font-medium"
+									>
 										<img height="16" width="16" src="/images/kadencewp-icon.svg" alt="Kadence logo" />
 										Kadence
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="absolute rounded-lg shadow-sm pointer-events-none inset-px ring-1 ring-black/5"></div>
+						<div class="absolute rounded-lg shadow-sm pointer-events-none inset-px ring-1 ring-black/5 dark:ring-white/5"></div>
 					</div>
 					<div class="relative">
-						<div class="absolute bg-white rounded-lg inset-px"></div>
+						<div class="absolute bg-white rounded-lg dark:bg-zinc-950 inset-px"></div>
 						<div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)]">
 							<div class="p-8">
-								<h3 class="text-xl font-semibold">Tooling & DevOps</h3>
-								<p class="max-w-lg mt-2 mb-4 text-zinc-600 text-sm/6">My environment, deployment, hosting, and version control setup.</p>
+								<h3 class="text-xl font-semibold text-zinc-950 dark:text-zinc-50">Tooling & DevOps</h3>
+								<p class="max-w-lg mt-2 mb-4 text-zinc-600 dark:text-zinc-400 text-sm/6">
+									My environment, deployment, hosting, and version control setup.
+								</p>
 								<div class="flex flex-wrap gap-2">
-									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+									<div
+										class="flex items-center gap-2 rounded-xl aborder border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+									>
 										<img height="16" width="16" src="https://cdn.simpleicons.org/github/181717" alt="GitHub logo" />
 										GitHub
 									</div>
-									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+									<div
+										class="flex items-center gap-2 rounded-xl aborder border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+									>
 										<img height="16" width="16" src="https://cdn.simpleicons.org/netlify/00C7B7" alt="Netlify logo" />
 										Netlify
 									</div>
-									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+									<div
+										class="flex items-center gap-2 rounded-xl aborder border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+									>
 										<img height="16" width="16" src="https://cdn.simpleicons.org/wpengine/0ECAD4" alt="WP Engine logo" />
 										WP Engine
 									</div>
-									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+									<div
+										class="flex items-center gap-2 rounded-xl aborder border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+									>
 										<img height="16" width="16" src="https://cdn.simpleicons.org/local/51BB7B" alt="Local logo" />
 										Local
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="absolute rounded-lg shadow-sm pointer-events-none inset-px ring-1 ring-black/5"></div>
+						<div class="absolute rounded-lg shadow-sm pointer-events-none inset-px ring-1 ring-black/5 dark:ring-white/5"></div>
 					</div>
 					<div class="relative">
-						<div class="absolute bg-white rounded-lg inset-px"></div>
+						<div class="absolute bg-white rounded-lg dark:bg-zinc-950 inset-px"></div>
 						<div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)]">
 							<div class="p-8">
-								<h3 class="text-xl font-semibold">Data & API Work</h3>
-								<p class="max-w-lg mt-2 mb-4 text-zinc-600 text-sm/6">How I connect apps, send data, and build integrations.</p>
+								<h3 class="text-xl font-semibold text-zinc-950 dark:text-zinc-50">Data & API Work</h3>
+								<p class="max-w-lg mt-2 mb-4 text-zinc-600 dark:text-zinc-400 text-sm/6">
+									How I connect apps, send data, and build integrations.
+								</p>
 								<div class="flex flex-wrap gap-2">
-									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+									<div
+										class="flex items-center gap-2 rounded-xl aborder border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+									>
 										<img height="16" width="16" src="/images/rest_api_logo.svg" alt="REST logo" />
 										REST APIs
 									</div>
-									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+									<div
+										class="flex items-center gap-2 rounded-xl aborder border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+									>
 										<img height="16" width="16" src="https://cdn.simpleicons.org/json/000000" alt="JSON logo" />
 										JSON
 									</div>
-									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+									<div
+										class="flex items-center gap-2 rounded-xl aborder border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+									>
 										<img height="16" width="16" src="https://cdn.simpleicons.org/postman/FF6C37" alt="Postman logo" />
 										Postman
 									</div>
-									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+									<div
+										class="flex items-center gap-2 rounded-xl aborder border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+									>
 										<img height="16" width="16" src="https://cdn.simpleicons.org/swagger/85EA2D" alt="Swagger logo" />
 										Swagger
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="absolute rounded-lg shadow-sm pointer-events-none inset-px ring-1 ring-black/5"></div>
+						<div class="absolute rounded-lg shadow-sm pointer-events-none inset-px ring-1 ring-black/5 dark:ring-white/5"></div>
 					</div>
 					<div class="relative">
-						<div class="absolute bg-white rounded-lg inset-px lg:rounded-bl-[2rem]"></div>
+						<div class="absolute bg-white rounded-lg dark:bg-zinc-950 inset-px lg:rounded-bl-[2rem]"></div>
 						<div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px) lg:rounded-bl-[calc(2rem+1px)]]">
 							<div class="p-8">
-								<h3 class="text-xl font-semibold">Marketing & Measurement</h3>
-								<p class="max-w-lg mt-2 mb-4 text-zinc-600 text-sm/6">
+								<h3 class="text-xl font-semibold text-zinc-950 dark:text-zinc-50">Marketing & Measurement</h3>
+								<p class="max-w-lg mt-2 mb-4 text-zinc-600 dark:text-zinc-400 text-sm/6">
 									For SEO, analytics, conversion tracking, inclusiveness, and compliance.
 								</p>
 								<div class="flex flex-wrap gap-2">
-									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+									<div
+										class="flex items-center gap-2 rounded-xl aborder border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+									>
 										<img height="16" width="16" src="/images/a11y-icon.svg" alt="Accessibility logo" />
 										Accessibility
 									</div>
-									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+									<div
+										class="flex items-center gap-2 rounded-xl aborder border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+									>
 										<img height="16" width="16" src="https://cdn.simpleicons.org/google/4285F4" alt="Google Tag Manager logo" />
 										GTM
 									</div>
-									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+									<div
+										class="flex items-center gap-2 rounded-xl aborder border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+									>
 										<img height="16" width="16" src="https://cdn.simpleicons.org/yoast/A61E69" alt="Yoast logo" />
 										SEO
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="absolute rounded-lg shadow-sm pointer-events-none inset-px ring-1 ring-black/5 lg:rounded-bl-[2rem]"></div>
+						<div
+							class="absolute rounded-lg shadow-sm pointer-events-none inset-px ring-1 ring-black/5 dark:ring-white/5 lg:rounded-bl-[2rem]"
+						></div>
 					</div>
 					<div class="relative">
-						<div class="absolute bg-white rounded-lg inset-px"></div>
+						<div class="absolute bg-white rounded-lg dark:bg-zinc-950 inset-px"></div>
 						<div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)]">
 							<div class="p-8">
-								<h3 class="text-xl font-semibold">AI & Automation</h3>
-								<p class="max-w-lg mt-2 mb-4 text-zinc-600 text-sm/6">
+								<h3 class="text-xl font-semibold text-zinc-950 dark:text-zinc-50">AI & Automation</h3>
+								<p class="max-w-lg mt-2 mb-4 text-zinc-600 dark:text-zinc-400 text-sm/6">
 									Tools I use to streamline workflows, refine ideas, and code smarter (and faster).
 								</p>
 								<div class="flex flex-wrap gap-2">
-									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+									<div
+										class="flex items-center gap-2 rounded-xl aborder border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+									>
 										<img height="16" width="16" src="https://cdn.simpleicons.org/openai/412991" alt="OpenAI logo" />
 										ChatGPT
 									</div>
-									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+									<div
+										class="flex items-center gap-2 rounded-xl aborder border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+									>
 										<img height="16" width="16" src="https://cdn.simpleicons.org/claude/D97757" alt="Claude logo" />
 										Claude
 									</div>
-									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+									<div
+										class="flex items-center gap-2 rounded-xl aborder border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+									>
 										<img height="16" width="16" src="https://cdn.simpleicons.org/googlegemini/8E75B2" alt="Google Gemini logo" />
 										Gemini
 									</div>
-									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+									<div
+										class="flex items-center gap-2 rounded-xl aborder border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+									>
 										<img height="16" width="16" src="/images/cursor-icon.svg" alt="Cursor logo" />
 										Cursor
 									</div>
-									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+									<div
+										class="flex items-center gap-2 rounded-xl aborder border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+									>
 										<img height="16" width="16" src="/images/windsurf-logo.svg" alt="Windsurf logo" />
 										Windsurf
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="absolute rounded-lg shadow-sm pointer-events-none inset-px ring-1 ring-black/5"></div>
+						<div class="absolute rounded-lg shadow-sm pointer-events-none inset-px ring-1 ring-black/5 dark:ring-white/5"></div>
 					</div>
 					<div class="relative">
-						<div class="absolute bg-white rounded-lg inset-px lg:rounded-br-[2rem]"></div>
+						<div class="absolute bg-white rounded-lg dark:bg-zinc-950 inset-px lg:rounded-br-[2rem]"></div>
 						<div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-br-[calc(2rem+1px)]">
 							<div class="p-8">
-								<h3 class="text-xl font-semibold">PM & Communication</h3>
-								<p class="max-w-lg mt-2 mb-4 text-zinc-600 text-sm/6">
+								<h3 class="text-xl font-semibold text-zinc-950 dark:text-zinc-50">PM & Communication</h3>
+								<p class="max-w-lg mt-2 mb-4 text-zinc-600 dark:text-zinc-400 text-sm/6">
 									Tools that keep projects moving smoothly, ideas organized, and teams aligned.
 								</p>
 								<div class="flex flex-wrap gap-2">
-									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+									<div
+										class="flex items-center gap-2 rounded-xl aborder border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+									>
 										<img height="16" width="16" src="https://cdn.simpleicons.org/slack/4A154B" alt="Slack logo" />
 										Slack
 									</div>
-									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+									<div
+										class="flex items-center gap-2 rounded-xl aborder border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+									>
 										<img height="16" width="16" src="https://cdn.simpleicons.org/trello/0052CC" alt="Trello logo" />
 										Trello
 									</div>
-									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+									<div
+										class="flex items-center gap-2 rounded-xl aborder border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+									>
 										<img height="16" width="16" src="/images/bugherd-logo.webp" alt="BugHerd logo" />
 										BugHerd
 									</div>
-									<div class="flex items-center gap-2 rounded-xl border border-black/[0.14] bg-white px-3 py-1 text-sm font-medium">
+									<div
+										class="flex items-center gap-2 rounded-xl aborder border-black/[0.14] dark:border-white/[0.14] bg-white dark:bg-zinc-900 px-3 py-1 text-sm font-medium"
+									>
 										<img height="16" width="16" src="https://cdn.simpleicons.org/jira/0052CC" alt="Jira logo" />
 										Jira
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="absolute rounded-lg shadow-sm pointer-events-none inset-px ring-1 ring-black/5 lg:rounded-br-[2rem]"></div>
+						<div
+							class="absolute rounded-lg shadow-sm pointer-events-none inset-px ring-1 ring-black/5 dark:ring-white/5 lg:rounded-br-[2rem]"
+						></div>
 					</div>
 				</div>
 			</div>
@@ -412,7 +512,7 @@ in modern web development and user interface design." %} {% extends "_includes/d
 	</section>
 	<section class="px-6 md:px-12 max-w-[108rem] mx-auto">
 		<div class="mx-auto max-w-7xl">
-			<div class="py-12 border-t md:py-16 border-zinc-100">
+			<div class="py-12 border-t md:py-16 border-zinc-100 dark:border-zinc-800">
 				<!-- Yes, this is the example layout from Simon Vrachliotis' Pixel Perfect Figma to Tailwind workshot on EpicWeb.dev. I haven't taken the course, but I saw the design and just HAD to try to recreate it. -->
 				<div class="flex flex-col-reverse xl:grid xl:grid-cols-2 gap-x-20 gap-y-12 xl:items-center">
 					<div>
@@ -911,13 +1011,13 @@ in modern web development and user interface design." %} {% extends "_includes/d
 						</ul>
 					</div>
 					<div>
-						<h3 class="mb-3 text-base font-medium text-fuchsia-600">Collaborations</h3>
-						<h4 class="mb-5 text-3xl font-semibold md:text-4xl text-zinc-950">Teaming Up with Top Brands</h4>
-						<p class="max-w-2xl mb-4 text-lg md:text-xl text-zinc-600">
+						<h3 class="mb-3 text-base font-medium text-fuchsia-600 dark:text-fuchsia-500">Collaborations</h3>
+						<h4 class="mb-5 text-3xl font-semibold md:text-4xl text-zinc-950 dark:text-zinc-50">Teaming Up with Top Brands</h4>
+						<p class="max-w-2xl mb-4 text-lg md:text-xl text-zinc-600 dark:text-zinc-400">
 							From local startups to global enterprises, I&rsquo;ve had the privilege of working with a diverse range of clients to bring their
 							digital visions to life.
 						</p>
-						<p class="max-w-2xl text-lg md:text-xl text-zinc-600">
+						<p class="max-w-2xl text-lg md:text-xl text-zinc-600 dark:text-zinc-400">
 							Each of these websites was developed either by me alone or in close collaboration with a teammate.
 						</p>
 					</div>

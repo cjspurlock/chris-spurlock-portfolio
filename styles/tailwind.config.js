@@ -1,6 +1,7 @@
 module.exports = {
 	content: ["_site/**/*.html"],
 	safelist: [],
+	darkMode: "class",
 	theme: {
 		fontFamily: {
 			sans: '"Syne", ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji',

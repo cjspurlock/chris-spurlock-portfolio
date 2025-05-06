@@ -1,9 +1,9 @@
 {% macro projectTabs(eyebrow,title, description, tabs) %}
 <div>
 	<div class="pt-8 mx-auto mt:py-12 lg:py-16 max-w-7xl">
-		<h3 class="mb-3 text-base font-medium text-fuchsia-600">{{ eyebrow }}</h3>
-		<h4 class="mb-3 text-3xl font-semibold md:mb-5 md:text-4xl text-zinc-950">{{ title }}</h4>
-		<p class="max-w-2xl text-lg md:text-xl text-zinc-600">{{ description }}</p>
+		<h3 class="mb-3 text-base font-medium text-fuchsia-600 dark:text-fuchsia-500">{{ eyebrow }}</h3>
+		<h4 class="mb-3 text-3xl font-semibold md:mb-5 md:text-4xl text-zinc-950 dark:text-zinc-50">{{ title }}</h4>
+		<p class="max-w-2xl text-lg md:text-xl text-zinc-600 dark:text-zinc-400">{{ description }}</p>
 
 		<div class="grid grid-cols-1 pt-8 md:pt-12 gap-y-8 gap-x-16 md:pt-16 lg:grid-cols-2" x-data="{ activeTab: 1, tabs: $refs.tablist.children }">
 			<!-- Tab buttons -->
@@ -16,7 +16,9 @@
 						type="button"
 						role="tab"
 						class="grow text-center lg:text-left px-2 sm:px-3 py-1.5 sm:py-2 lg:px-6 lg:py-4 transition-all duration-300 ease-linear max-lg:border-b-2 lg:border-l-4"
-						:class="{'border-fuchsia-500': activeTab === {{ tab.id }}, 'border-zinc-100 hover:border-fuchsia-200': activeTab !== {{ tab.id }}}"
+						:class="{'border-fuchsia-500 dark:border-fuchsia-400': activeTab === {{
+							tab.id
+						}}, 'border-zinc-100 dark:border-zinc-800 hover:border-fuchsia-200 dark:hover:border-fuchsia-950': activeTab !== {{ tab.id }}}"
 						:tabindex="activeTab === {{ tab.id }} ? 0 : -1"
 						:aria-selected="activeTab === {{ tab.id }} ? 'true' : 'false'"
 						aria-controls="tabpanel-{{ eyebrow | slug }}-{{ tab.id }}"
@@ -27,8 +29,10 @@
 						@keydown.arrow-left.prevent="$event.target.previousElementSibling ? $event.target.previousElementSibling.focus() : tabs[tabs.length - 1].focus()"
 						@keydown.arrow-up.prevent="$event.target.previousElementSibling ? $event.target.previousElementSibling.focus() : tabs[tabs.length - 1].focus()"
 					>
-						<span class="block text-xs font-semibold leading-none lg:mb-2 sm:text-sm md:text-base lg:text-xl text-zinc-950">{{ tab.title }}</span>
-						<span class="hidden text-base text-zinc-600 lg:block">{{ tab.content | safe }}</span>
+						<span class="block text-xs font-semibold leading-none lg:mb-2 sm:text-sm md:text-base lg:text-xl text-zinc-950 dark:text-zinc-50">{{
+							tab.title
+						}}</span>
+						<span class="hidden text-base text-zinc-600 dark:text-zinc-400 lg:block">{{ tab.content | safe }}</span>
 					</button>
 					{% endfor %}
 				</div>
@@ -40,7 +44,7 @@
 					{% for tab in tabs %}
 					<div
 						id="tabpanel-{{ eyebrow | slug }}-{{ tab.id }}"
-						class="w-full bg-gradient-to-br from-zinc-950 to-zinc-800 shadow-card rounded-4xl before:pointer-events-none before:absolute before:inset-0 before:rounded-4xl before:shadow-[0px_2px_8px_0px_rgba(0,_0,_0,_0.20),_0px_1px_0px_0px_rgba(255,_255,_255,_0.06)_inset]"
+						class="w-full bg-gradient-to-br from-zinc-950 to-zinc-800 shadow-card rounded-4xl before:pointer-events-none before:absolute before:inset-0 before:rounded-4xl before:shadow-[0px_2px_8px_0px_rgba(0,_0,_0,_0.20),_0px_1px_0px_0px_rgba(255,_255,_255,_0.06)_inset] dark:from-zinc-950 dark:to-zinc-800"
 						role="tabpanel"
 						tabindex="0"
 						aria-labelledby="tab-{{ eyebrow | slug }}-{{ tab.id }}"

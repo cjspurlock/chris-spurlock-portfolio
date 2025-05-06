@@ -86,14 +86,82 @@
 
 		{% block head %}{% endblock %}
 		<script defer src="/js/alpine.js?v={% version 'js' %}"></script>
+		<script>
+			(function () {
+				const theme = localStorage.theme;
+				if (theme === "dark" || (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+					document.documentElement.classList.add("dark");
+					document.documentElement.style.colorScheme = "dark";
+				} else {
+					document.documentElement.classList.remove("dark");
+					document.documentElement.style.colorScheme = "light";
+				}
+			})();
+		</script>
+		<script>
+			document.addEventListener("alpine:init", () => {
+				Alpine.store("theme", {
+					get mode() {
+						return localStorage.getItem("theme") || "system";
+					},
+					set mode(value) {
+						if (value === "system") {
+							localStorage.removeItem("theme");
+						} else {
+							localStorage.setItem("theme", value);
+						}
+						this.updateTheme();
+					},
+					mediaQuery: window.matchMedia("(prefers-color-scheme: dark)"),
+					mediaListener: null,
+
+					toggle() {
+						const current = this.mode;
+						const next = current === "light" ? "dark" : current === "dark" ? "system" : "light";
+						this.mode = next;
+					},
+
+					updateTheme() {
+						const html = document.documentElement;
+						html.classList.remove("light", "dark");
+						if (this.mediaListener) {
+							this.mediaQuery.removeEventListener("change", this.mediaListener);
+							this.mediaListener = null;
+						}
+						if (this.mode === "system") {
+							const setSystemTheme = () => {
+								if (this.mediaQuery.matches) {
+									html.classList.add("dark");
+									html.style.colorScheme = "dark";
+								} else {
+									html.classList.remove("dark");
+									html.style.colorScheme = "light";
+								}
+							};
+							setSystemTheme();
+							this.mediaListener = setSystemTheme;
+							this.mediaQuery.addEventListener("change", this.mediaListener);
+						} else if (this.mode === "dark") {
+							html.classList.add("dark");
+							html.style.colorScheme = "dark";
+						} else {
+							html.classList.remove("dark");
+							html.style.colorScheme = "light";
+						}
+					},
+				});
+				// Sync theme on Alpine init
+				Alpine.store("theme").updateTheme();
+			});
+		</script>
 	</head>
-	<body>
+	<body x-data x-init="$store.theme.updateTheme()" class="bg-white dark:bg-zinc-950">
 		{% block content %}
 		{{ content | safe }}
 		{% endblock %}
 		<footer class="px-6 my-6 md:px-12 md:my-12 max-w-[108rem] mx-auto">
 			<div
-				class="px-10 md:px-16 py-8 md:py-12 mx-auto text-white bg-gradient-to-br from-zinc-950 to-zinc-800 rounded-4xl lg:rounded-full shadow-card before:pointer-events-none before:absolute before:inset-0 before:rounded-4xl lg:before:rounded-full before:shadow-[0px_2px_8px_0px_rgba(0,_0,_0,_0.20),_0px_1px_0px_0px_rgba(255,_255,_255,_0.06)_inset] relative"
+				class="px-10 py-8 mx-auto text-white md:px-16 md:py-12 bg-gradient-to-br from-zinc-950 to-zinc-800 rounded-4xl lg:rounded-full ring-1 ring-black/5 dark:ring-white/5 ring-inset dark:bg-gradient-to-br dark:from-zinc-900 dark:to-zinc-800 dark:ring-inset"
 			>
 				<div class="flex flex-col items-center justify-between gap-6 mx-auto lg:flex-row">
 					<small class="text-sm text-zinc-400 max-lg:text-center"
@@ -105,7 +173,7 @@
 							target="_blank"
 							rel="noopener noreferrer"
 							class="block w-5 h-auto transition-all duration-300 ease-linear text-zinc-400 hover:text-white"
-							aria-label="Visit Chris Spurlock’s Twitter profile (opens in new tab)"
+							aria-label="Visit Chris Spurlock's Twitter profile (opens in new tab)"
 						>
 							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false">
 								<title>X icon</title>
@@ -122,7 +190,7 @@
 							target="_blank"
 							rel="noopener noreferrer"
 							class="block w-5 h-auto transition-all duration-300 ease-linear text-zinc-400 hover:text-white"
-							aria-label="Visit Chris Spurlock’s LinkedIn profile (opens in new tab)"
+							aria-label="Visit Chris Spurlock's LinkedIn profile (opens in new tab)"
 						>
 							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false">
 								<title>LinkedIn icon</title>
@@ -137,7 +205,7 @@
 							target="_blank"
 							rel="noopener noreferrer"
 							class="block w-5 h-auto transition-all duration-300 ease-linear text-zinc-400 hover:text-white"
-							aria-label="Visit Chris Spurlock’s Instagram profile (opens in new tab)"
+							aria-label="Visit Chris Spurlock's Instagram profile (opens in new tab)"
 						>
 							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false">
 								<title>Instagram icon</title>
@@ -160,7 +228,7 @@
 							target="_blank"
 							rel="noopener noreferrer"
 							class="block w-5 h-auto transition-all duration-300 ease-linear text-zinc-400 hover:text-white"
-							aria-label="Visit Chris Spurlock’s GitHub profile (opens in new tab)"
+							aria-label="Visit Chris Spurlock's GitHub profile (opens in new tab)"
 						>
 							<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" fill="currentColor" focusable="false">
 								<title>GitHub icon</title>
@@ -174,7 +242,7 @@
 							target="_blank"
 							rel="noopener noreferrer"
 							class="block w-5 h-auto transition-all duration-300 ease-linear text-zinc-400 hover:text-white"
-							aria-label="Visit Chris Spurlock’s Strava profile (opens in new tab)"
+							aria-label="Visit Chris Spurlock's Strava profile (opens in new tab)"
 						>
 							<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="currentColor" focusable="false">
 								<title>Strava icon</title>
@@ -186,4 +254,108 @@
 			</div>
 		</footer>
 	</body>
+	<!-- Theme Switcher Dropdown -->
+	<div x-data="{ open: false }" class="fixed z-50 bottom-4 md:top-4 right-4">
+		<button
+			@click="open = !open"
+			:aria-expanded="open"
+			:aria-controls="'theme-dropdown-menu'"
+			class="p-3 transition rounded-full shadow-lg group bg-white/90 ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm dark:bg-zinc-800/90 dark:hover:ring-white/20"
+			:title="$store.theme.mode.charAt(0).toUpperCase() + $store.theme.mode.slice(1) + ' mode'"
+			@keydown.escape.window="open = false"
+		>
+			<template x-if="$store.theme.mode === 'light' || ($store.theme.mode === 'system' && !$store.theme.mediaQuery.matches)">
+				<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-800 dark:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+					/>
+				</svg>
+			</template>
+			<template x-if="$store.theme.mode === 'dark' || ($store.theme.mode === 'system' && $store.theme.mediaQuery.matches)">
+				<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-800 dark:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+					/>
+				</svg>
+			</template>
+		</button>
+		<div
+			x-show="open"
+			@click.away="open = false"
+			@keydown.escape.window="open = false"
+			id="theme-dropdown-menu"
+			class="absolute right-0 w-40 p-1 mt-2 origin-top-right bg-white rounded-lg shadow-lg max-md:-top-4 max-md:-translate-y-full dark:bg-zinc-900 ring-1 ring-black/10 focus:outline-none"
+			style="display: none"
+		>
+			<!-- Light Option -->
+			<button
+				@click="$store.theme.mode = 'light'; $store.theme.updateTheme(); open = false"
+				class="flex items-center w-full px-3 py-2 transition-colors rounded hover:bg-gray-100 dark:hover:bg-zinc-800"
+				:class="$store.theme.mode === 'light' ? 'font-semibold' : ''"
+			>
+				<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+					/>
+				</svg>
+				Light
+				<svg x-show="$store.theme.mode === 'light'" class="w-4 h-4 ml-auto text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+				</svg>
+			</button>
+			<!-- Dark Option -->
+			<button
+				@click="$store.theme.mode = 'dark'; $store.theme.updateTheme(); open = false"
+				class="flex items-center w-full px-3 py-2 transition-colors rounded hover:bg-gray-100 dark:hover:bg-zinc-800"
+				:class="$store.theme.mode === 'dark' ? 'font-semibold' : ''"
+			>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					class="w-4 h-4 mr-2 text-gray-800 dark:text-gray-200"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke="currentColor"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+					/>
+				</svg>
+				Dark
+				<svg x-show="$store.theme.mode === 'dark'" class="w-4 h-4 ml-auto text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+				</svg>
+			</button>
+			<!-- System Option -->
+			<button
+				@click="$store.theme.mode = 'system'; $store.theme.updateTheme(); open = false"
+				class="flex items-center w-full px-3 py-2 transition-colors rounded hover:bg-gray-100 dark:hover:bg-zinc-800"
+				:class="$store.theme.mode === 'system' ? 'font-semibold' : ''"
+			>
+				<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+					/>
+				</svg>
+				System
+				<svg x-show="$store.theme.mode === 'system'" class="w-4 h-4 ml-auto text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+				</svg>
+			</button>
+		</div>
+	</div>
 </html>
