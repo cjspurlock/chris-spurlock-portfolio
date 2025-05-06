@@ -7,9 +7,9 @@ in modern web development and user interface design." %} {% extends "_includes/d
 			class="px-6 py-16 mx-auto text-center text-white bg-gradient-to-br from-zinc-950 to-zinc-800 md:px-16 md:py-32 bg-zinc-50 sm:py-32 rounded-4xl ring-1 ring-black/5 dark:ring-white/5 ring-inset dark:bg-gradient-to-br dark:from-zinc-900 dark:to-zinc-800 dark:ring-inset"
 		>
 			<img
-				src="/images/headshot-md.webp"
-				srcset="/images/headshot-sm.webp 400w, /images/headshot-md.webp 800w, /images/headshot-lg.webp 1200w, /images/headshot-xl.webp 1600w"
-				sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1200px) 1200px, 1600px"
+				src="/images/headshot-128.webp"
+				srcset="/images/headshot-64.webp 64w, /images/headshot-128.webp 128w, /images/headshot-256.webp 256w"
+				sizes="(max-width: 64px) 64px, (max-width: 128px) 128px, 256px"
 				alt="Headshot style image of Chris Spurlock, UI Developer"
 				class="block object-cover object-center w-32 h-auto mx-auto mb-6 rounded-full aspect-square"
 				loading="eager"
@@ -516,23 +516,56 @@ in modern web development and user interface design." %} {% extends "_includes/d
 				<!-- Yes, this is the example layout from Simon Vrachliotis' Pixel Perfect Figma to Tailwind workshot on EpicWeb.dev. I haven't taken the course, but I saw the design and just HAD to try to recreate it. -->
 				<div class="flex flex-col-reverse xl:grid xl:grid-cols-2 gap-x-20 gap-y-12 xl:items-center">
 					<div>
+						{% set logos = [ { name: 'AAO', src: '/images/icon--aao.webp', alt: 'AAO', link: 'https://techselect.aaoinfo.org/', ariaLabel: 'Visit
+						AAO TechSelect website (opens in new tab)', colStart: 1 }, { name: 'Artesys', src: '/images/icon--artesys.webp', alt: 'Artesys', link:
+						'https://artesysonline.com/', ariaLabel: 'Visit Artesys website (opens in new tab)', colStart: 4 }, { name: 'Ascent', src:
+						'/images/icon--ascent.webp', alt: 'Ascent', link: 'https://www.ascentcorp.com/', ariaLabel: 'Visit Ascent website (opens in new tab)',
+						colStart: 1 }, { name: 'Big Blue Spark', src: '/images/icon--big-blue-spark.webp', alt: 'Big Blue Spark', link:
+						'https://www.bigbluespark.com/', ariaLabel: 'Visit Big Blue Spark website (opens in new tab)', colStart: 2 }, { name: 'Cole Schotz',
+						src: '/images/icon--cole-schotz.webp', alt: 'Cole Schotz', link: 'https://www.coleschotz.com/', ariaLabel: 'Visit Cole Schotz website
+						(opens in new tab)', colStart: 4 }, { name: 'Convoy of Hope', src: '/images/icon--convoy-of-hope.webp', alt: 'Convoy of Hope', link:
+						'https://convoyofhope.org/', ariaLabel: 'Visit Convoy of Hope website (opens in new tab)', colStart: 5 }, { name: 'Focal Pointe', src:
+						'/images/icon--focal-pointe.webp', alt: 'Focal Pointe', link: 'https://www.yourfocalpointe.com/', ariaLabel: 'Visit Focal Pointe website
+						(opens in new tab)', colStart: 1 }, { name: 'GSL', src: '/images/icon--gsl.webp', alt: 'GSL', link: 'https://stl2030progress.com/',
+						ariaLabel: 'Visit GSL website (opens in new tab)', colStart: 2 }, { name: 'Kate & Co', src: '/images/icon--kate-and-co.webp', alt: 'Kate
+						& Co', link: 'https://www.kateandcollc.com/', ariaLabel: 'Visit Kate & Co website (opens in new tab)', colStart: 3 }, { name:
+						'Mayflower', src: '/images/icon--mayflower.webp', alt: 'Mayflower', link: 'https://www.mayflower.com/', ariaLabel: 'Visit Mayflower
+						website (opens in new tab)', colStart: 4 }, { name: 'OFC', src: '/images/icon--ofc.webp', alt: 'OFC', link:
+						'https://oldfashioncandy.com/', ariaLabel: 'Visit OFC website (opens in new tab)', colStart: 5 }, { name: 'Pathways Matter', src:
+						'/images/icon--pathways-matter.webp', alt: 'Pathways Matter', link: 'https://pathwaysmatter.org/', ariaLabel: 'Visit Pathways Matter
+						website (opens in new tab)', colStart: 2 }, { name: 'Premium', src: '/images/icon--premium.webp', alt: 'Premium', link:
+						'https://premiumretail.com/', ariaLabel: 'Visit Premium Retail website (opens in new tab)', colStart: 3 }, { name: 'Rosenthal', src:
+						'/images/icon--rosenthal.webp', alt: 'Rosenthal', link: 'https://rosenthalwinemerchant.com/', ariaLabel: 'Visit Rosenthal Wine Merchant
+						website (opens in new tab)', colStart: 4 }, { name: 'Switzerfilm', src: '/images/icon--switzerfilm.webp', alt: 'Switzerfilm', link:
+						'https://www.switzerfilm.com/', ariaLabel: 'Visit Switzerfilm website (opens in new tab)', colStart: 5 }, { name: 'Thompson Center',
+						src: '/images/icon--thompson-center.webp', alt: 'Thompson Center', link: 'https://thompsoncenter.missouri.edu/', ariaLabel: 'Visit
+						Thompson Center website (opens in new tab)', colStart: 2 }, { name: 'UHSP', src: '/images/icon--uhsp.webp', alt: 'UHSP', link:
+						'https://www.uhsp.edu/', ariaLabel: 'Visit UHSP website (opens in new tab)', colStart: 3 }, { name: 'Ultramodern', src:
+						'/images/icon--ultramodern.webp', alt: 'Ultramodern', link: 'https://www.ultramodern.com/', ariaLabel: 'Visit Ultramodern Pool & Patio
+						website (opens in new tab)', colStart: 4 }, { name: 'United Van Lines', src: '/images/icon--united-van-lines.webp', alt: 'United Van
+						Lines', link: 'https://www.unitedvanlines.com/', ariaLabel: 'Visit United Van Lines website (opens in new tab)', colStart: 5 }, { name:
+						'WashU', src: '/images/icon--washu.webp', alt: 'WashU', link: 'https://mir.wustl.edu/', ariaLabel: 'Visit WashU MIR website (opens in
+						new tab)', colStart: 2 }, { name: 'Zelis', src: '/images/icon--zelis.webp', alt: 'Zelis', link: 'https://www.zelis.com/', ariaLabel:
+						'Visit Zelis website (opens in new tab)', colStart: 4 } ] %}
+
 						<ul
 							class="flex flex-wrap gap-4 xl:grid xl:grid-cols-5 xl:grid-rows-6 [&>*]:w-[calc(33.333%-0.667rem)] sm:[&>*]:w-[calc(25%-.75rem)] md:[&>*]:w-[calc(16.667%-.8333rem)] xl:[&>*]:w-full"
 						>
-							<li class="xl:col-start-1">
+							{% for logo in logos %}
+							<li class="xl:col-start-{{ logo.colStart }}">
 								<a
-									href="https://techselect.aaoinfo.org/"
+									href="{{ logo.link }}"
 									target="_blank"
 									rel="noopener noreferrer"
 									class="block p-6 rounded-lg bg-fuchsia-50 aspect-square"
-									aria-label="Visit AAO TechSelect website (opens in new tab)"
+									aria-label="{{ logo.ariaLabel }}"
 								>
 									<figure class="block">
 										<img
-											src="/images/icon--aao.webp"
-											srcset="/images/icon--aao-64.webp 64w, /images/icon--aao-128.webp 128w, /images/icon--aao-256.webp 256w"
-											sizes="(max-width: 640px) 64px, (max-width: 1024px) 128px, 256px"
-											alt="AAO"
+											src="{{ logo.src }}"
+											srcset="{{ logo.src | replace('.webp', '-59.webp') }} 59w, {{ logo.src | replace('.webp', '-118.webp') }} 118w"
+											sizes="59px"
+											alt="{{ logo.alt }}"
 											loading="lazy"
 											decoding="async"
 											class="object-contain w-full h-full"
@@ -540,474 +573,7 @@ in modern web development and user interface design." %} {% extends "_includes/d
 									</figure>
 								</a>
 							</li>
-							<li class="xl:col-start-4">
-								<a
-									href="https://artesysonline.com/"
-									target="_blank"
-									rel="noopener noreferrer"
-									class="block p-6 rounded-lg bg-fuchsia-50 aspect-square"
-									aria-label="Visit Artesys website (opens in new tab)"
-								>
-									<figure class="block">
-										<img
-											src="/images/icon--artesys.webp"
-											srcset="/images/icon--artesys-64.webp 64w, /images/icon--artesys-128.webp 128w, /images/icon--artesys-256.webp 256w"
-											sizes="(max-width: 640px) 64px, (max-width: 1024px) 128px, 256px"
-											alt="Artesys"
-											loading="lazy"
-											decoding="async"
-											class="object-contain w-full h-full"
-										/>
-									</figure>
-								</a>
-							</li>
-							<li class="xl:col-start-1">
-								<a
-									href="https://www.ascentcorp.com/"
-									target="_blank"
-									rel="noopener noreferrer"
-									class="block p-6 rounded-lg bg-fuchsia-50 aspect-square"
-									aria-label="Visit Ascent website (opens in new tab)"
-								>
-									<figure class="block">
-										<img
-											src="/images/icon--ascent.webp"
-											srcset="/images/icon--ascent-64.webp 64w, /images/icon--ascent-128.webp 128w, /images/icon--ascent-256.webp 256w"
-											sizes="(max-width: 640px) 64px, (max-width: 1024px) 128px, 256px"
-											alt="Ascent"
-											loading="lazy"
-											decoding="async"
-											class="object-contain w-full h-full"
-										/>
-									</figure>
-								</a>
-							</li>
-							<li class="xl:col-start-2">
-								<a
-									href="https://www.bigbluespark.com/"
-									target="_blank"
-									rel="noopener noreferrer"
-									class="block p-6 rounded-lg bg-fuchsia-50 aspect-square"
-									aria-label="Visit Big Blue Spark website (opens in new tab)"
-								>
-									<figure class="block">
-										<img
-											src="/images/icon--big-blue-spark.webp"
-											srcset="
-												/images/icon--big-blue-spark-64.webp   64w,
-												/images/icon--big-blue-spark-128.webp 128w,
-												/images/icon--big-blue-spark-256.webp 256w
-											"
-											sizes="(max-width: 640px) 64px, (max-width: 1024px) 128px, 256px"
-											alt="Big Blue Spark"
-											loading="lazy"
-											decoding="async"
-											class="object-contain w-full h-full"
-										/>
-									</figure>
-								</a>
-							</li>
-							<li class="xl:col-start-4">
-								<a
-									href="https://www.coleschotz.com/"
-									target="_blank"
-									rel="noopener noreferrer"
-									class="block p-6 rounded-lg bg-fuchsia-50 aspect-square"
-									aria-label="Visit Cole Schotz website (opens in new tab)"
-								>
-									<figure class="block">
-										<img
-											src="/images/icon--cole-schotz.webp"
-											srcset="
-												/images/icon--cole-schotz-64.webp   64w,
-												/images/icon--cole-schotz-128.webp 128w,
-												/images/icon--cole-schotz-256.webp 256w
-											"
-											sizes="(max-width: 640px) 64px, (max-width: 1024px) 128px, 256px"
-											alt="Cole Schotz"
-											loading="lazy"
-											decoding="async"
-											class="object-contain w-full h-full"
-										/>
-									</figure>
-								</a>
-							</li>
-							<li class="xl:col-start-5">
-								<a
-									href="https://convoyofhope.org/"
-									target="_blank"
-									rel="noopener noreferrer"
-									class="block p-6 rounded-lg bg-fuchsia-50 aspect-square"
-									aria-label="Visit Convoy of Hope website (opens in new tab)"
-								>
-									<figure class="block">
-										<img
-											src="/images/icon--convoy-of-hope.webp"
-											srcset="
-												/images/icon--convoy-of-hope-64.webp   64w,
-												/images/icon--convoy-of-hope-128.webp 128w,
-												/images/icon--convoy-of-hope-256.webp 256w
-											"
-											sizes="(max-width: 640px) 64px, (max-width: 1024px) 128px, 256px"
-											alt="Convoy of Hope"
-											loading="lazy"
-											decoding="async"
-											class="object-contain w-full h-full"
-										/>
-									</figure>
-								</a>
-							</li>
-							<li class="xl:col-start-1">
-								<a
-									href="https://www.yourfocalpointe.com/"
-									target="_blank"
-									rel="noopener noreferrer"
-									class="block p-6 rounded-lg bg-fuchsia-50 aspect-square"
-									aria-label="Visit Focal Pointe website (opens in new tab)"
-								>
-									<figure class="block">
-										<img
-											src="/images/icon--focal-pointe.webp"
-											srcset="
-												/images/icon--focal-pointe-64.webp   64w,
-												/images/icon--focal-pointe-128.webp 128w,
-												/images/icon--focal-pointe-256.webp 256w
-											"
-											sizes="(max-width: 640px) 64px, (max-width: 1024px) 128px, 256px"
-											alt="Focal Pointe"
-											loading="lazy"
-											decoding="async"
-											class="object-contain w-full h-full"
-										/>
-									</figure>
-								</a>
-							</li>
-							<li class="xl:col-start-2">
-								<a
-									href="https://stl2030progress.com/"
-									target="_blank"
-									rel="noopener noreferrer"
-									class="block p-6 rounded-lg bg-fuchsia-50 aspect-square"
-									aria-label="Visit GSL website (opens in new tab)"
-								>
-									<figure class="block">
-										<img
-											src="/images/icon--gsl.webp"
-											srcset="/images/icon--gsl-64.webp 64w, /images/icon--gsl-128.webp 128w, /images/icon--gsl-256.webp 256w"
-											sizes="(max-width: 640px) 64px, (max-width: 1024px) 128px, 256px"
-											alt="GSL"
-											loading="lazy"
-											decoding="async"
-											class="object-contain w-full h-full"
-										/>
-									</figure>
-								</a>
-							</li>
-							<li class="xl:col-start-3">
-								<a
-									href="https://www.kateandcollc.com/"
-									target="_blank"
-									rel="noopener noreferrer"
-									class="block p-6 rounded-lg bg-fuchsia-50 aspect-square"
-									aria-label="Visit Kate & Co website (opens in new tab)"
-								>
-									<figure class="block">
-										<img
-											src="/images/icon--kate-and-co.webp"
-											srcset="
-												/images/icon--kate-and-co-64.webp   64w,
-												/images/icon--kate-and-co-128.webp 128w,
-												/images/icon--kate-and-co-256.webp 256w
-											"
-											sizes="(max-width: 640px) 64px, (max-width: 1024px) 128px, 256px"
-											alt="Kate & Co"
-											loading="lazy"
-											decoding="async"
-											class="object-contain w-full h-full"
-										/>
-									</figure>
-								</a>
-							</li>
-							<li class="xl:col-start-4">
-								<a
-									href="https://www.mayflower.com/"
-									target="_blank"
-									rel="noopener noreferrer"
-									class="block p-6 rounded-lg bg-fuchsia-50 aspect-square"
-									aria-label="Visit Mayflower website (opens in new tab)"
-								>
-									<figure class="block">
-										<img
-											src="/images/icon--mayflower.webp"
-											srcset="
-												/images/icon--mayflower-64.webp   64w,
-												/images/icon--mayflower-128.webp 128w,
-												/images/icon--mayflower-256.webp 256w
-											"
-											sizes="(max-width: 640px) 64px, (max-width: 1024px) 128px, 256px"
-											alt="Mayflower"
-											loading="lazy"
-											decoding="async"
-											class="object-contain w-full h-full"
-										/>
-									</figure>
-								</a>
-							</li>
-							<li class="xl:col-start-5">
-								<a
-									href="https://oldfashioncandy.com/"
-									target="_blank"
-									rel="noopener noreferrer"
-									class="block p-6 rounded-lg bg-fuchsia-50 aspect-square"
-									aria-label="Visit OFC website (opens in new tab)"
-								>
-									<figure class="block">
-										<img
-											src="/images/icon--ofc.webp"
-											srcset="/images/icon--ofc-64.webp 64w, /images/icon--ofc-128.webp 128w, /images/icon--ofc-256.webp 256w"
-											sizes="(max-width: 640px) 64px, (max-width: 1024px) 128px, 256px"
-											alt="OFC"
-											loading="lazy"
-											decoding="async"
-											class="object-contain w-full h-full"
-										/>
-									</figure>
-								</a>
-							</li>
-							<li class="xl:col-start-2">
-								<a
-									href="https://pathwaysmatter.org/"
-									target="_blank"
-									rel="noopener noreferrer"
-									class="block p-6 rounded-lg bg-fuchsia-50 aspect-square"
-									aria-label="Visit Pathways Matter website (opens in new tab)"
-								>
-									<figure class="block">
-										<img
-											src="/images/icon--pathways-matter.webp"
-											srcset="
-												/images/icon--pathways-matter-64.webp   64w,
-												/images/icon--pathways-matter-128.webp 128w,
-												/images/icon--pathways-matter-256.webp 256w
-											"
-											sizes="(max-width: 640px) 64px, (max-width: 1024px) 128px, 256px"
-											alt="Pathways Matter"
-											loading="lazy"
-											decoding="async"
-											class="object-contain w-full h-full"
-										/>
-									</figure>
-								</a>
-							</li>
-							<li class="xl:col-start-3">
-								<a
-									href="https://premiumretail.com/"
-									target="_blank"
-									rel="noopener noreferrer"
-									class="block p-6 rounded-lg bg-fuchsia-50 aspect-square"
-									aria-label="Visit Premium Retail website (opens in new tab)"
-								>
-									<figure class="block">
-										<img
-											src="/images/icon--premium.webp"
-											srcset="/images/icon--premium-64.webp 64w, /images/icon--premium-128.webp 128w, /images/icon--premium-256.webp 256w"
-											sizes="(max-width: 640px) 64px, (max-width: 1024px) 128px, 256px"
-											alt="Premium"
-											loading="lazy"
-											decoding="async"
-											class="object-contain w-full h-full"
-										/>
-									</figure>
-								</a>
-							</li>
-							<li class="xl:col-start-4">
-								<a
-									href="https://rosenthalwinemerchant.com/"
-									target="_blank"
-									rel="noopener noreferrer"
-									class="block p-6 rounded-lg bg-fuchsia-50 aspect-square"
-									aria-label="Visit Rosenthal Wine Merchant website (opens in new tab)"
-								>
-									<figure class="block">
-										<img
-											src="/images/icon--rosenthal.webp"
-											srcset="
-												/images/icon--rosenthal-64.webp   64w,
-												/images/icon--rosenthal-128.webp 128w,
-												/images/icon--rosenthal-256.webp 256w
-											"
-											sizes="(max-width: 640px) 64px, (max-width: 1024px) 128px, 256px"
-											alt="Rosenthal"
-											loading="lazy"
-											decoding="async"
-											class="object-contain w-full h-full"
-										/>
-									</figure>
-								</a>
-							</li>
-							<li class="xl:col-start-5">
-								<a
-									href="https://www.switzerfilm.com/"
-									target="_blank"
-									rel="noopener noreferrer"
-									class="block p-6 rounded-lg bg-fuchsia-50 aspect-square"
-									aria-label="Visit Switzerfilm website (opens in new tab)"
-								>
-									<figure class="block">
-										<img
-											src="/images/icon--switzerfilm.webp"
-											srcset="
-												/images/icon--switzerfilm-64.webp   64w,
-												/images/icon--switzerfilm-128.webp 128w,
-												/images/icon--switzerfilm-256.webp 256w
-											"
-											sizes="(max-width: 640px) 64px, (max-width: 1024px) 128px, 256px"
-											alt="Switzerfilm"
-											loading="lazy"
-											decoding="async"
-											class="object-contain w-full h-full"
-										/>
-									</figure>
-								</a>
-							</li>
-							<li class="xl:col-start-2">
-								<a
-									href="https://thompsoncenter.missouri.edu/"
-									target="_blank"
-									rel="noopener noreferrer"
-									class="block p-6 rounded-lg bg-fuchsia-50 aspect-square"
-									aria-label="Visit Thompson Center website (opens in new tab)"
-								>
-									<figure class="block">
-										<img
-											src="/images/icon--thompson-center.webp"
-											srcset="
-												/images/icon--thompson-center-64.webp   64w,
-												/images/icon--thompson-center-128.webp 128w,
-												/images/icon--thompson-center-256.webp 256w
-											"
-											sizes="(max-width: 640px) 64px, (max-width: 1024px) 128px, 256px"
-											alt="Thompson Center"
-											loading="lazy"
-											decoding="async"
-											class="object-contain w-full h-full"
-										/>
-									</figure>
-								</a>
-							</li>
-							<li class="xl:col-start-3">
-								<a
-									href="https://www.uhsp.edu/"
-									target="_blank"
-									rel="noopener noreferrer"
-									class="block p-6 rounded-lg bg-fuchsia-50 aspect-square"
-									aria-label="Visit UHSP website (opens in new tab)"
-								>
-									<figure class="block">
-										<img
-											src="/images/icon--uhsp.webp"
-											srcset="/images/icon--uhsp-64.webp 64w, /images/icon--uhsp-128.webp 128w, /images/icon--uhsp-256.webp 256w"
-											sizes="(max-width: 640px) 64px, (max-width: 1024px) 128px, 256px"
-											alt="UHSP"
-											loading="lazy"
-											decoding="async"
-											class="object-contain w-full h-full"
-										/>
-									</figure>
-								</a>
-							</li>
-							<li class="xl:col-start-4">
-								<a
-									href="https://www.ultramodern.com/"
-									target="_blank"
-									rel="noopener noreferrer"
-									class="block p-6 rounded-lg bg-fuchsia-50 aspect-square"
-									aria-label="Visit Ultramodern Pool & Patio website (opens in new tab)"
-								>
-									<figure class="block">
-										<img
-											src="/images/icon--ultramodern.webp"
-											srcset="
-												/images/icon--ultramodern-64.webp   64w,
-												/images/icon--ultramodern-128.webp 128w,
-												/images/icon--ultramodern-256.webp 256w
-											"
-											sizes="(max-width: 640px) 64px, (max-width: 1024px) 128px, 256px"
-											alt="Ultramodern"
-											loading="lazy"
-											decoding="async"
-											class="object-contain w-full h-full"
-										/>
-									</figure>
-								</a>
-							</li>
-							<li class="xl:col-start-5">
-								<a
-									href="https://www.unitedvanlines.com/"
-									target="_blank"
-									rel="noopener noreferrer"
-									class="block p-6 rounded-lg bg-fuchsia-50 aspect-square"
-									aria-label="Visit United Van Lines website (opens in new tab)"
-								>
-									<figure class="block">
-										<img
-											src="/images/icon--united-van-lines.webp"
-											srcset="
-												/images/icon--united-van-lines-64.webp   64w,
-												/images/icon--united-van-lines-128.webp 128w,
-												/images/icon--united-van-lines-256.webp 256w
-											"
-											sizes="(max-width: 640px) 64px, (max-width: 1024px) 128px, 256px"
-											alt="United Van Lines"
-											loading="lazy"
-											decoding="async"
-											class="object-contain w-full h-full"
-										/>
-									</figure>
-								</a>
-							</li>
-							<li class="xl:col-start-2">
-								<a
-									href="https://mir.wustl.edu/"
-									target="_blank"
-									rel="noopener noreferrer"
-									class="block p-6 rounded-lg bg-fuchsia-50 aspect-square"
-									aria-label="Visit WashU MIR website (opens in new tab)"
-								>
-									<figure class="block">
-										<img
-											src="/images/icon--washu.webp"
-											srcset="/images/icon--washu-64.webp 64w, /images/icon--washu-128.webp 128w, /images/icon--washu-256.webp 256w"
-											sizes="(max-width: 640px) 64px, (max-width: 1024px) 128px, 256px"
-											alt="WashU"
-											loading="lazy"
-											decoding="async"
-											class="object-contain w-full h-full"
-										/>
-									</figure>
-								</a>
-							</li>
-							<li class="xl:col-start-4">
-								<a
-									href="https://www.zelis.com/"
-									target="_blank"
-									rel="noopener noreferrer"
-									class="block p-6 rounded-lg bg-fuchsia-50 aspect-square"
-									aria-label="Visit Zelis website (opens in new tab)"
-								>
-									<figure class="block">
-										<img
-											src="/images/icon--zelis.webp"
-											srcset="/images/icon--zelis-64.webp 64w, /images/icon--zelis-128.webp 128w, /images/icon--zelis-256.webp 256w"
-											sizes="(max-width: 640px) 64px, (max-width: 1024px) 128px, 256px"
-											alt="Zelis"
-											loading="lazy"
-											decoding="async"
-											class="object-contain w-full h-full"
-										/>
-									</figure>
-								</a>
-							</li>
+							{% endfor %}
 						</ul>
 					</div>
 					<div>

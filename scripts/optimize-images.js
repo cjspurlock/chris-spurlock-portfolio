@@ -9,30 +9,51 @@ async function getImageFiles() {
 	const pngFiles = glob.sync("images/*.png").map((file) => ({
 		input: path.basename(file),
 		output: path.basename(file).replace(".png", ".webp"),
-		sizes: [64, 128, 256], // Default sizes for logos
+		sizes: [59, 118], // Logo sizes (59px for desktop, 118px for high-DPI)
 		quality: 85, // Higher quality for logos
 	}));
 
 	// Get all JPG files in the images directory
-	const jpgFiles = glob.sync("images/*.jpg").map((file) => ({
-		input: path.basename(file),
-		output: path.basename(file).replace(".jpg", ".webp"),
-		sizes: [300, 600, 900, 1200], // More granular sizes for project images
-		quality: 75, // Slightly lower quality for photos
-	}));
+	const jpgFiles = glob.sync("images/*.jpg").map((file) => {
+		const name = path.basename(file);
+		// Special handling for headshot
+		if (name.startsWith("headshot")) {
+			return {
+				input: name,
+				output: name.replace(".jpg", ".webp"),
+				sizes: [64, 128, 256], // Headshot sizes
+				quality: 85, // Higher quality for headshot
+			};
+		}
+		return {
+			input: name,
+			output: name.replace(".jpg", ".webp"),
+			sizes: [296, 592, 888], // Project image sizes
+			quality: 75,
+		};
+	});
 
 	// Get all base WEBP files in the images directory (exclude already-resized ones)
 	const webpFiles = glob
 		.sync("images/*.webp")
-		.filter((file) => !file.match(/-(64|128|256|300|600|900|1200)\.webp$/))
+		.filter((file) => !file.match(/-(59|118|296|592|888)\.webp$/))
 		.map((file) => {
 			const name = path.basename(file);
+			// Special handling for headshot
+			if (name.startsWith("headshot")) {
+				return {
+					input: name,
+					output: name,
+					sizes: [64, 128, 256],
+					quality: 85,
+				};
+			}
 			// Use logo sizes for icon--* files, project sizes for others
 			const isLogo = name.startsWith("icon--");
 			return {
 				input: name,
-				output: name, // Output is the same as input for webp
-				sizes: isLogo ? [64, 128, 256] : [300, 600, 900, 1200],
+				output: name,
+				sizes: isLogo ? [59, 118] : [296, 592, 888],
 				quality: isLogo ? 85 : 75,
 			};
 		});
@@ -59,15 +80,17 @@ async function optimizeImage(imageConfig) {
 			}
 
 			const outputPath = `${outputBasePath}-${size}.webp`;
+			const isHeadshot = imageConfig.input.startsWith("headshot");
+
 			await sharp(inputPath)
-				.resize(size, null, {
+				.resize(size, isHeadshot ? size : null, {
 					withoutEnlargement: true,
-					fit: "inside",
+					fit: isHeadshot ? "cover" : "inside", // Only use cover for headshots
 				})
 				.webp({
 					quality: imageConfig.quality,
-					effort: 6, // Higher compression effort
-					nearLossless: true, // Better quality for sharp edges
+					effort: 6,
+					nearLossless: true,
 				})
 				.toFile(outputPath);
 
@@ -77,12 +100,13 @@ async function optimizeImage(imageConfig) {
 
 		// Create the default size (largest that doesn't exceed original dimensions)
 		const defaultSize = Math.min(metadata.width, imageConfig.sizes[imageConfig.sizes.length - 1]);
+		const isHeadshot = imageConfig.input.startsWith("headshot");
 
 		const defaultOutputPath = path.join("images", imageConfig.output);
 		await sharp(inputPath)
-			.resize(defaultSize, null, {
+			.resize(defaultSize, isHeadshot ? defaultSize : null, {
 				withoutEnlargement: true,
-				fit: "inside",
+				fit: isHeadshot ? "cover" : "inside", // Only use cover for headshots
 			})
 			.webp({
 				quality: imageConfig.quality,

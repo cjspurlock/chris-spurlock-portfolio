@@ -60,16 +60,15 @@
 						<figure class="block p-2">
 							<img
 								class="block object-cover w-full h-auto rounded-3xl aspect-[5/3.2]"
-								width="304"
-								height="214"
+								width="592"
+								height="379"
 								src="{{ tab.imageUrl | replace('.jpg', '.webp') }}"
 								srcset="
-									{{ tab.imageUrl | replace('.jpg', '.webp') }} 400w,
-									{{ tab.imageUrl | replace('.jpg', '.webp') }} 800w,
-									{{ tab.imageUrl | replace('.jpg', '.webp') }} 1200w,
-									{{ tab.imageUrl | replace('.jpg', '.webp') }} 1600w
+									{{ tab.imageUrl | replace('.jpg', '-296.webp') }} 296w,
+									{{ tab.imageUrl | replace('.jpg', '-592.webp') }} 592w,
+									{{ tab.imageUrl | replace('.jpg', '-888.webp') }} 888w
 								"
-								sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1200px) 1200px, 1600px"
+								sizes="(max-width: 296px) 296px, (max-width: 592px) 592px, 888px"
 								alt="{{ tab.altText }}"
 								loading="lazy"
 								decoding="async"
