@@ -263,9 +263,18 @@
 			class="p-3 transition rounded-full shadow-lg group bg-white/90 ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm dark:bg-zinc-800/90 dark:hover:ring-white/20"
 			:title="$store.theme.mode.charAt(0).toUpperCase() + $store.theme.mode.slice(1) + ' mode'"
 			@keydown.escape.window="open = false"
+			type="button"
+			aria-label="Toggle theme"
 		>
 			<template x-if="$store.theme.mode === 'light' || ($store.theme.mode === 'system' && !$store.theme.mediaQuery.matches)">
-				<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-800 dark:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					class="w-5 h-5 text-gray-800 dark:text-gray-200"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke="currentColor"
+					focusable="false"
+				>
 					<path
 						stroke-linecap="round"
 						stroke-linejoin="round"
@@ -275,7 +284,14 @@
 				</svg>
 			</template>
 			<template x-if="$store.theme.mode === 'dark' || ($store.theme.mode === 'system' && $store.theme.mediaQuery.matches)">
-				<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-800 dark:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					class="w-5 h-5 text-gray-800 dark:text-gray-200"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke="currentColor"
+					focusable="false"
+				>
 					<path
 						stroke-linecap="round"
 						stroke-linejoin="round"
@@ -298,8 +314,16 @@
 				@click="$store.theme.mode = 'light'; $store.theme.updateTheme(); open = false"
 				class="flex items-center w-full px-3 py-2 transition-colors rounded hover:bg-gray-100 dark:hover:bg-zinc-800"
 				:class="$store.theme.mode === 'light' ? 'font-semibold' : ''"
+				type="button"
 			>
-				<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					class="w-4 h-4 mr-2 text-yellow-400"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke="currentColor"
+					focusable="false"
+				>
 					<path
 						stroke-linecap="round"
 						stroke-linejoin="round"
@@ -308,7 +332,14 @@
 					/>
 				</svg>
 				Light
-				<svg x-show="$store.theme.mode === 'light'" class="w-4 h-4 ml-auto text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+				<svg
+					x-show="$store.theme.mode === 'light'"
+					class="w-4 h-4 ml-auto text-blue-500"
+					fill="none"
+					stroke="currentColor"
+					viewBox="0 0 24 24"
+					focusable="false"
+				>
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 				</svg>
 			</button>
@@ -317,6 +348,7 @@
 				@click="$store.theme.mode = 'dark'; $store.theme.updateTheme(); open = false"
 				class="flex items-center w-full px-3 py-2 transition-colors rounded hover:bg-gray-100 dark:hover:bg-zinc-800"
 				:class="$store.theme.mode === 'dark' ? 'font-semibold' : ''"
+				type="button"
 			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -324,6 +356,7 @@
 					fill="none"
 					viewBox="0 0 24 24"
 					stroke="currentColor"
+					focusable="false"
 				>
 					<path
 						stroke-linecap="round"
@@ -333,7 +366,14 @@
 					/>
 				</svg>
 				Dark
-				<svg x-show="$store.theme.mode === 'dark'" class="w-4 h-4 ml-auto text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+				<svg
+					x-show="$store.theme.mode === 'dark'"
+					class="w-4 h-4 ml-auto text-blue-500"
+					fill="none"
+					stroke="currentColor"
+					viewBox="0 0 24 24"
+					focusable="false"
+				>
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 				</svg>
 			</button>
@@ -342,8 +382,16 @@
 				@click="$store.theme.mode = 'system'; $store.theme.updateTheme(); open = false"
 				class="flex items-center w-full px-3 py-2 transition-colors rounded hover:bg-gray-100 dark:hover:bg-zinc-800"
 				:class="$store.theme.mode === 'system' ? 'font-semibold' : ''"
+				type="button"
 			>
-				<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					class="w-4 h-4 mr-2 text-gray-500"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke="currentColor"
+					focusable="false"
+				>
 					<path
 						stroke-linecap="round"
 						stroke-linejoin="round"
@@ -352,7 +400,14 @@
 					/>
 				</svg>
 				System
-				<svg x-show="$store.theme.mode === 'system'" class="w-4 h-4 ml-auto text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+				<svg
+					x-show="$store.theme.mode === 'system'"
+					class="w-4 h-4 ml-auto text-blue-500"
+					fill="none"
+					stroke="currentColor"
+					viewBox="0 0 24 24"
+					focusable="false"
+				>
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 				</svg>
 			</button>
