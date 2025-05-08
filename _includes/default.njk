@@ -163,7 +163,7 @@
 		{% endblock %}
 		<footer class="px-6 my-6 md:px-12 md:my-12 max-w-[108rem] mx-auto">
 			<div
-				class="px-10 py-8 mx-auto text-white md:px-16 md:py-12 bg-gradient-to-br from-zinc-950 to-zinc-800 rounded-4xl lg:rounded-full ring-1 ring-black/5 dark:ring-white/5 ring-inset dark:bg-gradient-to-br dark:from-zinc-900 dark:to-zinc-800 dark:ring-inset"
+				class="px-10 py-8 mx-auto text-white md:px-16 md:py-12 bg-gradient-to-br from-zinc-950 to-zinc-800 rounded-4xl lg:rounded-full ring-1 ring-[rgba(0,0,0,.05)] dark:ring-[rgba(255,255,255,.05)] ring-inset dark:bg-gradient-to-br dark:from-zinc-900 dark:to-zinc-800 dark:ring-inset"
 			>
 				<div class="flex flex-col items-center justify-between gap-6 mx-auto lg:flex-row">
 					<small class="text-sm text-zinc-400 max-lg:text-center"
@@ -262,7 +262,7 @@
 			@click="open = !open"
 			:aria-expanded="open"
 			:aria-controls="'theme-dropdown-menu'"
-			class="p-3 transition rounded-full shadow-lg group bg-white/90 ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm dark:bg-zinc-800/90 dark:hover:ring-white/20"
+			class="p-3 transition rounded-full shadow-lg group bg-[rgba(255,255,255,0.9)] ring-1 shadow-[rgba(39,39,42,0.05)] ring-[rgba(24,24,27,.05)] hover:ring-[rgba(24,24,27,0.2)] backdrop-blur-sm dark:bg-[rgba(39,39,42,0.9)] dark:hover:ring-[rgba(255,255,255,0.2)]"
 			:title="$store.theme.mode.charAt(0).toUpperCase() + $store.theme.mode.slice(1) + ' mode'"
 			@keydown.escape.window="open = false"
 			type="button"
@@ -308,7 +308,7 @@
 			@click.away="open = false"
 			@keydown.escape.window="open = false"
 			id="theme-dropdown-menu"
-			class="absolute right-0 w-40 p-1 mt-2 origin-top-right bg-white rounded-lg shadow-lg max-md:-top-4 max-md:-translate-y-full dark:bg-zinc-900 ring-1 ring-black/10 focus:outline-none"
+			class="absolute right-0 w-40 p-1 mt-2 origin-top-right bg-white rounded-lg shadow-lg max-md:-top-4 max-md:-translate-y-full dark:bg-zinc-900 ring-1 ring-[rgba(0,0,0,.1)] focus:outline-none"
 			style="display: none"
 		>
 			<!-- Light Option -->
