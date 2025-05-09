@@ -68,11 +68,6 @@
 			}
 		</script>
 
-		<!-- Inline critical CSS -->
-		<style>
-			{% include "critical.css" %}
-		</style>
-
 		<!-- Load non-critical CSS -->
 		<link rel="stylesheet" href="/style.css?v={% version 'css' %}" media="print" onload="this.media='all'" />
 		<noscript>
