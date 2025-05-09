@@ -14,17 +14,4 @@
   package = "netlify-plugin-checklinks"
 
   [plugins.inputs]
-    skipPatterns = ["https://cdn.simpleicons.org"]
-
-[[plugins]]
-  package = "netlify-plugin-inline-critical-css"
-  
-  [plugins.inputs]
-    fileFilter = ["*.html"]
-    directoryFilter = ["!node_modules"]
-    # Don't remove the inlined styles from the stylesheet
-    extract = false
-    dimensions = [
-      { width = 414, height = 2000 },  # Mobile with increased height
-      { width = 1920, height = 2000 }  # Desktop with increased height
-    ] 
+    skipPatterns = ["https://cdn.simpleicons.org"] 
