@@ -22,19 +22,9 @@
   [plugins.inputs]
     fileFilter = ["*.html"]
     directoryFilter = ["!node_modules"]
-    dimensions = [
-      { width = 414, height = 896 },  # Mobile
-      { width = 1920, height = 1080 } # Desktop
-    ]
-    # Increase the height to capture more content
-    height = 2000
     # Don't remove the inlined styles from the stylesheet
     extract = false
-    # Increase the timeout for processing
-    timeout = 30000
-    # Increase the max size of the critical CSS
-    maxSize = 100000
-    # Include all media queries
-    inline = true
-    # Don't minify the critical CSS
-    minify = false 
+    dimensions = [
+      { width = 414, height = 2000 },  # Mobile with increased height
+      { width = 1920, height = 2000 }  # Desktop with increased height
+    ] 
