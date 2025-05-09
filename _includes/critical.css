@@ -1,1 +1,234 @@
-/*  */
+/* Critical CSS for above-the-fold content */
+:root {
+  --color-fuchsia-100: #fae8ff;
+}
+
+/* Base styles */
+html {
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  font-family: "Syne", ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+}
+
+/* Font loading states */
+html.fonts-unloaded {
+  font-family: ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+}
+
+html.fonts-loaded {
+  font-family: "Syne", ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+}
+
+/* Prevent layout shift during font load */
+html.fonts-unloaded h1,
+html.fonts-unloaded h2,
+html.fonts-unloaded h3,
+html.fonts-unloaded h4,
+html.fonts-unloaded h5,
+html.fonts-unloaded h6,
+html.fonts-unloaded p,
+html.fonts-unloaded span,
+html.fonts-unloaded a {
+  font-family: ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+}
+
+body {
+  margin: 0;
+  line-height: inherit;
+}
+
+/* Critical layout styles */
+.max-w-\[108rem\] {
+  max-width: 108rem;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.pt-6 {
+  padding-top: 1.5rem;
+}
+
+/* Critical component styles */
+.rounded-4xl {
+  border-radius: 2.125rem;
+}
+
+.bg-gradient-to-br {
+  background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+}
+
+.from-zinc-950 {
+  --tw-gradient-from: #09090b;
+  --tw-gradient-to: rgb(9 9 11 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.to-zinc-800 {
+  --tw-gradient-to: #27272a;
+}
+
+.text-white {
+  color: rgb(255 255 255);
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Critical typography */
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.text-zinc-400 {
+  color: rgb(161 161 170);
+}
+
+/* Critical image styles */
+.w-32 {
+  width: 8rem;
+}
+
+.h-auto {
+  height: auto;
+}
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
+.aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
+.object-cover {
+  object-fit: cover;
+}
+
+.object-center {
+  object-position: center;
+}
+
+/* Critical button styles */
+.inline-flex {
+  display: inline-flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.py-2\.5 {
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+}
+
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
+.bg-transparent {
+  background-color: transparent;
+}
+
+.border {
+  border-width: 1px;
+}
+
+.border-zinc-700 {
+  border-color: rgb(63 63 70);
+}
+
+.shadow-button-light {
+  box-shadow: 0px 3px 4px -1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.1), inset 0px 4px 2px rgba(255, 255, 255, 0.04), inset 0px -4px 2px rgba(255, 255, 255, 0.04), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.2);
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.hover\:bg-zinc-950:hover {
+  background-color: rgb(9 9 11);
+}
+
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Media queries */
+@media (min-width: 768px) {
+  .md\:pt-12 {
+    padding-top: 3rem;
+  }
+  
+  .md\:px-12 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+  
+  .md\:py-32 {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+  
+  .md\:text-6xl {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+  
+  .md\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  
+  .md\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+  
+  .md\:mb-12 {
+    margin-bottom: 3rem;
+  }
+} 

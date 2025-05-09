@@ -15,14 +15,3 @@
 
   [plugins.inputs]
     skipPatterns = ["https://cdn.simpleicons.org"] 
-
-[[plugins]]
-  package = "netlify-plugin-inline-critical-css"
-  
-  [plugins.inputs]
-    fileFilter = ["*.html"]
-    directoryFilter = ["!node_modules"]
-    dimensions = [
-      { width = 414, height = 896 },  # Mobile
-      { width = 1920, height = 1080 } # Desktop
-    ] 
