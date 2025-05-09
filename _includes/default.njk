@@ -68,16 +68,8 @@
 			}
 		</script>
 
-		<!-- Inline critical CSS -->
-		<style>
-			{% include "critical.css" %}
-		</style>
-
-		<!-- Load non-critical CSS -->
-		<link rel="stylesheet" href="/style.css?v={% version 'css' %}" media="print" onload="this.media='all'" />
-		<noscript>
-			<link rel="stylesheet" href="/style.css?v={% version 'css' %}" />
-		</noscript>
+		<!-- Load CSS -->
+		<link rel="stylesheet" href="/style.css?v={% version 'css' %}" />
 
 		<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.webp" />
 		<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.webp" />

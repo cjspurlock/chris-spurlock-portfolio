@@ -1,7 +1,8 @@
 const htmlmin = require("html-minifier");
 const crypto = require("crypto-js");
-const fs = require("fs");
-const path = require("path");
+const fs = require("node:fs");
+const path = require("node:path");
+const Critters = require("critters");
 
 // Generate a hash of a file's content
 function getFileHash(filePath) {
@@ -38,6 +39,34 @@ module.exports = (eleventyConfig) => {
 	// Version shortcode that accepts an asset type
 	eleventyConfig.addShortcode("version", (assetType = "css") => {
 		return assetHashes[assetType] || assetHashes.css; // fallback to CSS hash if type not found
+	});
+
+	// Process critical CSS with critters
+	eleventyConfig.addTransform("critical-css", async (content, outputPath) => {
+		if (process.env.ELEVENTY_PRODUCTION && outputPath && outputPath.endsWith(".html")) {
+			const critters = new Critters({
+				// Keep the original CSS file
+				pruneSource: false,
+				// Include all media queries
+				inlineThreshold: 0,
+				// Don't remove any CSS
+				reduceInlineStyles: false,
+				// Additional options for better compatibility
+				mergeStylesheets: true,
+				preload: "swap",
+				// Debug mode in development
+				debug: process.env.NODE_ENV !== "production",
+			});
+
+			try {
+				const processed = await critters.process(content);
+				return processed;
+			} catch (error) {
+				console.error("Error processing critical CSS:", error);
+				return content;
+			}
+		}
+		return content;
 	});
 
 	eleventyConfig.addTransform("htmlmin", (content, outputPath) => {
